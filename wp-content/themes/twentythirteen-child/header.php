@@ -10,7 +10,8 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
+        <link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png" />
 
         <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri() ?>/assets/style/style.css?v=20150122" />
 
