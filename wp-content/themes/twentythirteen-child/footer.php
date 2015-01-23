@@ -1,0 +1,77 @@
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/plugins.js"></script>
+        <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/global.js"></script>
+        <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/slick.min.js"></script>
+        <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/imagesloaded.pkgd.min.js"></script>
+        <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/masonry.pkgd.min.js"></script>
+        <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/masonry_grid.js"></script>
+
+        <?php if (ENVIRONMENT == 'live') { ?>
+            <?php /*
+            <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+            <script>
+                (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+                function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+                e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+                e.src='//www.google-analytics.com/analytics.js';
+                r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+                ga('create','UA-XXXXX-X');ga('send','pageview');
+            </script>
+            */ ?>
+            <script type="text/javascript">
+                var _ss = _ss || [];
+                _ss.push(['_setDomain', 'https://koi-VWLYX0.sharpspring.com/net']);
+                _ss.push(['_setAccount', 'KOI-10IB2IG']);
+                _ss.push(['_trackPageView']);
+                (function() {
+                    var ss = document.createElement('script');
+                    ss.type = 'text/javascript'; ss.async = true;
+                    ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-VWLYX0.sharpspring.com/client/ss.js?ver=1.1.1';
+                    var scr = document.getElementsByTagName('script')[0];
+                    scr.parentNode.insertBefore(ss, scr);
+                })();
+            </script>
+        <?php } ?>
+
+        <?php if (get_the_ID() == $homepage_post_id) { ?>
+            <script>
+                $(window).load(function() {
+                    $('.loader').fadeOut('slow');
+                })
+            </script>
+        <?php } ?>
+
+        <script>
+            $(document).ready(function(){
+                // Homepage carousel
+                if ($('.slideshow').length > 0) {
+                    $('.slideshow').slick({
+                        dots: true,
+                        arrows: false,
+                        infinite: true,
+                        speed: 500,
+                        fade: true,
+                        slide: 'div',
+                        cssEase: 'linear',
+                        autoplay: true,
+                        autoplaySpeed: 1000,
+                        pauseOnHover: true
+                    });
+                }
+
+                // Work details grid
+                if ($('#masonry').length > 0) {
+                    // Layout Masonry again after all images have loaded
+                    $('#masonry').imagesLoaded(function () {
+                        $('#masonry').masonry({
+                            // columnWidth: 1,
+                            itemSelector: '.item',
+                            // gutter: 5
+                        });
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

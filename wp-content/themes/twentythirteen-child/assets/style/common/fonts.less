@@ -1,0 +1,13 @@
+.include-font(@family: arial, @file: arial, @weight: normal, @style: normal){
+    @font-face{
+        font-family: @family;
+        src:url('/wp-content/themes/twentythirteen-child/assets/fonts/@{file}.eot');
+        src:url('/wp-content/themes/twentythirteen-child/assets/fonts/@{file}.eot?#iefix') format('embedded-opentype'),
+            url('/wp-content/themes/twentythirteen-child/assets/fonts/@{file}.woff') format('woff'),
+            url('/wp-content/themes/twentythirteen-child/assets/fonts/@{file}.svg#@{file}') format('svg'),
+            url('/wp-content/themes/twentythirteen-child/assets/fonts/@{file}.ttf') format('truetype');
+        font-weight: @weight;
+        font-style: @style;
+    }
+
+}

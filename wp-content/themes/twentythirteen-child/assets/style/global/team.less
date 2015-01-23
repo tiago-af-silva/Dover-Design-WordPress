@@ -1,0 +1,231 @@
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+	  box-sizing: border-box;
+}
+
+.no_scroll {
+	overflow:hidden;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.team_wrap {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: auto;
+	padding: 80px 2.5px 50px 2.5px;
+
+	background: white;
+}
+
+.item_wrap {
+	display: inline-block;
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	line-height: 100%;
+}
+
+
+.people_btn {
+	cursor: pointer;
+	overflow: hidden;
+
+	&:hover {
+		.team-button {
+			transform: translateY(-150px);
+		}
+	}
+}
+
+.team_btn {
+	position: absolute;
+	display: block;
+	float: left;
+	width: 100%;
+	height: 40px;
+	bottom: 0;
+
+	background-color: black;
+
+	color: white;
+	font-size: 30px;
+}
+
+
+
+/*  Copy block  */
+.copy { 
+	padding: 60px 30px;
+
+	background-size: cover;
+	background-color: @orange;
+}
+
+.team_copy {
+	display: inline-block;
+
+	color: white;
+	font-size: 18px;
+	font-family: 'Pro-Light', 'sans-serif';
+	line-height: 25px;
+}
+
+
+
+
+
+/*  button  */
+
+
+.team-button {
+	&:extend(.work__title);
+	text-align:left;
+
+	.team-member-name {
+		&:extend(.client_name);
+	}
+
+	.team-member-role {
+		&:extend(.project_location);
+	}
+}
+
+
+
+
+/* ---- Light box -----*/
+
+.team_lighbox {
+
+	height: 61%;
+	background-color: white;
+
+	@media only screen and (max-width: 765px) {
+		height: 95%;
+	}
+}
+
+.team_info {
+	position: relative;
+	display: inline-block;
+	width: 50%;
+	margin-top: 10%;
+	padding: 40px 40px 40px 0px;
+
+	color: black;
+}
+
+.team_title {
+	display: block;
+	width: 100%;
+}
+
+.team_info_name {
+	margin-bottom: 5px;
+
+	font-family: 'Pro-Bold',sans-serif;
+	font-size: 21px;
+	line-height: 21px;
+	
+	font-style: normal;
+	font-weight: 700;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.team_info_roll {
+	margin-bottom: 30px;
+
+	font-family: 'Pro-Light',sans-serif;
+	font-size: 21px;
+	line-height: 21px;
+	
+	font-style: italic;
+	font-weight: 700;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.team_info_photo {
+	display: inline-block;
+	float: left;
+	width: 50%;
+	padding: 20px;
+
+	img {
+		width: 100%;
+	}
+}
+
+.team_info_copy {
+	display: block;
+}
+
+.close_btn {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	top: 0;
+	right: 0;
+	margin: 20px;
+
+	background-image: url(/wp-content/themes/twentythirteen-child/assets/img/close_btn_b.svg);
+	background-size: 100%;
+
+	z-index: 99;
+
+	transition: all .2s;
+	-webkit-transition: all .2s;
+	-moz-transition: all .2s;
+
+	&:hover {
+		transform: rotate(90deg);
+		-webkit-transform: rotate(90deg);
+		-moz-transform: rotate(90deg);
+	}
+}
+
+
+
+
+@media only screen and (max-width: 1025px) {
+	
+}
+
+@media only screen and (max-width: 765px) {
+
+	/* light box */
+	.team_info_photo {
+		width: 100%;
+		padding: 30px;
+	}
+
+	.team_info {
+		width: 100%;
+		padding: 0px 30px 30px 30px;
+		margin-top: 0;
+	}
+
+	.close_btn {
+		margin: 10px;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+
+}
+
+.touch {
+
+	.team-button {
+		&:extend(.touch .work__title);
+	}
+
+}
