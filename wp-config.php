@@ -20,7 +20,7 @@ switch ($_SERVER['SERVER_NAME']) {
         define('ENVIRONMENT', 'development');
         define('DB_NAME', 'doverdes_mysql');
         define('DB_USER', 'root');
-        define('DB_PASSWORD', 'root');
+        define('DB_PASSWORD', '');
 
     case 'dover.madbox.org':
         define('ENVIRONMENT', 'staging');

@@ -15,16 +15,6 @@
                 </div>
 
                 <div class="grid_item c4">
-                    <div class="item_wrap people_btn pop-2">
-                        <div class="team-button">
-                            <span class="team-member-name">David McDougall</span>
-                            <span class="team-member-role">Executive Director</span>
-                        </div>
-                        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_david.jpg">
-                    </div>
-                </div>
-
-                <div class="grid_item c4">
                     <div class="item_wrap people_btn pop-3">
                         <div class="team-button">
                             <span class="team-member-name">George Georgiou</span>
@@ -35,27 +25,38 @@
                 </div>
 
                 <div class="grid_item c4">
+                    <div class="item_wrap people_btn pop-2">
+                        <div class="team-button">
+                            <span class="team-member-name">David McDougall</span>
+                            <span class="team-member-role">Executive Director</span>
+                        </div>
+                        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_david.jpg">
+                    </div>
+                </div>
+
+                <div class="grid_item c4">
                     <div class="item_wrap copy">
                         <span class="team_copy">We enjoy working with our designers, building enthusiastic teams and making the most out of our balance of ideas and experience. It is this, combined with clear communication and quality information, that produces great results for our clients.</span>
                     </div>
                 </div>
 
-                <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_1.jpg"></div>
-                <div class="grid_item c2 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_2.jpg"></div>
-                <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_3.jpg"></div>
-                <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_4.jpg"></div>
-                <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_5.jpg"></div>
-                <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_6.jpg"></div>
-                <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_7.jpg"></div>
+                <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_15.jpg"></div>
+                <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_11.jpg"></div>
+                <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_14.jpg"></div>
                 <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_8.jpg"></div>
+                <div class="grid_item c2 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_2.jpg"></div>
+                <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_1.jpg"></div>
+
+                <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_5.jpg"></div>
+                <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_16.jpg"></div>
+                <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_4.jpg"></div>
+                <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_7.jpg"></div>
+                <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_3.jpg"></div>
+                <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_6.jpg"></div>
                 <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_9.jpg"></div>
                 <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_10.jpg"></div>
-                <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_11.jpg"></div>
                 <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_12.jpg"></div>
                 <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_13.jpg"></div>
-                <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_14.jpg"></div>
-                <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_15.jpg"></div>
-                <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_16.jpg"></div>
                 <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_17.jpg"></div>
                 <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_18.jpg"></div>
                 <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_19.jpg"></div>
