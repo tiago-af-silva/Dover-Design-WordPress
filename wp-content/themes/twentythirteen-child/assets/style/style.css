@@ -181,6 +181,9 @@ body,
 	margin: 0;
 	border: 0;*/
 }
+html {
+  height: 100%;
+}
 .bandw {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
@@ -701,7 +704,6 @@ body,
   background-color: white;
   opacity: 1;
 }
-/*# sourceMappingURL=slick.css.map */
 .header {
   position: fixed;
   display: block;

@@ -2,8 +2,7 @@
         <script>window.jQuery || document.write('<script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/plugins.js"></script>
         <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/global.js"></script>
-        <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/slick.min.js"></script>
-        <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/imagesloaded.pkgd.min.js"></script>
+        <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/slick.js"></script>
         <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/masonry.pkgd.min.js"></script>
         <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/masonry_grid.js"></script>
 
@@ -57,18 +56,6 @@
                         autoplay: true,
                         autoplaySpeed: 1000,
                         pauseOnHover: true
-                    });
-                }
-
-                // Work details grid
-                if ($('#masonry').length > 0) {
-                    // Layout Masonry again after all images have loaded
-                    $('#masonry').imagesLoaded(function () {
-                        $('#masonry').masonry({
-                            // columnWidth: 1,
-                            itemSelector: '.item',
-                            // gutter: 5
-                        });
                     });
                 }
             });
