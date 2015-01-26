@@ -1,7 +1,7 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/plugins.js"></script>
-        <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/global.js"></script>
+        <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/plugins.js?v=20150126"></script>
+        <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/global.js?v=20150126"></script>
         <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/slick.js"></script>
         <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/masonry.pkgd.min.js"></script>
         <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/masonry_grid.js"></script>

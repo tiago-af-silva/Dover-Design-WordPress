@@ -1591,7 +1591,7 @@ a:hover .instagram_logo {
 }
 .touch .work__title,
 .touch .team-button {
-  transform: translateY(-150px);
+  bottom: 0;
 }
 * {
   -webkit-box-sizing: border-box;
