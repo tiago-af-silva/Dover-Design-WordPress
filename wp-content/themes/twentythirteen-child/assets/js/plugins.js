@@ -36,7 +36,7 @@ $(document).ready(function(){
             cssEase: 'linear',
             autoplay: true,
             autoplaySpeed: 9000,
-            pauseOnHover: true,
+            pauseOnHover: false,
             onInit: function (slider) {
                 // Hide all text boxes
                 slider.$slider.find('.cell').hide();
@@ -58,14 +58,6 @@ $(document).ready(function(){
                     slider.$slider.find('.cell').eq(index).show();
                 }, 2000);
             }
-        });
-
-        $('.slideshow').find('.cell')
-        .on('mouseenter', function () {
-            // $(this).parents('.slideshow:first').slickPause();
-        })
-        .on('mouseleave', function () {
-            // $(this).parents('.slideshow:first').slickPlay();
         });
     }
 
