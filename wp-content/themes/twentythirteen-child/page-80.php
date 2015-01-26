@@ -4,7 +4,7 @@
     <?php while (have_posts()) { the_post(); ?>
         <div class="team_wrap">
             <div id="masonry">
-                <div class="grid_item c4">
+                <div class="grid_item c4 bandw">
                     <div class="item_wrap people_btn pop-1">
                         <div class="team-button">
                             <span class="team-member-name">Jon Dover</span>
@@ -14,7 +14,7 @@
                     </div>
                 </div>
 
-                <div class="grid_item c4">
+                <div class="grid_item c4 bandw">
                     <div class="item_wrap people_btn pop-3">
                         <div class="team-button">
                             <span class="team-member-name">George Georgiou</span>
@@ -24,7 +24,7 @@
                     </div>
                 </div>
 
-                <div class="grid_item c4">
+                <div class="grid_item c4 bandw">
                     <div class="item_wrap people_btn pop-2">
                         <div class="team-button">
                             <span class="team-member-name">David McDougall</span>
