@@ -3,6 +3,7 @@
 
     <div class="work_wrap">
         <div class="work__row">
+            <?php $previous_btn_added = false; ?>
             <?php while (have_posts()) { the_post(); ?>
                 <?php
                     $details = simple_fields_fieldgroup('project_details');
@@ -15,6 +16,14 @@
                         $options = array('project_options_archived'=>$project_options_archived);
                     }
                 ?>
+
+                <?php if ($options['project_options_archived']['selected_value']=='Yes' && !$previous_btn_added) { ?>
+                    <div class="load_more">
+                        <div class="archive_btn more"><span>Previous projects</span></div>
+                        <div class="archive_btn less no_btn"><span>Hide previous projects</span></div>
+                    </div>
+                    <?php $previous_btn_added = true; ?>
+                <?php } ?>
 
                 <a href="<?php echo get_the_permalink(); ?>" class="work__cell <?php echo ($options['project_options_archived']['selected_value']=='Yes' ? 'more_proj archived' : '') ?>">
                     <div class="work__cell__container">
@@ -34,11 +43,6 @@
                     </div>
                 </a>
             <?php } ?>
-
-            <div class="load_more">
-                <div class="archive_btn more"><span>Previous projects</span></div>
-                <div class="archive_btn less no_btn"><span>Hide previous projects</span></div>
-            </div>
         </div>
     </div>
 
