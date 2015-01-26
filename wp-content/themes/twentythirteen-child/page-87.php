@@ -19,7 +19,7 @@
                         <br>
 
                         <p class="contact_title">Directors</p>
-                        <p class="contact_info">Jon Dover - David McDougall - George Georgiou</p>
+                        <p class="contact_info"><span>Jon Dover</span> - <span>David McDougall</span> - <span>George Georgiou</span></p>
                     </div>
 
                     <a class="button-orange directions" href="https://www.google.co.uk/maps/place/Bickerton+House,+25-27+Bickerton+Rd,+London+N19+5JT/@51.5626166,-0.1388456,16z/data=!4m2!3m1!1s0x48761bac8496be35:0xbfb11579a301e4e7" target="_blank"><span>Get directions</span></a>

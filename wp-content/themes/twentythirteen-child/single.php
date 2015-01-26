@@ -30,9 +30,7 @@
                                 <div class="item_wrap quote" style="color:#<?php echo ltrim($testimonial['project_testimonial_colour'], '#') ?>;background-image:url('<?php echo $tile['project_tiles_image']['url'] ?>');">
                                     <span class="client_quote"><?php echo $testimonial['project_testimonial_text'] ?></span>
                                     <span class="client_roll">
-                                        <?php echo $testimonial['project_testimonial_author'] ?>
-                                        <?php echo (!empty($testimonial['project_testimonial_role']) ? ', '.$testimonial['project_testimonial_role'] : '') ?>
-                                        <?php echo (!empty($testimonial['project_details_client']) ? ', '.$testimonial['project_details_client'] : '') ?>
+                                        <?php echo $testimonial['project_testimonial_author'] ?><?php echo (!empty($testimonial['project_testimonial_role']) ? ', '.$testimonial['project_testimonial_role'] : '') ?>.<?php echo (!empty($testimonial['project_details_client']) ? ', '.$testimonial['project_details_client'] : '') ?>
                                     </span>
                                 </div>
                                 <?php $testimonial_added = true ?>

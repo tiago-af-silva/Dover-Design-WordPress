@@ -431,6 +431,11 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.client_info .info_title,
+.client_info .info_subtitle {
+  font-size: 21px;
+  line-height: 1.1;
+}
 @font-face {
   font-family: 'Pro-Bold';
   src: url('/wp-content/themes/twentythirteen-child/assets/fonts/SourceSansPro-Bold.eot');
@@ -1095,7 +1100,7 @@ a:hover .instagram_logo {
   width: 100%;
   height: 100%;
   z-index: 9999;
-  background: white;
+  background: #231F20;
 }
 .content {
   position: absolute;
@@ -1646,7 +1651,7 @@ a:hover .instagram_logo {
 }
 /* ---- Light box -----*/
 .work_lightbox {
-  height: 90%;
+  height: auto;
 }
 .client_info {
   display: block;
@@ -1847,12 +1852,12 @@ a:hover .instagram_logo {
 .about_line {
   display: inline-block;
   border-color: #db5207;
-  width: 30%;
+  width: 31%;
 }
 .about_title_text {
   display: inline-block;
   width: 30%;
-  margin: 5%;
+  margin: 5% 4%;
   padding: 10px;
   border: 1px solid white;
 }
@@ -1942,13 +1947,95 @@ a:hover .instagram_logo {
   font-size: 30px;
 }
 /*  Copy block  */
+.copy_box .c1x1,
+.copy_box .c1x2,
+.copy_box .c1x3 {
+  z-index: -1;
+}
+.copy_box .c1x1 {
+  display: block;
+}
+.copy_box .c1x2 {
+  display: none;
+}
+.copy_box .c1x3 {
+  display: none;
+}
+@media only screen and (max-width: 450px) {
+  .copy_box .c1x1,
+  .copy_box .c1x2,
+  .copy_box .c1x3 {
+    display: none;
+  }
+  .copy_box .copy {
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+@media only screen and (min-width: 451px) and (max-width: 580px) {
+  .copy_box .c1x1 {
+    display: none;
+  }
+  .copy_box .c1x2 {
+    display: none;
+  }
+  .copy_box .c1x3 {
+    display: block;
+  }
+}
+@media only screen and (min-width: 581px) and (max-width: 765px) {
+  .copy_box .c1x1 {
+    display: block;
+  }
+  .copy_box .c1x2 {
+    display: none;
+  }
+  .copy_box .c1x3 {
+    display: none;
+  }
+}
+@media only screen and (min-width: 766px) and (max-width: 1025px) {
+  .copy_box .c1x1 {
+    display: none;
+  }
+  .copy_box .c1x2 {
+    display: block;
+  }
+  .copy_box .c1x3 {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1026px) and (max-width: 1150px) {
+  .copy_box .c1x1 {
+    display: none;
+  }
+  .copy_box .c1x2 {
+    display: none;
+  }
+  .copy_box .c1x3 {
+    display: block;
+  }
+}
+.copy_box_inner {
+  position: relative;
+}
 .copy {
-  padding: 60px 30px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0 30px;
   background-size: cover;
   background-color: #db5207;
 }
+.team_copy_container {
+  position: relative;
+  display: table;
+  height: 100%;
+}
 .team_copy {
-  display: inline-block;
+  display: table-cell;
+  vertical-align: middle;
   color: white;
   font-size: 18px;
   font-family: 'Pro-Light', 'sans-serif';
@@ -1960,7 +2047,7 @@ a:hover .instagram_logo {
 }
 /* ---- Light box -----*/
 .team_lighbox {
-  height: 61%;
+  height: auto;
   background-color: white;
 }
 @media only screen and (max-width: 765px) {
@@ -1972,7 +2059,7 @@ a:hover .instagram_logo {
   position: relative;
   display: inline-block;
   width: 50%;
-  margin-top: 10%;
+  margin-top: 9%;
   padding: 40px 40px 40px 0px;
   color: black;
 }
@@ -2069,19 +2156,20 @@ a:hover .instagram_logo {
 .contact_wrap_inside {
   position: relative;
   display: block;
-  width: 340px;
+  width: 360px;
   padding: 20px;
   margin: 0 auto;
 }
 .contact_content {
+  width: 320px;
+  height: 320px;
   position: relative;
-  display: block;
   padding: 20px;
-  padding-top: 80px;
+  display: table-cell;
+  vertical-align: bottom;
   color: white;
   background-color: #db5207;
   text-align: left;
-  display: inline-block;
   font-family: 'Pro-Light', sans-serif;
   font-size: 13px;
   line-height: 19px;
@@ -2093,6 +2181,9 @@ a:hover .instagram_logo {
 .contact_title {
   font-family: 'Pro-Bold', sans-serif;
   text-transform: uppercase;
+}
+.contact_info span {
+  white-space: nowrap;
 }
 .directions {
   margin-top: 5px;

@@ -15,7 +15,7 @@
                         $options = array('project_options_archived'=>$project_options_archived);
                     }
                 ?>
-                
+
                 <a href="<?php echo get_the_permalink(); ?>" class="work__cell <?php echo ($options['project_options_archived']['selected_value']=='Yes' ? 'more_proj archived' : '') ?>">
                     <div class="work__cell__container">
                         <span class="new-work"></span>
@@ -36,8 +36,8 @@
             <?php } ?>
 
             <div class="load_more">
-                <div class="archive_btn more"><span>Load more projects</span></div>
-                <div class="archive_btn less no_btn"><span>Hide projects</span></div>
+                <div class="archive_btn more"><span>Previous projects</span></div>
+                <div class="archive_btn less no_btn"><span>Hide previous projects</span></div>
             </div>
         </div>
     </div>

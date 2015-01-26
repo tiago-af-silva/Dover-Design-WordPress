@@ -33,32 +33,13 @@
             </script>
         <?php } ?>
 
-        <?php if (get_the_ID() == $homepage_post_id) { ?>
+        <?php if (get_the_ID() == get_post_id_for('home')) { ?>
             <script>
                 $(window).load(function() {
+                    // Show loading animation
                     $('.loader').fadeOut('slow');
                 })
             </script>
         <?php } ?>
-
-        <script>
-            $(document).ready(function(){
-                // Homepage carousel
-                if ($('.slideshow').length > 0) {
-                    $('.slideshow').slick({
-                        dots: true,
-                        arrows: false,
-                        infinite: true,
-                        speed: 500,
-                        fade: true,
-                        slide: 'div',
-                        cssEase: 'linear',
-                        autoplay: true,
-                        autoplaySpeed: 1000,
-                        pauseOnHover: true
-                    });
-                }
-            });
-        </script>
     </body>
 </html>

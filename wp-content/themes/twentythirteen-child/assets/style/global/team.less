@@ -59,15 +59,76 @@
 
 
 /*  Copy block  */
-.copy { 
-	padding: 60px 30px;
+.copy_box {
+	.c1x1,
+	.c1x2,
+	.c1x3 {
+		z-index: -1;
+	}
+
+	.c1x1 { display: block; }
+	.c1x2 { display: none; }
+	.c1x3 { display: none; }
+
+	@media only screen and (max-width: 450px) {
+		.c1x1, .c1x2, .c1x3 { display: none; }
+
+		.copy {
+			position: relative;
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+	}
+
+	@media only screen and (min-width: 451px) and (max-width: 580px) {
+		.c1x1 { display: none; }
+		.c1x2 { display: none; }
+		.c1x3 { display: block; }
+	}
+
+	@media only screen and (min-width: 581px) and (max-width: 765px) {
+		.c1x1 { display: block; }
+		.c1x2 { display: none; }
+		.c1x3 { display: none; }
+	}
+
+	@media only screen and (min-width: 766px) and (max-width: 1025px) {
+		.c1x1 { display: none; }
+		.c1x2 { display: block; }
+		.c1x3 { display: none; }
+	}
+
+	@media only screen and (min-width: 1026px) and (max-width: 1150px) {
+		.c1x1 { display: none; }
+		.c1x2 { display: none; }
+		.c1x3 { display: block; }
+	}
+}
+
+.copy_box_inner {
+	position: relative;
+}
+
+.copy {
+	position:absolute;
+	width: 100%;
+	height: 100%;
+
+	padding: 0 30px;
 
 	background-size: cover;
 	background-color: @orange;
 }
 
+.team_copy_container {
+	position: relative;
+	display: table;
+	height: 100%;
+}
+
 .team_copy {
-	display: inline-block;
+	display: table-cell;
+	vertical-align: middle;
 
 	color: white;
 	font-size: 18px;
@@ -101,8 +162,8 @@
 /* ---- Light box -----*/
 
 .team_lighbox {
-
-	height: 61%;
+	// height: 61%;
+	height:auto;
 	background-color: white;
 
 	@media only screen and (max-width: 765px) {
@@ -114,7 +175,7 @@
 	position: relative;
 	display: inline-block;
 	width: 50%;
-	margin-top: 10%;
+	margin-top: 9%;
 	padding: 40px 40px 40px 0px;
 
 	color: black;

@@ -1,14 +1,21 @@
 <?php
 
-$homepage_post_id = '63';
-$about_post_id = '67';
-
 // Prevent editors from deleting pages
 // **** We only have to run this once ****
 // $role = get_role('editor');
 // $role->add_cap('delete_pages');
 // $role->add_cap('delete_others_pages');
 // $role->add_cap('delete_published_pages');
+
+// Get post IDs of a few pages
+function get_post_id_for($slug) {
+    $post_ids = array(
+        'home'  => '63',
+        'about' => '67',
+    );
+
+    return (array_key_exists($slug, $post_ids) ? $post_ids[$slug] : null);
+}
 
 // Remove post formats support
 add_action('after_setup_theme', 'remove_post_formats', 11);
@@ -71,14 +78,12 @@ function register_my_menu() {
 if (!current_user_can('manage_options')) {
     add_action('init', 'unregister_taxonomies');
     function unregister_taxonomies() {
-        global $homepage_post_id;
-
         // Disable categories and tags
         register_taxonomy('category', array());
         register_taxonomy('post_tag', array());
 
         // Remove content textarea for the homepage
-        if (isset($_GET['post']) && $_GET['post'] == $homepage_post_id) {
+        if (isset($_GET['post']) && $_GET['post'] == get_post_id_for('home')) {
             remove_post_type_support('page', 'editor');
         }
 
@@ -113,29 +118,27 @@ if (!current_user_can('manage_options')) {
     // Hide Featured Image meta box for posts and pages
     add_action('admin_menu' , 'remove_post_thumb_meta_box');
     function remove_post_thumb_meta_box() {
-        global $pagenow, $_wp_theme_features, $homepage_post_id;
+        global $pagenow, $_wp_theme_features;
 
         if (in_array($pagenow, array('post.php', 'post-new.php'))) {
             unset($_wp_theme_features['post-thumbnails']);
         }
 
-        if (isset($_GET['post']) && $_GET['post'] == $homepage_post_id) {
+        if (isset($_GET['post']) && $_GET['post'] == get_post_id_for('home')) {
             remove_meta_box('simple_fields_connector_5', 'page', 'normal');
         }
     }
 
     add_action('admin_head', 'custom_admin_styles');
     function custom_admin_styles() {
-        global $homepage_post_id, $about_post_id;
-
-        if (!isset($_GET['post']) || $_GET['post'] != $homepage_post_id) {
+        if (!isset($_GET['post']) || $_GET['post'] != get_post_id_for('home')) {
             // Only show slideshow fields when editing the homepage
             echo '<style>
                 #simple_fields_connector_5 { display:none; }
             </style>';
         }
 
-        if (!isset($_GET['post']) || $_GET['post'] != $about_post_id) {
+        if (!isset($_GET['post']) || $_GET['post'] != get_post_id_for('about')) {
             // Only show clients fields when editing the about page
             echo '<style>
                 #simple_fields_connector_6 { display:none; }

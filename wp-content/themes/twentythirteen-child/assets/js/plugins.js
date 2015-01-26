@@ -35,7 +35,37 @@ $(document).ready(function(){
             slide: 'div',
             cssEase: 'linear',
             autoplay: true,
-            autoplaySpeed: 5000,
+            autoplaySpeed: 9000,
+            pauseOnHover: true,
+            onInit: function (slider) {
+                // Hide all text boxes
+                slider.$slider.find('.cell').hide();
+
+                // Show text box for the first slide
+                setTimeout(function () {
+                    slider.$slider.find('.cell').eq(0).show();
+                }, 2000);
+
+                slickSlider = slider.$slider;
+            },
+            onBeforeChange: function (slider, index) {
+                // Hide all text boxes
+                slider.$slider.find('.cell').hide();
+            },
+            onAfterChange: function (slider, index) {
+                // Show text box for the slide that we switched on to
+                setTimeout(function () {
+                    slider.$slider.find('.cell').eq(index).show();
+                }, 2000);
+            }
+        });
+
+        $('.slideshow').find('.cell')
+        .on('mouseenter', function () {
+            // $(this).parents('.slideshow:first').slickPause();
+        })
+        .on('mouseleave', function () {
+            // $(this).parents('.slideshow:first').slickPlay();
         });
     }
 
