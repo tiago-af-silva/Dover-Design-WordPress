@@ -10,7 +10,7 @@
                             <span class="team-member-name">Jon Dover</span>
                             <span class="team-member-role">Managing Director</span>
                         </div>
-                        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_jon.jpg">
+                        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_jon.jpg?v=2">
                     </div>
                 </div>
 
@@ -20,7 +20,7 @@
                             <span class="team-member-name">George Georgiou</span>
                             <span class="team-member-role">Creative Director</span>
                         </div>
-                        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_george.jpg">
+                        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_george.jpg?v=2">
                     </div>
                 </div>
 
@@ -30,7 +30,7 @@
                             <span class="team-member-name">David McDougall</span>
                             <span class="team-member-role">Executive Director</span>
                         </div>
-                        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_david.jpg">
+                        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_david.jpg?v=2">
                     </div>
                 </div>
 
@@ -51,7 +51,7 @@
                     </div>
                 </div>
 
-                <div class="grid_item c2 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_15.jpg"></div>
+                <div class="grid_item c2 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_15.jpg?v=2"></div>
                 <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_11.jpg"></div>
                 <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_14.jpg"></div>
                 <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_8.jpg"></div>
