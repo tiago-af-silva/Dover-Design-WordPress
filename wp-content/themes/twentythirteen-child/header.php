@@ -26,7 +26,7 @@
             <div class="loader">
                 <div class="table">
                     <div class="cell">
-                        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/loader.gif">
+                        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/loader.gif?v=2">
                     </div>
                 </div>
             </div>
