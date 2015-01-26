@@ -37,10 +37,10 @@
                 <div class="grid_item c4 copy_box">
                     <div class="copy_box_inner">
                         <img class="c1x1" src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_jon.jpg">
-                        <img class="c1x2" src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_11.jpg">
+                        <img class="c1x2" src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_11.jpg?v=2">
                         <div class="c1x3">
                             <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_jon.jpg">
-                            <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_14.jpg">
+                            <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_14.jpg" style="margin-top:4px;">
                         </div>
                         
                         <div class="item_wrap copy">
@@ -52,13 +52,13 @@
                 </div>
 
                 <div class="grid_item c2 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_15.jpg?v=2"></div>
-                <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_11.jpg"></div>
+                <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_11.jpg?v=2"></div>
                 <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_14.jpg"></div>
                 <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_8.jpg"></div>
                 <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_2.jpg"></div>
                 <!-- <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_1.jpg"></div> -->
                 <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_5.jpg"></div>
-                <div class="grid_item c2 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_16.jpg"></div>
+                <div class="grid_item c2 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_16.jpg?v=2"></div>
                 <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_4.jpg"></div>
                 <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_7.jpg"></div>
                 <!-- <div class="grid_item c4 bandw"><img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_3.jpg"></div>
