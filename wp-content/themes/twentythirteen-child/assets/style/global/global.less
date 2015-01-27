@@ -11,6 +11,28 @@ html {
 }
 
 
+// Clearfix
+// Source: http://nicolasgallagher.com/micro-clearfix-hack/
+//
+// For modern browsers
+// 1. The space content is one way to avoid an Opera bug when the
+//    contenteditable attribute is included anywhere else in the document.
+//    Otherwise it causes space to appear at the top and bottom of elements
+//    that are clearfixed.
+// 2. The use of `table` rather than `block` is only necessary if using
+//    `:before` to contain the top-margins of child elements.
+.clearfix {
+	&:before,
+	&:after {
+		content: " "; /* 1 */
+		display: table; /* 2 */
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+
 .bandw {
 	-webkit-filter: grayscale(100%);
 	filter: grayscale(100%);
@@ -150,7 +172,6 @@ html {
 
 	z-index: 100;
 
-
 	/* Overlay */
 	&::after {
 		content: "";
@@ -164,8 +185,20 @@ html {
 
 	    z-index: -1;
 	}
-
 }
+
+@media only screen and (min-width: 766px) and (max-width: 1025px) {
+	.pop-up_wraper {
+		padding-top: 15%;
+	}
+}
+
+@media only screen and (min-width: 1026px) {
+	.pop-up_wraper {
+		padding-top: 10%;
+	}
+}
+
 .work_pop-up_wraper {
 	position: absolute;
 	display: block;
@@ -181,7 +214,6 @@ html {
 
 	z-index: 10;
 
-
 	/* Overlay */
 	&::after {
 		content: "";
@@ -195,7 +227,18 @@ html {
 
 	    z-index: -1;
 	}
+}
 
+@media only screen and (min-width: 766px) and (max-width: 1025px) {
+	.work_pop-up_wraper {
+		padding-top: 5%;
+	}
+}
+
+@media only screen and (min-width: 1026px) {
+	.work_pop-up_wraper {
+		padding-top: 3%;
+	}
 }
 
 .pop-up_container {

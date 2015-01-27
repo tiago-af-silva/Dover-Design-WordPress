@@ -80,78 +80,63 @@
 </div><!-- .wrapper -->
 
 <div class="pop-up_1 pop-up_wraper no_pop-up">
-    <div class="table">
-        <div class="cell">
-            <div class="pop-up_container team_lighbox">
-                <div class="pop-up_content">
-                    <a href="#" class="close_btn"></a>
-                    <div class="team_info_photo">
-                        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_jon.jpg">
-                    </div>
-                    <div class="team_info">
-                        <div class="team_title">
-                            <div class="team_info_name">Jon Dover</div>
-                            <div class="team_info_roll">Managing Director</div>
-                        </div>
-                        <div class="team_info_copy">
-                            <p class="info_subtitle">With a successful career spanning four decades Jon Dover has become a respected name in the Leisure and Hospitality sector. His philosophy of delivering strong, well thought out, design solutions that answer the brief has been the foundation that dover Design is built on.</p>
-                        </div>
-                    </div>
+    <div class="pop-up_container team_lighbox">
+        <div class="pop-up_content clearfix">
+            <a href="#" class="close_btn"></a>
+            <div class="team_info_photo">
+                <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_jon.jpg">
+            </div>
+            <div class="team_info">
+                <div class="team_title">
+                    <div class="team_info_name">Jon Dover</div>
+                    <div class="team_info_roll">Managing Director</div>
+                </div>
+                <div class="team_info_copy">
+                    <p class="info_subtitle">With a successful career spanning four decades Jon Dover has become a respected name in the Leisure and Hospitality sector. His philosophy of delivering strong, well thought out, design solutions that answer the brief has been the foundation that dover Design is built on.</p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="overlay"></div>
 </div>
 
 <div class="pop-up_2 pop-up_wraper no_pop-up">
-    <div class="table">
-        <div class="cell">
-            <div class="pop-up_container team_lighbox">
-                <div class="pop-up_content">
-                    <a href="#" class="close_btn"></a>
-                    <div class="team_info_photo">
-                        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_david.jpg">
-                    </div>
-                    <div class="team_info">
-                        <div class="team_title">
-                            <div class="team_info_name">David McDougall</div>
-                            <div class="team_info_roll">Executive Director</div>
-                        </div>
-                        <div class="team_info_copy">
-                            <p class="info_subtitle">David has been with Dover Design for over 10 years, being invited to become a director in 2007. Previously freelance with small niche consultancies specialising in POS, graphics, retail and hospital interiors. He still enjoys the challenge of restaurant design and delivery with some of London's leading entrepreneurs and operators.</p>
-                        </div>
-                    </div>
+    <div class="pop-up_container team_lighbox">
+        <div class="pop-up_content clearfix">
+            <a href="#" class="close_btn"></a>
+            <div class="team_info_photo">
+                <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_david.jpg">
+            </div>
+            <div class="team_info">
+                <div class="team_title">
+                    <div class="team_info_name">David McDougall</div>
+                    <div class="team_info_roll">Executive Director</div>
+                </div>
+                <div class="team_info_copy">
+                    <p class="info_subtitle">David has been with Dover Design for over 10 years, being invited to become a director in 2007. Previously freelance with small niche consultancies specialising in POS, graphics, retail and hospital interiors. He still enjoys the challenge of restaurant design and delivery with some of London's leading entrepreneurs and operators.</p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="overlay"></div>
 </div>
 
 <div class="pop-up_3 pop-up_wraper no_pop-up">
-    <div class="table">
-        <div class="cell">
-            <div class="pop-up_container team_lighbox">
-                <div class="pop-up_content">
-                    <a href="#" class="close_btn"></a>
-                    <div class="team_info_photo">
-                        <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_george.jpg">
-                    </div>
-                    <div class="team_info">
-                        <div class="team_title">
-                            <div class="team_info_name">George Georgiou</div>
-                            <div class="team_info_roll">Creative Director</div>
-                        </div>
-                        <div class="team_info_copy">
-                            <p class="info_subtitle">George joined Dover Design in 2011 having gained experience through working for a number of design agencies. He has worked across most areas of interior design including retail, exhibition and residential and has extensive knowledge of the leisure sector.</p>
-                        </div>
-                    </div>
+    <div class="pop-up_container team_lighbox">
+        <div class="pop-up_content clearfix">
+            <a href="#" class="close_btn"></a>
+            <div class="team_info_photo">
+                <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/team/team_george.jpg">
+            </div>
+            <div class="team_info">
+                <div class="team_title">
+                    <div class="team_info_name">George Georgiou</div>
+                    <div class="team_info_roll">Creative Director</div>
+                </div>
+                <div class="team_info_copy">
+                    <p class="info_subtitle">George joined Dover Design in 2011 having gained experience through working for a number of design agencies. He has worked across most areas of interior design including retail, exhibition and residential and has extensive knowledge of the leisure sector.</p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="overlay"></div>
 </div>
 
 <?php get_footer(); ?>
