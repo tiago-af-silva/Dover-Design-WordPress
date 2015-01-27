@@ -76,14 +76,15 @@ function register_my_menu() {
 }
 
 if (!current_user_can('manage_options')) {
+    // Hide a few things
     add_action('init', 'unregister_taxonomies');
     function unregister_taxonomies() {
         // Disable categories and tags
         register_taxonomy('category', array());
         register_taxonomy('post_tag', array());
 
-        // Remove content textarea for the homepage
-        if (isset($_GET['post']) && $_GET['post'] == get_post_id_for('home')) {
+        // Remove content textarea for all pages
+        if (isset($_GET['post']) && get_post_type($_GET['post']) == 'page') {
             remove_post_type_support('page', 'editor');
         }
 
