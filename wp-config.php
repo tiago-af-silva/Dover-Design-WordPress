@@ -18,26 +18,27 @@
 switch ($_SERVER['SERVER_NAME']) {
     case 'local.doverdesign.com':
         define('ENVIRONMENT', 'development');
+        define('DB_HOST', 'localhost');
         define('DB_NAME', 'doverdes_mysql');
         define('DB_USER', 'root');
         define('DB_PASSWORD', '');
 
     case 'dover.madbox.org':
         define('ENVIRONMENT', 'staging');
+        define('DB_HOST', 'localhost');
         define('DB_NAME', 'dover');
         define('DB_USER', 'root');
         define('DB_PASSWORD', 'w0rdpr35s');
 
     case 'doverdesign.com':
+    case 'www.doverdesign.com':
     default:
         define('ENVIRONMENT', 'live');
-        define('DB_NAME', 'doverdes_mysql');
+        define('DB_HOST', '10.168.1.78');
+        define('DB_NAME', 'doverdes_database');
         define('DB_USER', 'doverdes_mysql');
         define('DB_PASSWORD', 'desperado');
 }
-
-/** MySQL hostname */
-define('DB_HOST', 'localhost');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
