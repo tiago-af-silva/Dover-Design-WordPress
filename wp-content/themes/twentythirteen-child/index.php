@@ -40,12 +40,14 @@
                     </div>
                 </a>
             <?php } ?>
+        </div>
 
-            <div class="load_more">
-                <div class="archive_btn more"><span>Previous projects</span></div>
-                <div class="archive_btn less no_btn"><span>Hide previous projects</span></div>
-            </div>
+        <div class="load_more">
+            <div class="archive_btn more"><span>Previous projects</span></div>
+            <div class="archive_btn less no_btn"><span>Hide previous projects</span></div>
+        </div>
 
+        <div class="work__row">
             <?php // Archived projects ?>
             <?php while (have_posts()) { the_post(); ?>
                 <?php
