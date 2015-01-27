@@ -14,7 +14,7 @@
                             United Kingdom
                         </p>
                         <br>
-                        <p class="contact_info">Phone: +44 020 7272 9414</p>
+                        <p class="contact_info">Phone: +44 (0) 2072 729 414</p>
                         <p class="contact_info">Email: <a href="mailto:studio@doverdesign.com" target="_blank">studio@doverdesign.com</a></p>
                         <br>
 

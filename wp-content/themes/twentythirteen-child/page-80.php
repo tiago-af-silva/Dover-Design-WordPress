@@ -45,7 +45,7 @@
                         
                         <div class="item_wrap copy">
                             <div class="team_copy_container">
-                                <span class="team_copy">We enjoy working with our designers, building enthusiastic teams and making the most out of our balance of ideas and experience. It is this, combined with clear communication and quality information, that produces great results for our clients.</span>
+                                <span class="team_copy">We enjoy working with our designers, building enthusiastic teams and making the most out of our balance of ideas and experience.  It is this, combined with clear communication and quality information, that produces great results for our clients.</span>
                             </div>
                         </div>
                     </div>
