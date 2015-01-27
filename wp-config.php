@@ -15,7 +15,7 @@
  */
 
 // ** MySQL settings - You can get this info from your web host ** //
-sswitch ($_SERVER['SERVER_NAME']) {
+switch ($_SERVER['SERVER_NAME']) {
     case 'local.doverdesign.com':
         define('ENVIRONMENT', 'development');
         define('DB_HOST', 'localhost');
