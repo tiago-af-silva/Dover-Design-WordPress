@@ -15,13 +15,14 @@
  */
 
 // ** MySQL settings - You can get this info from your web host ** //
-switch ($_SERVER['SERVER_NAME']) {
+sswitch ($_SERVER['SERVER_NAME']) {
     case 'local.doverdesign.com':
         define('ENVIRONMENT', 'development');
         define('DB_HOST', 'localhost');
-        define('DB_NAME', 'doverdes_mysql');
+        define('DB_NAME', 'doverdesign');
         define('DB_USER', 'root');
         define('DB_PASSWORD', '');
+        break;
 
     case 'dover.madbox.org':
         define('ENVIRONMENT', 'staging');
@@ -29,6 +30,16 @@ switch ($_SERVER['SERVER_NAME']) {
         define('DB_NAME', 'dover');
         define('DB_USER', 'root');
         define('DB_PASSWORD', 'w0rdpr35s');
+        break;
+
+    case 'doverdesign.com.gridhosted.co.uk':
+    case 'www.doverdesign.com.gridhosted.co.uk':
+        define('ENVIRONMENT', 'prelive');
+        define('DB_HOST', '10.168.1.78');
+        define('DB_NAME', 'doverdes_database');
+        define('DB_USER', 'doverdes_mysql');
+        define('DB_PASSWORD', 'desperado');
+        break;
 
     case 'doverdesign.com':
     case 'www.doverdesign.com':
@@ -38,6 +49,7 @@ switch ($_SERVER['SERVER_NAME']) {
         define('DB_NAME', 'doverdes_database');
         define('DB_USER', 'doverdes_mysql');
         define('DB_PASSWORD', 'desperado');
+        break;
 }
 
 /** Database Charset to use in creating database tables. */
