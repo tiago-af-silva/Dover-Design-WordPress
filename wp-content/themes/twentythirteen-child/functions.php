@@ -46,7 +46,7 @@ function rewrite_menu_items() {
     }
 
     // Rename "Posts" to "Our work"
-    $menu[5][0] = 'Our work';
+    $menu[5][0] = 'Projects';
 }
 
 // Redirect to "Our work" after logging in
