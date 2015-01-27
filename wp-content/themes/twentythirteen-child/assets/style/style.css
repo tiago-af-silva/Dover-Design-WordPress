@@ -1581,6 +1581,7 @@ a:hover .instagram_logo {
   width: 100%;
   margin: 30px 5px 30px 5px;
   cursor: pointer;
+  text-align: center;
 }
 .archive_btn {
   position: relative;
