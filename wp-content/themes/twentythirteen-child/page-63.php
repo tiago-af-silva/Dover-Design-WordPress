@@ -12,15 +12,18 @@
                         <?php if (!empty($slideshow[$i])) { ?>
                             <div class="slide">
                                 <div class="image" style="background-image:url('<?php echo $slideshow[$i]['homepage_slideshow_image']['url'] ?>')"></div>
-                                <div class="table">
-                                    <div class="cell">
-                                        <div class="slide_title">
-                                            <div class="content_quote"><?php echo $slideshow[$i]['homepage_slideshow_testimonial'] ?></div>
-                                            <div class="content_author"><?php echo $slideshow[$i]['homepage_slideshow_author'] ?></div>
+
+                                <?php if (!empty($slideshow[$i]['homepage_slideshow_testimonial'])) { ?>
+                                    <div class="table">
+                                        <div class="cell">
+                                            <div class="slide_title">
+                                                <div class="content_quote"><?php echo $slideshow[$i]['homepage_slideshow_testimonial'] ?></div>
+                                                <div class="content_author"><?php echo $slideshow[$i]['homepage_slideshow_author'] ?></div>
+                                            </div>
+                                            <a href="<?php echo $slideshow[$i]['homepage_slideshow_link'] ?>" class="find_more_btn"><span>Find out more</span></a>
                                         </div>
-                                        <a href="<?php echo $slideshow[$i]['homepage_slideshow_link'] ?>" class="find_more_btn"><span>Find out more</span></a>
                                     </div>
-                                </div>
+                                <?php } ?>
                             </div>
                         <?php } ?>
                     <?php } ?>

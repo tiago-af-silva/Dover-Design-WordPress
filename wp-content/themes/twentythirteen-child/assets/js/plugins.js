@@ -43,7 +43,7 @@ $(document).ready(function(){
 
                 // Show text box for the first slide
                 setTimeout(function () {
-                    slider.$slider.find('.cell').eq(0).show();
+                    slider.$slider.find('.slide').eq(0).find('.cell').show();
                 }, 2000);
 
                 slickSlider = slider.$slider;
@@ -55,7 +55,7 @@ $(document).ready(function(){
             onAfterChange: function (slider, index) {
                 // Show text box for the slide that we switched on to
                 setTimeout(function () {
-                    slider.$slider.find('.cell').eq(index).show();
+                    slider.$slider.find('.slide').eq(index).find('.cell').show();
                 }, 2000);
             }
         });
