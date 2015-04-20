@@ -75,7 +75,9 @@
             </div>
 
             <div class="download_btn_container">
-                <a class="download_btn" href="<?php echo($details['project_details_attachment']['url']) ?>" target="_blank"><span>Download PDF</span></a>
+                <?php if (!empty($details['project_details_attachment']['url'])) { ?>
+                    <a class="download_btn" href="<?php echo($details['project_details_attachment']['url']) ?>" target="_blank"><span>Download PDF</span></a>
+                <?php } ?>
             </div>
         </div>
     </div>
