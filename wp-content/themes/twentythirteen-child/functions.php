@@ -23,7 +23,32 @@ function remove_post_formats() {
     remove_theme_support('post-formats');
 }
 
-// Change CMS menu
+// Brand Experience post type
+add_action('init', 'create_posttype');
+function create_posttype() {
+    register_post_type('brand_experience',
+        array(
+            'labels' => array(
+                'name' => __('Posts'),
+                'singular_name' => __('Post'),
+                'all_items' => __('All Posts'),
+            ),
+            'public' => true,
+            'capability_type' => 'post',
+            'map_meta_cap' => true,
+            'hierarchical' => false,
+            'rewrite' => array('slug' => 'brand_experience'),
+            'query_var' => false,
+            'delete_with_user' => true,
+            'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'post-formats'),
+        )
+    );
+
+    register_taxonomy_for_object_type('category', 'brand_experience');
+    register_taxonomy_for_object_type('post_tag', 'brand_experience');
+}
+
+// Modify CMS menu
 add_action('admin_menu', 'rewrite_menu_items');
 function rewrite_menu_items() {
     global $menu;
@@ -45,8 +70,16 @@ function rewrite_menu_items() {
         remove_menu_page('plugins.php');
     }
 
-    // Rename "Posts" to "Our work"
-    $menu[5][0] = 'Projects';
+    // Move menu items
+    $menu[6] = $menu[26];
+    unset($menu[26]);
+
+    // Rename menu items
+    $menu[5][0] = 'Interior Design';
+    $menu[6][0] = 'Brand Experience';
+
+    // Add separators
+    $menu[7] = array('', 'read', 'separator1', '', 'wp-menu-separator');
 }
 
 // Redirect to "Our work" after logging in
@@ -88,8 +121,9 @@ if (!current_user_can('manage_options')) {
             remove_post_type_support('page', 'editor');
         }
 
-        // Remove content textarea on the whole "Our work" section
+        // Remove content textarea on the projects section
         remove_post_type_support('post', 'editor');
+        remove_post_type_support('brand_experience', 'editor');
     }
 
     // Customise admin bar
