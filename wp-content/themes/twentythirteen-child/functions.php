@@ -12,6 +12,7 @@ function get_post_id_for($slug) {
     $post_ids = array(
         'home'  => '63',
         'about' => '67',
+        'work' => '70',
     );
 
     return (array_key_exists($slug, $post_ids) ? $post_ids[$slug] : null);
@@ -26,26 +27,35 @@ function remove_post_formats() {
 // Brand Experience post type
 add_action('init', 'create_posttype');
 function create_posttype() {
-    register_post_type('brand_experience',
-        array(
-            'labels' => array(
-                'name' => __('Posts'),
-                'singular_name' => __('Post'),
-                'all_items' => __('All Posts'),
-            ),
-            'public' => true,
-            'capability_type' => 'post',
-            'map_meta_cap' => true,
-            'hierarchical' => false,
-            'rewrite' => array('slug' => 'brand_experience'),
-            'query_var' => false,
-            'delete_with_user' => true,
-            'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'post-formats'),
-        )
-    );
+    register_post_type('brand_experience', array(
+        'labels' => array(
+            'name' => __('Posts'),
+            'singular_name' => __('Post'),
+            'all_items' => __('All Posts'),
+        ),
+        'public' => true,
+        'capability_type' => 'post',
+        'map_meta_cap' => true,
+        'rewrite' => array('slug' => 'brand-experience', 'with_front' => true),
+        'query_var' => false,
+        'delete_with_user' => true,
+        'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'post-formats'),
+    ));
 
     register_taxonomy_for_object_type('category', 'brand_experience');
     register_taxonomy_for_object_type('post_tag', 'brand_experience');
+}
+
+// Show Brand Experience projects on the "Our work" page
+add_action('pre_get_posts', 'work_search_filter');
+function work_search_filter($query) {
+    global $wp_query;
+
+    if ($query->is_main_query() && $wp_query->queried_object_id == get_post_id_for('work')) {
+        $query->set('post_type', array('post', 'brand_experience'));
+        $query->set('orderby', 'post_date');
+        $query->set('order', 'DESC');
+    }
 }
 
 // Modify CMS menu

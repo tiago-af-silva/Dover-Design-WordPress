@@ -1,42 +1,83 @@
 <?php /* OUR WORK */ ?>
 <?php get_header(); ?>
 
-    <div class="work_wrap">
-        <div class="work__row">
-            <?php // Live projects ?>
-            <?php while (have_posts()) { the_post(); ?>
-                <?php
+    <?php
+        $live_projects = array();
+        $archived_projects = array();
+
+        while (have_posts()) { the_post();
+            $post_type = get_post_type();
+            $project = FALSE;
+
+            switch ($post_type) {
+                case 'post':
                     $details = simple_fields_fieldgroup('project_details');
                     $tiles = simple_fields_fieldgroup('project_tiles');
-                    $options = simple_fields_fieldgroup('project_options');
 
-                    // BUG FIX: If there's only one option, the plugin doesn't create the related index in the array
-                    if (!array_key_exists('project_options_archived', $options)) {
-                        $project_options_archived = $options;
-                        $options = array('project_options_archived'=>$project_options_archived);
+                    // Look for first picture available (not testimonial)
+                    $image = array('url' => '');
+                    foreach ($tiles as $tile) {
+                        if ($tile['project_tiles_image']['is_image'] && !empty($tile['project_tiles_type']) && $tile['project_tiles_type']['selected_value']=='Picture') {
+                            $image = $tile['project_tiles_image'];
+                            break;
+                        }
                     }
 
-                    // Don't show archived projects
-                    if ($options['project_options_archived']['selected_value']=='Yes') {
-                        continue;
-                    }
-                ?>
+                    $project = (object) array(
+                        'client' => $details['project_details_client'],
+                        'location' => $details['project_details_location'],
+                        'image' => $image['url'],
+                        'link' => get_the_permalink(),
+                        'class' => $post_type,
+                    );
 
-                <a href="<?php echo get_the_permalink(); ?>" class="work__cell">
+                    break;
+
+                case 'brand_experience':
+                    $tile = simple_fields_fieldgroup('project_brand_tile');
+
+                    $project = (object) array(
+                        'client' => $tile['project_brand_tile_client'],
+                        'location' => $tile['project_brand_tile_location'],
+                        'image' => $tile['project_brand_tile_image']['url'],
+                        'link' => get_the_permalink(),
+                        'class' => $post_type,
+                    );
+
+                    break;
+            }
+
+            if (!empty($project)) {
+                $options = simple_fields_fieldgroup('project_options');
+
+                // BUG FIX: If there's only one option, the plugin doesn't create the related index in the array
+                if (!array_key_exists('project_options_archived', $options)) {
+                    $project_options_archived = $options;
+                    $options = array('project_options_archived'=>$project_options_archived);
+                }
+
+                if ($options['project_options_archived']['selected_value']=='Yes') {
+                    $archived_projects[] = $project;
+                } else {
+                    $live_projects[] = $project;
+                }
+            }
+        }
+    ?>
+
+    <div class="work_wrap">
+        <div class="work__row">
+            <?php foreach ($live_projects as $live_project) { ?>
+                <a href="<?php echo $live_project->link ?>" class="work__cell <?php echo $live_project->class ?>">
                     <div class="work__cell__container">
                         <span class="new-work"></span>
+                        
                         <div class="work__title">
-                            <span class="client_name"><?php echo $details['project_details_client'] ?></span>
-                            <span class="project_location"><?php echo $details['project_details_location'] ?></span>
+                            <span class="client_name"><?php echo $live_project->client ?></span>
+                            <span class="project_location"><?php echo $live_project->location ?></span>
                         </div>
 
-                        <?php // Look for first picture available (not testimonial) ?>
-                        <?php foreach ($tiles as $tile) { ?>
-                            <?php if ($tile['project_tiles_image']['is_image'] && !empty($tile['project_tiles_type']) && $tile['project_tiles_type']['selected_value']=='Picture') { ?>
-                                <div class="work__background" style="background-image:url('<?php echo $tile['project_tiles_image']['url'] ?>');"></div>
-                                <?php break; ?>
-                            <?php } ?>
-                        <?php } ?>
+                        <div class="work__background" style="background-image:url('<?php echo $live_project->image ?>');"></div>
                     </div>
                 </a>
             <?php } ?>
@@ -48,40 +89,17 @@
         </div>
 
         <div class="work__row">
-            <?php // Archived projects ?>
-            <?php while (have_posts()) { the_post(); ?>
-                <?php
-                    $details = simple_fields_fieldgroup('project_details');
-                    $tiles = simple_fields_fieldgroup('project_tiles');
-                    $options = simple_fields_fieldgroup('project_options');
-
-                    // BUG FIX: If there's only one option, the plugin doesn't create the related index in the array
-                    if (!array_key_exists('project_options_archived', $options)) {
-                        $project_options_archived = $options;
-                        $options = array('project_options_archived'=>$project_options_archived);
-                    }
-
-                    // Only show archived projects
-                    if ($options['project_options_archived']['selected_value']!='Yes') {
-                        continue;
-                    }
-                ?>
-
-                <a href="<?php echo get_the_permalink(); ?>" class="work__cell more_proj archived">
+            <?php foreach ($archived_projects as $archived_project) { ?>
+                <a href="<?php echo $archived_project->link ?>" class="work__cell <?php echo $archived_project->class ?> more_proj archived">
                     <div class="work__cell__container">
                         <span class="new-work"></span>
+
                         <div class="work__title">
-                            <span class="client_name"><?php echo $details['project_details_client'] ?></span>
-                            <span class="project_location"><?php echo $details['project_details_location'] ?></span>
+                            <span class="client_name"><?php echo $archived_project->client ?></span>
+                            <span class="project_location"><?php echo $archived_project->location ?></span>
                         </div>
 
-                        <?php // Look for first picture available (not testimonial) ?>
-                        <?php foreach ($tiles as $tile) { ?>
-                            <?php if ($tile['project_tiles_image']['is_image'] && !empty($tile['project_tiles_type']) && $tile['project_tiles_type']['selected_value']=='Picture') { ?>
-                                <div class="work__background" style="background-image:url('<?php echo $tile['project_tiles_image']['url'] ?>');"></div>
-                                <?php break; ?>
-                            <?php } ?>
-                        <?php } ?>
+                        <div class="work__background" style="background-image:url('<?php echo $archived_project->image ?>');"></div>
                     </div>
                 </a>
             <?php } ?>
