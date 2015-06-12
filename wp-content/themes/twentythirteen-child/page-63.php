@@ -8,7 +8,7 @@
             <div class="home">
                 <div class="slideshow">
                     <div class="slide">
-                        <div class="image" style='background-image:url(assets/content/home/home_1.jpg)'></div>
+                        <div class="image" style='background-image:url(<?php echo get_stylesheet_directory_uri() ?>/assets/content/home/home_1.jpg)'></div>
                         <div class="table">
                             <div class="cell">
                                 <div class="once_slide">

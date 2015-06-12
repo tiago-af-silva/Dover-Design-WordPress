@@ -79,7 +79,6 @@
         </div>
 
         <div class="grid_wrapper">
-
             <div class="grid work__row">
                 <?php foreach ($live_projects as $live_project) { ?>
                     <a href="<?php echo $live_project->link ?>" class="element-item work__cell <?php echo $live_project->category ?>" data-category="<?php echo $live_project->category ?>">
@@ -99,18 +98,18 @@
                 <?php } ?>
             </div>
 
-            <div class="filter-button-group js-radio-button-group load_more">
-                <button class="archive_btn more" data-filter=".archive, *">
+            <div class="load_more">
+                <button class="archive_btn more">
                     <span>Previous projects</span>
                 </button>
-                <button class="archive_btn less no_btn" data-filter="*">
+                <button class="archive_btn less no_btn">
                     <span>Hide previous projects</span>
                 </button>
             </div>
 
-            <div class="grid work__row">
+            <div class="grid grid-archived work__row">
                 <?php foreach ($archived_projects as $archived_project) { ?>
-                    <a href="<?php echo $archived_project->link ?>" class="element-item work__cell more_proj archived <?php echo $archived_project->category ?>" data-category="<?php echo $archived_project->category ?>, archive">
+                    <a href="<?php echo $archived_project->link ?>" class="element-item work__cell more_proj archived <?php echo $archived_project->category ?>" data-category="<?php echo $archived_project->category ?>">
                         <div class="work__cell__container">
                             <div class="work_wrapper">
                                 <span class="new-work"></span>
@@ -126,7 +125,7 @@
                     </a>
                 <?php } ?>
             </div>
-
+        </div>
     </div>
 
     <?php include('footer-nav.php'); ?>

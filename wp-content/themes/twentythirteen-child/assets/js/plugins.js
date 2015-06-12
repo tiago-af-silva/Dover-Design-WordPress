@@ -23,8 +23,10 @@
 
 // Place any jQuery/helper plugins in here.
 
-$(document).ready(function(){
+$(document).ready(function () {
+    //
     // Homepage carousel
+    //
     if ($('.slideshow').length > 0) {
         $('.slideshow').slick({
             dots: true,
@@ -68,4 +70,5 @@ $(document).ready(function(){
     //   itemSelector: '.item',
     //   // gutter: 5
     // });
+
 });

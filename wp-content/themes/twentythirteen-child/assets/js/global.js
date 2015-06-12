@@ -12,6 +12,7 @@ $(document).ready(function () {
         $(".work__cell.more_proj").toggleClass("archived");
         $(".archive_btn.more").toggleClass("no_btn");
         $(".archive_btn.less").toggleClass("no_btn");
+        $('.grid-archived').isotope('layout');
     });
 
     // work pop-up

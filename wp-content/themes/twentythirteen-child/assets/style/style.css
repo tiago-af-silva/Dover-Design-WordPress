@@ -468,48 +468,48 @@ body,
 
 @font-face {
   font-family: 'Pro-Bold';
-  src: url('/assets/fonts/SourceSansPro-Bold.eot');
-  src: url('/assets/fonts/SourceSansPro-Bold.eot?#iefix') format('embedded-opentype'),url('/assets/fonts/SourceSansPro-Bold.woff') format('woff'),url('/assets/fonts/SourceSansPro-Bold.svg#SourceSansPro-Bold') format('svg'),url('/assets/fonts/SourceSansPro-Bold.ttf') format('truetype');
+  src: url('/wp-content/themes/twentythirteen-child/assets/fonts/SourceSansPro-Bold.eot');
+  src: url('/wp-content/themes/twentythirteen-child/assets/fonts/SourceSansPro-Bold.eot?#iefix') format('embedded-opentype'),url('/wp-content/themes/twentythirteen-child/assets/fonts/SourceSansPro-Bold.woff') format('woff'),url('/wp-content/themes/twentythirteen-child/assets/fonts/SourceSansPro-Bold.svg#SourceSansPro-Bold') format('svg'),url('/wp-content/themes/twentythirteen-child/assets/fonts/SourceSansPro-Bold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Pro-SemiBold';
-  src: url('/assets/fonts/SourceSansPro-Semibold.eot');
-  src: url('/assets/fonts/SourceSansPro-Semibold.eot?#iefix') format('embedded-opentype'),url('/assets/fonts/SourceSansPro-Semibold.woff') format('woff'),url('/assets/fonts/SourceSansPro-Semibold.svg#SourceSansPro-Semibold') format('svg'),url('/assets/fonts/SourceSansPro-Semibold.ttf') format('truetype');
+  src: url('/wp-content/themes/twentythirteen-child/assets/fonts/SourceSansPro-Semibold.eot');
+  src: url('/wp-content/themes/twentythirteen-child/assets/fonts/SourceSansPro-Semibold.eot?#iefix') format('embedded-opentype'),url('/wp-content/themes/twentythirteen-child/assets/fonts/SourceSansPro-Semibold.woff') format('woff'),url('/wp-content/themes/twentythirteen-child/assets/fonts/SourceSansPro-Semibold.svg#SourceSansPro-Semibold') format('svg'),url('/wp-content/themes/twentythirteen-child/assets/fonts/SourceSansPro-Semibold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Pro-SemiBoldItalic';
-  src: url('/assets/fonts/SourceSansPro-SemiboldIt.eot');
-  src: url('/assets/fonts/SourceSansPro-SemiboldIt.eot?#iefix') format('embedded-opentype'),url('/assets/fonts/SourceSansPro-SemiboldIt.woff') format('woff'),url('/assets/fonts/SourceSansPro-SemiboldIt.svg#SourceSansPro-SemiboldIt') format('svg'),url('/assets/fonts/SourceSansPro-SemiboldIt.ttf') format('truetype');
+  src: url('/wp-content/themes/twentythirteen-child/assets/fonts/SourceSansPro-SemiboldIt.eot');
+  src: url('/wp-content/themes/twentythirteen-child/assets/fonts/SourceSansPro-SemiboldIt.eot?#iefix') format('embedded-opentype'),url('/wp-content/themes/twentythirteen-child/assets/fonts/SourceSansPro-SemiboldIt.woff') format('woff'),url('/wp-content/themes/twentythirteen-child/assets/fonts/SourceSansPro-SemiboldIt.svg#SourceSansPro-SemiboldIt') format('svg'),url('/wp-content/themes/twentythirteen-child/assets/fonts/SourceSansPro-SemiboldIt.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Pro-Regular';
-  src: url('/assets/fonts/SourceSansPro-Regular.eot');
-  src: url('/assets/fonts/SourceSansPro-Regular.eot?#iefix') format('embedded-opentype'),url('/assets/fonts/SourceSansPro-Regular.woff') format('woff'),url('/assets/fonts/SourceSansPro-Regular.svg#SourceSansPro-Regular') format('svg'),url('/assets/fonts/SourceSansPro-Regular.ttf') format('truetype');
+  src: url('/wp-content/themes/twentythirteen-child/assets/fonts/SourceSansPro-Regular.eot');
+  src: url('/wp-content/themes/twentythirteen-child/assets/fonts/SourceSansPro-Regular.eot?#iefix') format('embedded-opentype'),url('/wp-content/themes/twentythirteen-child/assets/fonts/SourceSansPro-Regular.woff') format('woff'),url('/wp-content/themes/twentythirteen-child/assets/fonts/SourceSansPro-Regular.svg#SourceSansPro-Regular') format('svg'),url('/wp-content/themes/twentythirteen-child/assets/fonts/SourceSansPro-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Pro-RegularItalic';
-  src: url('/assets/fonts/SourceSansPro-It.eot');
-  src: url('/assets/fonts/SourceSansPro-It.eot?#iefix') format('embedded-opentype'),url('/assets/fonts/SourceSansPro-It.woff') format('woff'),url('/assets/fonts/SourceSansPro-It.svg#SourceSansPro-It') format('svg'),url('/assets/fonts/SourceSansPro-It.ttf') format('truetype');
+  src: url('/wp-content/themes/twentythirteen-child/assets/fonts/SourceSansPro-It.eot');
+  src: url('/wp-content/themes/twentythirteen-child/assets/fonts/SourceSansPro-It.eot?#iefix') format('embedded-opentype'),url('/wp-content/themes/twentythirteen-child/assets/fonts/SourceSansPro-It.woff') format('woff'),url('/wp-content/themes/twentythirteen-child/assets/fonts/SourceSansPro-It.svg#SourceSansPro-It') format('svg'),url('/wp-content/themes/twentythirteen-child/assets/fonts/SourceSansPro-It.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Pro-Light';
-  src: url('/assets/fonts/SourceSansPro-Light.eot');
-  src: url('/assets/fonts/SourceSansPro-Light.eot?#iefix') format('embedded-opentype'),url('/assets/fonts/SourceSansPro-Light.woff') format('woff'),url('/assets/fonts/SourceSansPro-Light.svg#SourceSansPro-Light') format('svg'),url('/assets/fonts/SourceSansPro-Light.ttf') format('truetype');
+  src: url('/wp-content/themes/twentythirteen-child/assets/fonts/SourceSansPro-Light.eot');
+  src: url('/wp-content/themes/twentythirteen-child/assets/fonts/SourceSansPro-Light.eot?#iefix') format('embedded-opentype'),url('/wp-content/themes/twentythirteen-child/assets/fonts/SourceSansPro-Light.woff') format('woff'),url('/wp-content/themes/twentythirteen-child/assets/fonts/SourceSansPro-Light.svg#SourceSansPro-Light') format('svg'),url('/wp-content/themes/twentythirteen-child/assets/fonts/SourceSansPro-Light.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -548,7 +548,7 @@ body,
 }
 
 .slick-loading .slick-list {
-  background: #fff url("assets/img/loader.gif") center center no-repeat;
+  background: #fff url("/wp-content/themes/twentythirteen-child/assets/img/loader.gif") center center no-repeat;
 }
 
 .slick-list.dragging {
@@ -804,7 +804,7 @@ body,
   left: 0;
   margin: 10px;
   color: transparent;
-  background-image: url(/assets/img/dover-logo.svg);
+  background-image: url(/wp-content/themes/twentythirteen-child/assets/img/dover-logo.svg);
   background-repeat: no-repeat;
   background-position: 0% 0px;
   -webkit-background-size: 100% 100%;
@@ -1132,13 +1132,13 @@ body,
   height: 25px;
   left: 0;
   top: 0;
-  background-image: url(/assets/img/linkedin.svg);
+  background-image: url(/wp-content/themes/twentythirteen-child/assets/img/linkedin.svg);
   -webkit-background-size: 100%;
   background-size: 100%;
 }
 
 a:hover .linkedin_logo {
-  background-image: url(/assets/img/linkedin_hover.svg);
+  background-image: url(/wp-content/themes/twentythirteen-child/assets/img/linkedin_hover.svg);
 }
 
 .facebook_logo {
@@ -1147,13 +1147,13 @@ a:hover .linkedin_logo {
   height: 25px;
   left: 0;
   top: 0;
-  background-image: url(/assets/img/facebook.svg);
+  background-image: url(/wp-content/themes/twentythirteen-child/assets/img/facebook.svg);
   -webkit-background-size: 100%;
   background-size: 100%;
 }
 
 a:hover .facebook_logo {
-  background-image: url(/assets/img/facebook_hover.svg);
+  background-image: url(/wp-content/themes/twentythirteen-child/assets/img/facebook_hover.svg);
 }
 
 .twitter_logo {
@@ -1162,13 +1162,13 @@ a:hover .facebook_logo {
   height: 25px;
   left: 0;
   top: 0;
-  background-image: url(/assets/img/twitter.svg);
+  background-image: url(/wp-content/themes/twentythirteen-child/assets/img/twitter.svg);
   -webkit-background-size: 100%;
   background-size: 100%;
 }
 
 a:hover .twitter_logo {
-  background-image: url(/assets/img/twitter_hover.svg);
+  background-image: url(/wp-content/themes/twentythirteen-child/assets/img/twitter_hover.svg);
 }
 
 .instagram_logo {
@@ -1177,13 +1177,13 @@ a:hover .twitter_logo {
   height: 25px;
   left: 0;
   top: 0;
-  background-image: url(/assets/img/instagram.svg);
+  background-image: url(/wp-content/themes/twentythirteen-child/assets/img/instagram.svg);
   -webkit-background-size: 100%;
   background-size: 100%;
 }
 
 a:hover .instagram_logo {
-  background-image: url(/assets/img/instagram_hover.svg);
+  background-image: url(/wp-content/themes/twentythirteen-child/assets/img/instagram_hover.svg);
 }
 
 @media only screen and (max-width:765px) {
@@ -1998,7 +1998,7 @@ button {
   top: 0;
   right: 0;
   margin: 20px;
-  background-image: url(/assets/img/close_btn.svg);
+  background-image: url(/wp-content/themes/twentythirteen-child/assets/img/close_btn.svg);
   -webkit-background-size: 100%;
   background-size: 100%;
   transition: all .2s;
@@ -2144,14 +2144,14 @@ button {
 }
 
 .work_row_bg {
-  background-image: url("/assets/content/work_brand/color_red.jpg");
+  background-image: url("/wp-content/themes/twentythirteen-child/assets/content/work_brand/color_red.jpg");
   -webkit-background-size: cover;
   background-size: cover;
 }
 
 .work_brand_hero {
   height: 350px;
-  background-image: url("/assets/content/work_brand/hero_brand.jpg");
+  background-image: url("/wp-content/themes/twentythirteen-child/assets/content/work_brand/hero_brand.jpg");
   -webkit-background-size: cover;
   background-size: cover;
   background-position: center;
@@ -2245,7 +2245,7 @@ button {
   display: block;
   height: 350px;
   width: 100%;
-  background-image: url("/assets/content/work_brand/hero_brand.jpg");
+  background-image: url("/wp-content/themes/twentythirteen-child/assets/content/work_brand/hero_brand.jpg");
   -webkit-background-size: cover;
   background-size: cover;
   background-position: center;
@@ -2374,7 +2374,7 @@ button {
   top: 0;
   right: 0;
   margin: 20px;
-  background-image: url(/assets/img/close_btn.svg);
+  background-image: url(/wp-content/themes/twentythirteen-child/assets/img/close_btn.svg);
   -webkit-background-size: 100%;
   background-size: 100%;
   transition: all .2s;
@@ -2520,7 +2520,7 @@ button {
   right: 0;
   padding-top: 90px;
   padding-bottom: 60px;
-  background-image: url(/assets/content/about/about_bg.jpg);
+  background-image: url(/wp-content/themes/twentythirteen-child/assets/content/about/about_bg2.jpg);
   -webkit-background-size: cover;
   background-size: cover;
   background-position: center;
@@ -2779,7 +2779,7 @@ button {
   top: 0;
   right: 0;
   margin: 20px;
-  background-image: url(/assets/img/close_btn_b.svg);
+  background-image: url(/wp-content/themes/twentythirteen-child/assets/img/close_btn_b.svg);
   -webkit-background-size: 100%;
   background-size: 100%;
   z-index: 99;
@@ -2819,7 +2819,7 @@ button {
   left: 0;
   bottom: 0;
   right: 0;
-  background-image: url(/assets/content/contact/contact_bg.jpg);
+  background-image: url(/wp-content/themes/twentythirteen-child/assets/content/contact/contact_bg.jpg);
   -webkit-background-size: cover;
   background-size: cover;
   background-position: center;
