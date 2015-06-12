@@ -7,6 +7,17 @@
         <div class="content">
             <div class="home">
                 <div class="slideshow">
+                    <div class="slide">
+                        <div class="image" style='background-image:url(assets/content/home/home_1.jpg)'></div>
+                        <div class="table">
+                            <div class="cell">
+                                <div class="once_slide">
+                                    <h1 class="once_slide_title">Interior Brand</br>Experience</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                     <?php // Show the first 4 entries only ?>
                     <?php for ($i=0; $i<4; $i++) { ?>
                         <?php if (!empty($slideshow[$i])) { ?>

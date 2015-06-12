@@ -2,6 +2,89 @@
 <?php get_header(); ?>
 
     <div class="work_detail_wrap">
+        <div class="work_row">
+            <div class=" work_brand_hero">
+                <div class="table">
+                    <div class="cell">
+                        <img class="work_logo" src="/assets/img/dover-logo.svg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="work_row">
+            <div class="work_brand_r1 work_row_bg">
+                <div class="work_brand_wrapper">
+                    <div class="work_brand_content content_left">
+                        <div class="table">
+                            <div class="cell">
+                                <p class="work_brand_copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur ac lacus in viverra. Sed a aliquam dui. Cras efficitur vel ex id sagittis. Etiam laoreet, nisl vel bibendum semper, purus mauris cursus lacus, malesuada ullamcorper urna metus sed est. Nunc sagittis risus maximus gravida maximus. Nulla facilisi. Aliquam ultricies, tortor viverra tincidunt feugiat, nunc purus ullamcorper sapien, ac dapibus augue erat ut dui. Ut scelerisque blandit tortor at tristique. Aenean ultrices tincidunt sem, vitae sodales dui hendrerit id.
+                                </br>
+                                </br>
+                                Nunc sagittis risus maximus gravida maximus. Nulla facilisi. Aliquam ultricies, tortor viverra tincidunt feugiat, nunc purus ullamcorper sapien, ac dapibus augue erat ut dui. Ut scelerisque blandit tortor at tristique. Aenean ultrices tincidunt sem, vitae sodales dui hendrerit id.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="work_brand_media">
+                        <div class="brand_media_wrapper">
+                            <iframe src="//player.vimeo.com/video/117395227?title=0&amp;byline=0&amp;portrait=0" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="work_row">
+            <div class="work_brand_grid">
+                <div class="brand_grid_item wc3"><img src="assets/content/work_detail/portrait.jpg"></div>
+                <div class="brand_grid_item wc3"><img src="assets/content/work_detail/portrait.jpg"></div>
+                <div class="brand_grid_item wc3"><img src="assets/content/work_detail/portrait.jpg"></div>
+            </div>
+        </div>
+
+        <div class="work_row">
+            <div class="work_brand_full">
+               <!--  <div class="brand_grid_item c3"><img src="assets/content/work_detail/portrait.jpg"></div> -->
+            </div>
+        </div>
+
+
+        <div class="work_row">
+            <div class="work_brand_r1 work_row_bg">
+                <div class="work_brand_wrapper">
+                    <div class="work_brand_content content_right">
+                        <div class="table">
+                            <div class="cell">
+                                <p class="work_brand_copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur ac lacus in viverra. Sed a aliquam dui. Cras efficitur vel ex id sagittis. Etiam laoreet, nisl vel bibendum semper, purus mauris cursus lacus, malesuada ullamcorper urna metus sed est. Nunc sagittis risus maximus gravida maximus. Nulla facilisi. Aliquam ultricies, tortor viverra tincidunt feugiat, nunc purus ullamcorper sapien, ac dapibus augue erat ut dui. Ut scelerisque blandit tortor at tristique. Aenean ultrices tincidunt sem, vitae sodales dui hendrerit id.
+                                </br>
+                                </br>
+                                Nunc sagittis risus maximus gravida maximus. Nulla facilisi. Aliquam ultricies, tortor viverra tincidunt feugiat, nunc purus ullamcorper sapien, ac dapibus augue erat ut dui. Ut scelerisque blandit tortor at tristique. Aenean ultrices tincidunt sem, vitae sodales dui hendrerit id.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="work_brand_media">
+                        <div class="brand_media_img">
+                            <img src="assets/content/team/team_16.jpg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="work_row">
+            <div class="work_brand_grid">
+                <div class="brand_grid_item wc3"><img src="assets/content/work_detail/portrait.jpg"></div>
+                <div class="brand_grid_item wc3"><img src="assets/content/work_detail/portrait.jpg"></div>
+                <div class="brand_grid_item wc3"><img src="assets/content/work_detail/portrait.jpg"></div>
+            </div>
+        </div>
+
+        <!-- ------------ -->
+
         <div id="masonry">
             <?php while (have_posts()) { the_post(); ?>
                 <?php
@@ -37,47 +120,10 @@
                 <?php } ?>
             <?php } ?>
         </div>
-
-        <a href="#" class="case-study_btn"><span>Case study</span></a>
     </div>
 
     <?php include('footer-nav.php'); ?>
 
 </div><!-- .wrapper -->
-
-<div class="work_pop-up_wraper no_pop-up">
-    <div class="pop-up_container work_lightbox">
-        <div class="pop-up_content">
-            <a href="#" class="close_btn"></a>
-
-            <div class="client_info">
-                <div class="client_info_name">
-                    <h3 class="info_title">Client:</h3>
-                    <p class="info_subtitle"><?php echo $details['project_details_client'] ?></p>
-                </div>
-                <div class="client_info_location">
-                    <h3 class="info_title">Location:</h3>
-                    <p class="info_subtitle"><?php echo $details['project_details_location'] ?></p>
-                </div>
-            </div>
-
-            <div class="client_info_copy">
-                <!-- <h3 class="info_title">The challenge</h3> -->
-                <p class="info_subtitle"><?php echo $details['project_details_challenges'] ?></p>
-            </div>
-
-            <div class="client_info_copy">
-                <!-- <h3 class="info_title">The solution</h3> -->
-                <p class="info_subtitle"><?php echo $details['project_details_solution'] ?></p>
-            </div>
-
-            <div class="download_btn_container">
-                <?php if (!empty($details['project_details_attachment']['url'])) { ?>
-                    <a class="download_btn" href="<?php echo($details['project_details_attachment']['url']) ?>" target="_blank"><span>Download PDF</span></a>
-                <?php } ?>
-            </div>
-        </div>
-    </div>
-</div>
 
 <?php get_footer(); ?>

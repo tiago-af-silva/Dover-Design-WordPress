@@ -3,6 +3,7 @@
         <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/plugins.js?v=20150128"></script>
         <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/global.js?v=20150126"></script>
         <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/slick.js"></script>
+        <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/isotope-docs.min.js"></script>
         <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/masonry.pkgd.min.js"></script>
         <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/masonry_grid.js"></script>
 

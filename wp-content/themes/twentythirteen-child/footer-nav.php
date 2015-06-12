@@ -17,6 +17,7 @@
 
         <li class="footer_item"><a class="social_btn linkedin" href="http://uk.linkedin.com/pub/dover-design-restaurant-designers/2a/a31/234" target="_blank">-<div class="linkedin_logo"></div></a></li>
         <li class="footer_item"><a class="social_btn facebook" href="https://www.facebook.com/DoverDesignAssociates" target="_blank">-<div class="facebook_logo"></div></a></li>
+        <li class="footer_item"><a class="social_btn twitter" href="https://twitter.com/doverdesign" target="_blank">-<div class="twitter_logo"></div></a></li>
         <li class="footer_item"><a class="social_btn instagram" href="http://instagram.com/doverdesign" target="_blank">-<div class="instagram_logo"></div></a></li>
     </ul>
 </div>
