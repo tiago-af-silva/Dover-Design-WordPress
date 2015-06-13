@@ -2209,7 +2209,8 @@ button {
 
 .work_brand_hero {
   height: 350px;
-  background-image: url("/wp-content/themes/twentythirteen-child/assets/content/work_brand/hero_brand.jpg");
+  background-color: black;
+  /*background-image: url("/wp-content/themes/twentythirteen-child/assets/content/work_brand/hero_brand.jpg");*/
   -webkit-background-size: cover;
   background-size: cover;
   background-position: center;
@@ -2303,7 +2304,8 @@ button {
   display: block;
   height: 350px;
   width: 100%;
-  background-image: url("/wp-content/themes/twentythirteen-child/assets/content/work_brand/hero_brand.jpg");
+  background-color: black;
+  /*background-image: url("/wp-content/themes/twentythirteen-child/assets/content/work_brand/hero_brand.jpg");*/
   -webkit-background-size: cover;
   background-size: cover;
   background-position: center;

@@ -56,7 +56,16 @@
                                 }
                             ?>
                             <?php foreach($header_menu_items as $header_menu_item){ ?>
-                                <li class="nav_item <?php echo ($header_menu_item->object_id==get_queried_object_id() ? 'active' : '') ?>">
+                                <?php
+                                    if ($header_menu_item->object_id==$post->ID) {
+                                        $class_name = 'active';
+                                    } elseif ($header_menu_item->object_id==get_post_id_for('work') && ($post->post_type=='post' || $post->post_type=='brand_experience')) {
+                                        $class_name = 'active';
+                                    } else {
+                                        $class_name = '';
+                                    }
+                                ?>
+                                <li class="nav_item <?php echo $class_name ?>">
                                     <a href="<?php echo $header_menu_item->url ?>"><span><?php echo $header_menu_item->title ?></span></a>
                                 </li>
                             <?php } ?>

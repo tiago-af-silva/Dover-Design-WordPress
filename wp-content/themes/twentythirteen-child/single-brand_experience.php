@@ -2,86 +2,126 @@
 <?php get_header(); ?>
 
     <div class="work_detail_wrap">
-        <div class="work_row">
-            <div class=" work_brand_hero">
-                <div class="table">
-                    <div class="cell">
-                        <img class="work_logo" src="/assets/img/dover-logo.svg">
+        <?php while (have_posts()) { the_post(); ?>
+            <?php
+                // $tile = simple_fields_fieldgroup('project_brand_tile');
+                // $options = simple_fields_fieldgroup('project_options');
+
+                // Layout box 1 will always be the at the top
+                $boxes = array(0=>simple_fields_fieldgroup('project_brand_box1'));
+                $boxes_position = array(0=>'1');
+
+                // Get other layout boxes
+                $boxes_position_options = simple_fields_fieldgroup('project_brand_layout');
+                for ($i=2; $i<=6; $i++) {
+                    $boxes[$i] = simple_fields_fieldgroup('project_brand_box'.$i);
+
+                    $selected_position = $boxes_position_options['project_brand_layout_box'.$i]['selected_value'];
+                    if (strpos($selected_position,'Position ')!==FALSE) {
+                        $position = str_replace('Position ', '', $selected_position);
+                        if (!array_key_exists($position-1, $boxes_position)) {
+                            $boxes_position[$position-1] = $i;
+                        }
+                    }
+                }
+                ksort($boxes_position);
+
+                // BUG FIX: If there's only one option, the plugin doesn't create the related index in the array
+                if (!array_key_exists('project_options_archived', $options)) {
+                    $project_options_archived = $options;
+                    $options = array('project_options_archived'=>$project_options_archived);
+                }
+            ?>
+
+            <div class="work_row">
+                <div class="work_brand_hero" style="background-image:url('<?php echo $boxes[0]['project_brand_box1_background']['url'] ?>');">
+                    <div class="table">
+                        <div class="cell">
+                            <img class="work_logo" src="<?php echo $boxes[0]['project_brand_box1_logo']['url'] ?>">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="work_row">
-            <div class="work_brand_r1 work_row_bg">
-                <div class="work_brand_wrapper">
-                    <div class="work_brand_content content_left">
-                        <div class="table">
-                            <div class="cell">
-                                <p class="work_brand_copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur ac lacus in viverra. Sed a aliquam dui. Cras efficitur vel ex id sagittis. Etiam laoreet, nisl vel bibendum semper, purus mauris cursus lacus, malesuada ullamcorper urna metus sed est. Nunc sagittis risus maximus gravida maximus. Nulla facilisi. Aliquam ultricies, tortor viverra tincidunt feugiat, nunc purus ullamcorper sapien, ac dapibus augue erat ut dui. Ut scelerisque blandit tortor at tristique. Aenean ultrices tincidunt sem, vitae sodales dui hendrerit id.
-                                </br>
-                                </br>
-                                Nunc sagittis risus maximus gravida maximus. Nulla facilisi. Aliquam ultricies, tortor viverra tincidunt feugiat, nunc purus ullamcorper sapien, ac dapibus augue erat ut dui. Ut scelerisque blandit tortor at tristique. Aenean ultrices tincidunt sem, vitae sodales dui hendrerit id.
-                                </p>
+            <?php foreach ($boxes_position as $index) { ?>
+                <?php switch ($index) {
+                    case '2': ?>
+                        <div class="work_row">
+                            <div class="work_brand_r1 work_row_bg">
+                                <div class="work_brand_wrapper">
+                                    <div class="work_brand_content content_left">
+                                        <div class="table">
+                                            <div class="cell">
+                                                <p class="work_brand_copy"><?php echo get_field('project_brand_box2_copy') ?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="work_brand_media">
+                                        <?php if (get_field('project_brand_box2_type')=='media') { ?>
+                                            <div class="brand_media_wrapper">
+                                                <?php echo get_field('project_brand_box2_media') ?>
+                                            </div>
+                                        <?php } elseif (get_field('project_brand_box2_type')=='image') { ?>
+                                            <div class="brand_media_img">
+                                                <?php $image = get_field('project_brand_box2_image') ?>
+                                                <img src="<?php echo $image['url'] ?>">
+                                            </div>
+                                        <?php } ?>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        <?php break; ?>
 
-                    <div class="work_brand_media">
-                        <div class="brand_media_wrapper">
-                            <iframe src="//player.vimeo.com/video/117395227?title=0&amp;byline=0&amp;portrait=0" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="work_row">
-            <div class="work_brand_grid">
-                <div class="brand_grid_item wc3"><img src="assets/content/work_detail/portrait.jpg"></div>
-                <div class="brand_grid_item wc3"><img src="assets/content/work_detail/portrait.jpg"></div>
-                <div class="brand_grid_item wc3"><img src="assets/content/work_detail/portrait.jpg"></div>
-            </div>
-        </div>
-
-        <div class="work_row">
-            <div class="work_brand_full">
-               <!--  <div class="brand_grid_item c3"><img src="assets/content/work_detail/portrait.jpg"></div> -->
-            </div>
-        </div>
-
-
-        <div class="work_row">
-            <div class="work_brand_r1 work_row_bg">
-                <div class="work_brand_wrapper">
-                    <div class="work_brand_content content_right">
-                        <div class="table">
-                            <div class="cell">
-                                <p class="work_brand_copy">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla consectetur ac lacus in viverra. Sed a aliquam dui. Cras efficitur vel ex id sagittis. Etiam laoreet, nisl vel bibendum semper, purus mauris cursus lacus, malesuada ullamcorper urna metus sed est. Nunc sagittis risus maximus gravida maximus. Nulla facilisi. Aliquam ultricies, tortor viverra tincidunt feugiat, nunc purus ullamcorper sapien, ac dapibus augue erat ut dui. Ut scelerisque blandit tortor at tristique. Aenean ultrices tincidunt sem, vitae sodales dui hendrerit id.
-                                </br>
-                                </br>
-                                Nunc sagittis risus maximus gravida maximus. Nulla facilisi. Aliquam ultricies, tortor viverra tincidunt feugiat, nunc purus ullamcorper sapien, ac dapibus augue erat ut dui. Ut scelerisque blandit tortor at tristique. Aenean ultrices tincidunt sem, vitae sodales dui hendrerit id.
-                                </p>
+                    <?php case '3': ?>
+                    <?php case '6': ?>
+                        <div class="work_row">
+                            <div class="work_brand_grid">
+                                <?php foreach ($boxes[$index] as $image) { ?>
+                                    <div class="brand_grid_item wc3"><img src="<?php echo $image['url'] ?>"></div>
+                                <?php } ?>
                             </div>
                         </div>
-                    </div>
+                        <?php break; ?>
 
-                    <div class="work_brand_media">
-                        <div class="brand_media_img">
-                            <img src="assets/content/team/team_16.jpg">
+                    <?php case '4': ?>
+                        <div class="work_row">
+                            <div class="work_brand_full" style="background-image:url('<?php echo $boxes[$index]['url'] ?>');"></div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                        <?php break; ?>
 
-        <div class="work_row">
-            <div class="work_brand_grid">
-                <div class="brand_grid_item wc3"><img src="assets/content/work_detail/portrait.jpg"></div>
-                <div class="brand_grid_item wc3"><img src="assets/content/work_detail/portrait.jpg"></div>
-                <div class="brand_grid_item wc3"><img src="assets/content/work_detail/portrait.jpg"></div>
-            </div>
-        </div>
+                    <?php case '5': ?>
+                        <div class="work_row">
+                            <div class="work_brand_r1 work_row_bg">
+                                <div class="work_brand_wrapper">
+                                    <div class="work_brand_content content_right">
+                                        <div class="table">
+                                            <div class="cell">
+                                                <p class="work_brand_copy"><?php echo get_field('project_brand_box5_copy') ?></p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="work_brand_media">
+                                        <?php if (get_field('project_brand_box5_type')=='media') { ?>
+                                            <div class="brand_media_wrapper">
+                                                <?php echo get_field('project_brand_box5_media') ?>
+                                            </div>
+                                        <?php } elseif (get_field('project_brand_box5_type')=='image') { ?>
+                                            <div class="brand_media_img">
+                                                <?php $image = get_field('project_brand_box5_image') ?>
+                                                <img src="<?php echo $image['url'] ?>">
+                                            </div>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php break; ?>
+                <?php } ?>
+            <?php } ?>
+        <?php } ?>
 
         <!-- ------------ -->
 
