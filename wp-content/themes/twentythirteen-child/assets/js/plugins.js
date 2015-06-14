@@ -37,7 +37,7 @@ $(document).ready(function () {
             slide: 'div',
             cssEase: 'linear',
             autoplay: true,
-            autoplaySpeed: 9000,
+            autoplaySpeed: 12000,
             pauseOnHover: false,
             onInit: function (slider) {
                 // Hide all text boxes
