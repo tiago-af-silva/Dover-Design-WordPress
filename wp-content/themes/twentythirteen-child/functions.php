@@ -13,6 +13,7 @@ function get_post_id_for($slug) {
         'home'  => '63',
         'about' => '67',
         'work' => '70',
+        'team' => '80',
     );
 
     return (array_key_exists($slug, $post_ids) ? $post_ids[$slug] : null);
@@ -176,17 +177,24 @@ if (!current_user_can('manage_options')) {
 
     add_action('admin_head', 'custom_admin_styles');
     function custom_admin_styles() {
+        // Only show slideshow fields when editing the homepage
         if (!isset($_GET['post']) || $_GET['post'] != get_post_id_for('home')) {
-            // Only show slideshow fields when editing the homepage
             echo '<style>
                 #simple_fields_connector_5 { display:none; }
             </style>';
         }
 
+        // Only show clients fields when editing the about page
         if (!isset($_GET['post']) || $_GET['post'] != get_post_id_for('about')) {
-            // Only show clients fields when editing the about page
             echo '<style>
                 #simple_fields_connector_6 { display:none; }
+            </style>';
+        }
+
+        // Only show clients fields when editing the about page
+        if (!isset($_GET['post']) || $_GET['post'] != get_post_id_for('team')) {
+            echo '<style>
+                #simple_fields_connector_15 { display:none; }
             </style>';
         }
     }

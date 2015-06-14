@@ -2729,8 +2729,11 @@ button {
 }
 
 .people_btn {
-  cursor: pointer;
   overflow: hidden;
+}
+
+.people_btn.director {
+  cursor: pointer;
 }
 
 .people_btn:hover .team-button {
