@@ -1352,7 +1352,7 @@ a:hover .instagram_logo {
   background-repeat: no-repeat;
 }
 
-.slick-active .image {
+.image.zoom {
   animation: image_zoom 50s forwards;
   -webkit-animation: image_zoom 50s forwards;
   -moz-animation: image_zoom 50s forwards;   

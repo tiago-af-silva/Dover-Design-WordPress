@@ -48,6 +48,9 @@ $(document).ready(function () {
                     slider.$slider.find('.slide').eq(0).find('.cell').show();
                 }, 2000);
 
+                // Apply the zoom effect to the current image
+                slider.$slider.find('.slide').eq(0).find('.image').addClass('zoom');
+
                 slickSlider = slider.$slider;
             },
             onBeforeChange: function (slider, index) {
@@ -59,6 +62,10 @@ $(document).ready(function () {
                 setTimeout(function () {
                     slider.$slider.find('.slide').eq(index).find('.cell').show();
                 }, 2000);
+
+                // Apply the zoom effect to the current image
+                slider.$slider.find('.slide .image.zoom').removeClass('zoom');
+                slider.$slider.find('.slide').eq(index).find('.image').addClass('zoom');
             }
         });
     }
