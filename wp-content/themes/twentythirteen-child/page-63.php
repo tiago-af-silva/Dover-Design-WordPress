@@ -12,7 +12,11 @@
                         <div class="table">
                             <div class="cell">
                                 <div class="once_slide">
-                                    <h1 class="once_slide_title">Interior Brand</br>Experience</h1>
+                                    <div class="table">
+                                        <div class="cell">
+                                            <h1 class="once_slide_title">We are an</br><strong>INTERIOR BRAND EXPERIENCE</strong></br>agency</h1>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
