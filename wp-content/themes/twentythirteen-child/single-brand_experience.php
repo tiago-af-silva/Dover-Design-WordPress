@@ -47,7 +47,7 @@
                 <?php switch ($index) {
                     case '2': ?>
                         <div class="work_row">
-                            <div class="work_brand_r1 work_row_bg" style="background-color:get_field('project_brand_box2_background');">
+                            <div class="work_brand_r1 work_row_bg" style="background-color:<?php echo get_field('project_brand_box2_background') ?>;">
                                 <div class="work_brand_wrapper">
                                     <div class="work_brand_content content_left">
                                         <div class="table">
@@ -86,7 +86,7 @@
 
                     <?php case '5': ?>
                         <div class="work_row">
-                            <div class="work_brand_r1 work_row_bg" style="background-color:get_field('project_brand_box5_background');">
+                            <div class="work_brand_r1 work_row_bg" style="background-color:<?php echo get_field('project_brand_box5_background') ?>;">
                                 <div class="work_brand_wrapper">
                                     <div class="work_brand_content content_right">
                                         <div class="table">
@@ -108,7 +108,7 @@
 
                     <?php case '7': ?>
                         <div class="work_row">
-                            <div class="work_brand_r1 work_row_bg" style="background-color:get_field('project_brand_box7_background');">
+                            <div class="work_brand_r1 work_row_bg" style="background-color:<?php echo get_field('project_brand_box7_background') ?>;">
                                 <div class="work_brand_wrapper">
                                     <div class="work_brand_content content_right">
                                         <div class="table">
