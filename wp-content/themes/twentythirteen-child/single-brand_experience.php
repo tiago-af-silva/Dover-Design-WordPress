@@ -47,7 +47,7 @@
                 <?php switch ($index) {
                     case '2': ?>
                         <div class="work_row">
-                            <div class="work_brand_r1 work_row_bg">
+                            <div class="work_brand_r1 work_row_bg" style="background-color:get_field('project_brand_box2_background');">
                                 <div class="work_brand_wrapper">
                                     <div class="work_brand_content content_left">
                                         <div class="table">
@@ -58,16 +58,9 @@
                                     </div>
 
                                     <div class="work_brand_media">
-                                        <?php if (get_field('project_brand_box2_type')=='media') { ?>
-                                            <div class="brand_media_wrapper">
-                                                <?php echo get_field('project_brand_box2_media') ?>
-                                            </div>
-                                        <?php } elseif (get_field('project_brand_box2_type')=='image') { ?>
-                                            <div class="brand_media_img">
-                                                <?php $image = get_field('project_brand_box2_image') ?>
-                                                <img src="<?php echo $image['url'] ?>">
-                                            </div>
-                                        <?php } ?>
+                                        <div class="brand_media_wrapper">
+                                            <?php echo get_field('project_brand_box2_media') ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -93,7 +86,7 @@
 
                     <?php case '5': ?>
                         <div class="work_row">
-                            <div class="work_brand_r1 work_row_bg">
+                            <div class="work_brand_r1 work_row_bg" style="background-color:get_field('project_brand_box5_background');">
                                 <div class="work_brand_wrapper">
                                     <div class="work_brand_content content_right">
                                         <div class="table">
@@ -104,16 +97,32 @@
                                     </div>
 
                                     <div class="work_brand_media">
-                                        <?php if (get_field('project_brand_box5_type')=='media') { ?>
-                                            <div class="brand_media_wrapper">
-                                                <?php echo get_field('project_brand_box5_media') ?>
+                                        <div class="brand_media_wrapper">
+                                            <?php echo get_field('project_brand_box5_media') ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <?php break; ?>
+
+                    <?php case '7': ?>
+                        <div class="work_row">
+                            <div class="work_brand_r1 work_row_bg" style="background-color:get_field('project_brand_box7_background');">
+                                <div class="work_brand_wrapper">
+                                    <div class="work_brand_content content_right">
+                                        <div class="table">
+                                            <div class="cell">
+                                                <p class="work_brand_copy"><?php echo get_field('project_brand_box7_copy') ?></p>
                                             </div>
-                                        <?php } elseif (get_field('project_brand_box5_type')=='image') { ?>
-                                            <div class="brand_media_img">
-                                                <?php $image = get_field('project_brand_box5_image') ?>
-                                                <img src="<?php echo $image['url'] ?>">
-                                            </div>
-                                        <?php } ?>
+                                        </div>
+                                    </div>
+
+                                    <div class="work_brand_media">
+                                        <div class="brand_media_img">
+                                            <?php $image = get_field('project_brand_box7_image') ?>
+                                            <img src="<?php echo $image['url'] ?>">
+                                        </div>
                                     </div>
                                 </div>
                             </div>

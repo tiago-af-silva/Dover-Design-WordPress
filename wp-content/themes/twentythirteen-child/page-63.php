@@ -2,7 +2,10 @@
 <?php get_header(); ?>
 
     <?php while (have_posts()) { the_post(); ?>
-        <?php $slideshow = simple_fields_fieldgroup('homepage_slideshow') ?>
+        <?php
+            $slideshow_first = simple_fields_fieldgroup('homepage_slideshow_first');
+            $slideshow = simple_fields_fieldgroup('homepage_slideshow');
+        ?>
 
         <div class="content">
             <div class="home">
@@ -14,7 +17,7 @@
                                 <div class="once_slide">
                                     <div class="table">
                                         <div class="cell">
-                                            <h1 class="once_slide_title">We are an</br><strong>INTERIOR BRAND EXPERIENCE</strong></br>agency</h1>
+                                            <h1 class="once_slide_title"><?php echo strip_tags($slideshow_first, '<strong><em><del><a><br>') ?></h1>
                                         </div>
                                     </div>
                                 </div>

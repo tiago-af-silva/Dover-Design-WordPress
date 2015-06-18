@@ -93,6 +93,23 @@ function rewrite_menu_items() {
     $menu[7] = array('', 'read', 'separator1', '', 'wp-menu-separator');
 }
 
+// Tweak TinyMCE buttons
+add_filter('tiny_mce_before_init', 'custom_tiny_mce_init');
+function custom_tiny_mce_init($init) {
+    $init['forced_root_block'] = false;
+    // $init['toolbar2'] = 'bold,italic,strikethrough,bullist,numlist,blockquote,hr,alignleft,aligncenter,alignright,link,unlink,wp_more,spellchecker,fullscreen,wp_adv';
+    $init['toolbar1'] = 'bold,italic,strikethrough,link,unlink';
+    // $init['toolbar2'] = 'formatselect,underline,alignjustify,forecolor,pastetext,removeformat,charmap,outdent,indent,undo,redo,wp_help';
+    $init['toolbar2'] = '';
+    return $init;
+}
+add_filter('quicktags_settings', 'custom_quicktags_settings');
+function custom_quicktags_settings($init) {
+    // $init['buttons'] = 'strong,em,link,block,del,ins,img,ul,ol,li,code,more,close';
+    $init['buttons'] = 'strong,em,del,link';
+    return $init;
+}
+
 // Redirect to "Our work" after logging in
 add_filter('login_redirect', 'redirect_after_login', 10, 3);
 function redirect_after_login($redirect_to, $request, $user) {
@@ -181,6 +198,16 @@ if (!current_user_can('manage_options')) {
         if (!isset($_GET['post']) || $_GET['post'] != get_post_id_for('home')) {
             echo '<style>
                 #simple_fields_connector_5 { display:none; }
+                #simple_fields_connector_17 { display:none; }
+            </style>';
+        }
+
+        // Temporary
+        echo '<style>#simple_fields_connector_17 { display:none; }</style>';
+
+        if ($_GET['post'] == get_post_id_for('home')) {
+            echo '<style>
+                #simple_fields_connector_17 .add_media { display:none; }
             </style>';
         }
 

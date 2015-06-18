@@ -2218,9 +2218,10 @@ button {
 }
 
 .work_row_bg {
-  background-image: url("/wp-content/themes/twentythirteen-child/assets/content/work_brand/color_red.jpg");
+  /*background-image: url("/wp-content/themes/twentythirteen-child/assets/content/work_brand/color_red.jpg");
   -webkit-background-size: cover;
-  background-size: cover;
+  background-size: cover;*/
+  background-color:#65040A;
 }
 
 .work_brand_hero {
