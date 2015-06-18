@@ -203,7 +203,11 @@ if (!current_user_can('manage_options')) {
         }
 
         // Temporary
-        echo '<style>#simple_fields_connector_17 { display:none; }</style>';
+        echo '<style>
+            #simple_fields_connector_17 { display:none; }
+            #acf_635 { display:none; }
+            .simple-fields-fieldgroups-field-13-8.simple-fields-fieldgroups-field-slug-project_brand_layout_box7 { display:none; }
+        </style>';
 
         if ($_GET['post'] == get_post_id_for('home')) {
             echo '<style>

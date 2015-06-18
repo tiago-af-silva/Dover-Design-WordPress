@@ -106,7 +106,7 @@
                         </div>
                         <?php break; ?>
 
-                    <?php case '7': ?>
+                    <?php /* case '7': ?>
                         <div class="work_row">
                             <div class="work_brand_r1 work_row_bg" style="background-color:<?php echo get_field('project_brand_box7_background') ?>;">
                                 <div class="work_brand_wrapper">
@@ -127,48 +127,10 @@
                                 </div>
                             </div>
                         </div>
-                        <?php break; ?>
+                        <?php break; */ ?>
                 <?php } ?>
             <?php } ?>
         <?php } ?>
-
-        <!-- ------------ -->
-
-        <div id="masonry">
-            <?php while (have_posts()) { the_post(); ?>
-                <?php
-                    $tile = simple_fields_fieldgroup('project_brand_tile');
-                    $options = simple_fields_fieldgroup('project_options');
-
-                    // BUG FIX: If there's only one option, the plugin doesn't create the related index in the array
-                    if (!array_key_exists('project_options_archived', $options)) {
-                        $project_options_archived = $options;
-                        $options = array('project_options_archived'=>$project_options_archived);
-                    }
-                ?>
-
-                <?php foreach ($tiles as $tile) { ?>
-                    <?php if ($tile['project_tiles_image']['is_image'] && !empty($tile['project_tiles_type']['selected_value'])) { ?>
-                        <div class="grid_item c4">
-                            <?php if ($tile['project_tiles_type']['selected_value']=='Picture') { ?>
-                                <div class="item_wrap">
-                                    <img src="<?php echo $tile['project_tiles_image']['url'] ?>">
-                                </div>
-
-                            <?php } elseif ($tile['project_tiles_type']['selected_value']=='Testimonial' && !$testimonial_added) { ?>
-                                <div class="item_wrap quote" style="color:#<?php echo ltrim($testimonial['project_testimonial_colour'], '#') ?>;background-image:url('<?php echo $tile['project_tiles_image']['url'] ?>');">
-                                    <span class="client_quote"><?php echo $testimonial['project_testimonial_text'] ?></span>
-                                    <span class="client_roll">
-                                        <?php echo $testimonial['project_testimonial_author'] ?><?php echo (!empty($testimonial['project_testimonial_role']) ? ', '.$testimonial['project_testimonial_role'] : '') ?>.<?php echo (!empty($testimonial['project_details_client']) ? ', '.$testimonial['project_details_client'] : '') ?>
-                                    </span>
-                                </div>
-                                <?php $testimonial_added = true ?>
-                            <?php } ?>
-                        </div>
-                    <?php } ?>
-                <?php } ?>
-            <?php } ?>
-        </div>
     </div>
 
     <?php include('footer-nav.php'); ?>
