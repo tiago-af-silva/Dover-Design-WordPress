@@ -13,7 +13,7 @@
 
                 // Get other layout boxes
                 $boxes_position_options = simple_fields_fieldgroup('project_brand_layout');
-                for ($i=2; $i<=6; $i++) {
+                for ($i=2; $i<=7; $i++) {
                     $boxes[$i] = simple_fields_fieldgroup('project_brand_box'.$i);
 
                     $selected_position = $boxes_position_options['project_brand_layout_box'.$i]['selected_value'];
