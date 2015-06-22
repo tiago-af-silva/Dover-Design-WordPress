@@ -70,7 +70,7 @@
                     <?php case '3': ?>
                     <?php case '6': ?>
                         <div class="work_row">
-                            <div class="work_brand_grid">
+                            <div class="work_brand_grid clearfix">
                                 <?php foreach ($boxes[$index] as $images) { ?>
                                     <div class="brand_grid wc3">
                                         <div class="brand_grid_container" style="background-image:url('<?php echo $images['project_brand_box3_image_hover']['url'] ?>')">
