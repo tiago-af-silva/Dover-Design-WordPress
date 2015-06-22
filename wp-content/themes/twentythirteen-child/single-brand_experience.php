@@ -73,8 +73,8 @@
                             <div class="work_brand_grid clearfix">
                                 <?php foreach ($boxes[$index] as $images) { ?>
                                     <div class="brand_grid wc3">
-                                        <div class="brand_grid_container" style="background-image:url('<?php echo $images['project_brand_box3_image_hover']['url'] ?>')">
-                                            <div class="brand_grid_background" style="background-image:url('<?php echo $images['project_brand_box3_image']['url'] ?>');"></div>
+                                        <div class="brand_grid_container" style="background-image:url('<?php echo $images['project_brand_box'.$index.'_image_hover']['url'] ?>')">
+                                            <div class="brand_grid_background" style="background-image:url('<?php echo $images['project_brand_box'.$index.'_image']['url'] ?>');"></div>
                                         </div>
                                     </div>
                                 <?php } ?>
