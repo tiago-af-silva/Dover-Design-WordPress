@@ -2921,6 +2921,23 @@ button {
   line-height: 25px;
 }
 
+.team_copy strong {
+  display: block;
+  font-family: 'Pro-SemiBold',sans-serif;
+  font-size: 50px;
+  line-height: 0.9;
+  margin: 3px 0;
+}
+
+.team_copy a {
+  color:white;
+  text-decoration:none;
+}
+
+.team_copy a:hover {
+  text-decoration:underline;
+}
+
 .team-button {
   text-align: left;
 }
