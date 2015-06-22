@@ -71,8 +71,12 @@
                     <?php case '6': ?>
                         <div class="work_row">
                             <div class="work_brand_grid">
-                                <?php foreach ($boxes[$index] as $image) { ?>
-                                    <div class="brand_grid_item wc3"><img src="<?php echo $image['url'] ?>"></div>
+                                <?php foreach ($boxes[$index] as $images) { ?>
+                                    <div class="brand_grid_item wc3">
+                                        <div class="brand_grid_container" style="background-image:url('<?php echo $images['project_brand_box3_image_hover']['url'] ?>')">
+                                            <div class="brand_grid_background" style="background-image:url('<?php echo $images['project_brand_box3_image']['url'] ?>');"></div>
+                                        </div>
+                                    </div>
                                 <?php } ?>
                             </div>
                         </div>
