@@ -110,7 +110,7 @@
                         </div>
                         <?php break; ?>
 
-                    <?php /* case '7': ?>
+                    <?php case '7': ?>
                         <div class="work_row">
                             <div class="work_brand_r1 work_row_bg" style="background-color:<?php echo get_field('project_brand_box7_background') ?>;">
                                 <div class="work_brand_wrapper">
@@ -131,7 +131,7 @@
                                 </div>
                             </div>
                         </div>
-                        <?php break; */ ?>
+                        <?php break; ?>
                 <?php } ?>
             <?php } ?>
         <?php } ?>
