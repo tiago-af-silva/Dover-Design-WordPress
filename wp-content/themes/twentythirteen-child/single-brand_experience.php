@@ -74,7 +74,7 @@
                                 <?php foreach ($boxes[$index] as $images) { ?>
                                     <div class="brand_grid_item wc3">
                                         <div class="brand_grid_container" style="background-image:url('<?php echo $images['project_brand_box3_image_hover']['url'] ?>')">
-                                            <img src="<?php echo $images['project_brand_box3_image']['url'] ?>"></div>
+                                            <img src="<?php echo $images['project_brand_box3_image']['url'] ?>">
                                         </div>
                                     </div>
                                 <?php } ?>
