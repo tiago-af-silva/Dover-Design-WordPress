@@ -2225,6 +2225,12 @@ button {
   background-color:#65040A;
 }
 
+.work_brand_images_row {
+  min-height:0;
+  padding-left:0;
+  padding-right:0;
+}
+
 .work_brand_hero {
   height: 350px;
   background-color: black;
@@ -2426,6 +2432,10 @@ button {
   padding-top: 80px;
   padding-bottom: 50px;
   background: white;
+}
+
+.work_detail_wrap.work_brand_detail_wrap {
+  padding-bottom:0;
 }
 
 .item_wrap {

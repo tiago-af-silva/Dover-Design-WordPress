@@ -1,7 +1,7 @@
 <?php // Work details ?>
 <?php get_header(); ?>
 
-    <div class="work_detail_wrap">
+    <div class="work_detail_wrap work_brand_detail_wrap">
         <?php while (have_posts()) { the_post(); ?>
             <?php
                 // $tile = simple_fields_fieldgroup('project_brand_tile');
@@ -69,7 +69,7 @@
 
                     <?php case '3': ?>
                     <?php case '6': ?>
-                        <div class="work_row" style="padding-left:0;padding-right:0;min-height:0;">
+                        <div class="work_row work_brand_images_row">
                             <div class="work_brand_grid clearfix">
                                 <?php foreach ($boxes[$index] as $images) { ?>
                                     <div class="brand_grid wc3">
