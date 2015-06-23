@@ -2003,12 +2003,6 @@ button {
   background: white;
 }
 
-@media only screen and (max-width:765px) {
-  .work_detail_wrap.work_brand_detail_wrap {
-    padding-bottom:0;
-  }
-}
-
 .item_wrap {
   display: inline-block;
   position: relative;
