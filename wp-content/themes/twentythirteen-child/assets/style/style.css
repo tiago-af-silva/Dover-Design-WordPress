@@ -2003,6 +2003,12 @@ button {
   background: white;
 }
 
+@media only screen and (max-width:765px) {
+  .work_detail_wrap.work_brand_detail_wrap {
+    padding-bottom:0;
+  }
+}
+
 .item_wrap {
   display: inline-block;
   position: relative;
@@ -2432,10 +2438,6 @@ button {
   padding-top: 80px;
   padding-bottom: 50px;
   background: white;
-}
-
-.work_detail_wrap.work_brand_detail_wrap {
-  padding-bottom:0;
 }
 
 .item_wrap {
