@@ -2231,8 +2231,11 @@ button {
   background-color:#65040A;
 }
 
-.work_brand_images_row {
+.work_brand_detail_wrap .work_row {
   min-height:0;
+}
+
+.work_brand_detail_wrap .work_brand_images_row {
   padding-left:0;
   padding-right:0;
 }
@@ -2400,7 +2403,7 @@ button {
   .content_left,
   .content_right {
     border-right: none;
-    border-bottom: 5px solid #FFFFFF;
+    border-bottom: 5px solid #FFFFFF;2
   }
 }
 
