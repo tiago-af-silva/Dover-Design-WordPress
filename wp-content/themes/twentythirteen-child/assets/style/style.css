@@ -2402,7 +2402,7 @@ button {
 
   .content_left,
   .content_right {
-    border-right: none;
+    border: none;
     border-bottom: 5px solid #FFFFFF;2
   }
 }
