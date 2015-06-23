@@ -11,13 +11,13 @@
             <div class="home">
                 <div class="slideshow">
                     <div class="slide">
-                        <div class="image" style='background-image:url(<?php echo get_stylesheet_directory_uri() ?>/assets/content/home/home_1.jpg)'></div>
+                        <div class="image" style='background-image:url(<?php echo $slideshow_first['homepage_slideshow_first_background']['url'] ?>)'></div>
                         <div class="table">
                             <div class="cell">
                                 <div class="once_slide">
                                     <div class="table">
                                         <div class="cell">
-                                            <h1 class="once_slide_title"><?php echo strip_tags($slideshow_first, '<strong><em><del><a><br>') ?></h1>
+                                            <h1 class="once_slide_title"><?php echo strip_tags($slideshow_first['homepage_slideshow_first_text'], '<strong><em><del><a><br>') ?></h1>
                                         </div>
                                     </div>
                                 </div>
