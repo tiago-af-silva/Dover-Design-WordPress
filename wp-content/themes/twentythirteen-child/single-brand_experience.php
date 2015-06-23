@@ -69,7 +69,7 @@
 
                     <?php case '3': ?>
                     <?php case '6': ?>
-                        <div class="work_row" style="padding-left:0;padding-right:0;">
+                        <div class="work_row" style="padding-left:0;padding-right:0;min-height:0;">
                             <div class="work_brand_grid clearfix">
                                 <?php foreach ($boxes[$index] as $images) { ?>
                                     <div class="brand_grid wc3">
