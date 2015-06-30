@@ -43,10 +43,8 @@ $(document).ready(function () {
                 // Hide all text boxes
                 slider.$slider.find('.cell').hide();
 
-                // Show text box for the first slide
-                setTimeout(function () {
-                    slider.$slider.find('.slide').eq(0).find('.cell').show();
-                }, 2000);
+                // Show text box for the first slide (straighaway; no delay like for the other slides)
+                slider.$slider.find('.slide').eq(0).find('.cell').show();
 
                 // Apply the zoom effect to the current image
                 slider.$slider.find('.slide').eq(0).find('.image').addClass('zoom');
@@ -59,9 +57,13 @@ $(document).ready(function () {
             },
             onAfterChange: function (slider, index) {
                 // Show text box for the slide that we switched on to
-                setTimeout(function () {
+                if (index > 0) {
                     slider.$slider.find('.slide').eq(index).find('.cell').show();
-                }, 2000);
+                } else {
+                    setTimeout(function () {
+                        slider.$slider.find('.slide').eq(index).find('.cell').show();
+                    }, 2000);
+                }
 
                 // Apply the zoom effect to the current image
                 slider.$slider.find('.slide .image.zoom').removeClass('zoom');
