@@ -7,15 +7,22 @@
                 // $tile = simple_fields_fieldgroup('project_brand_tile');
                 // $options = simple_fields_fieldgroup('project_options');
 
+                $boxes = array(
+                    0 => simple_fields_fieldgroup('project_brand_box1'),
+                    1 => NULL,
+                    2 => simple_fields_fieldgroup('project_brand_box3'),
+                    3 => simple_fields_fieldgroup('project_brand_box4'),
+                    4 => NULL,
+                    5 => simple_fields_fieldgroup('project_brand_box6'),
+                    6 => NULL,
+                );
+
                 // Layout box 1 will always be the at the top
-                $boxes = array(0=>simple_fields_fieldgroup('project_brand_box1'));
                 $boxes_position = array(0=>'1');
 
                 // Get other layout boxes
                 $boxes_position_options = simple_fields_fieldgroup('project_brand_layout');
                 for ($i=2; $i<=7; $i++) {
-                    $boxes[$i] = simple_fields_fieldgroup('project_brand_box'.$i);
-
                     $selected_position = $boxes_position_options['project_brand_layout_box'.$i]['selected_value'];
                     if (strpos($selected_position,'Position ')!==FALSE) {
                         $position = str_replace('Position ', '', $selected_position);
@@ -27,19 +34,21 @@
                 ksort($boxes_position);
 
                 // BUG FIX: If there's only one option, the plugin doesn't create the related index in the array
-                if (!array_key_exists('project_options_archived', $options)) {
-                    $project_options_archived = $options;
-                    $options = array('project_options_archived'=>$project_options_archived);
-                }
+                // if (!array_key_exists('project_options_archived', $options)) {
+                //     $project_options_archived = $options;
+                //     $options = array('project_options_archived'=>$project_options_archived);
+                // }
             ?>
 
             <div class="work_row">
                 <div class="work_brand_hero" style="background-image:url('<?php echo $boxes[0]['project_brand_box1_background']['url'] ?>');">
-                    <div class="table">
-                        <div class="cell">
-                            <img class="work_logo" src="<?php echo $boxes[0]['project_brand_box1_logo']['url'] ?>">
+                    <?php if ($boxes[0]['project_brand_box1_logo']['url']) { ?>
+                        <div class="table">
+                            <div class="cell">
+                                <img class="work_logo" src="<?php echo $boxes[0]['project_brand_box1_logo']['url'] ?>">
+                            </div>
                         </div>
-                    </div>
+                    <?php } ?>
                 </div>
             </div>
 
