@@ -1485,10 +1485,10 @@ a:hover .instagram_logo {
   height: 100%;
 }
 
-.slick-active .once_slide {
+/*.slick-active .once_slide {
   -webkit-animation: slideup 2s ease forwards;
   animation: slideup 2s ease forwards;
-}
+}*/
 
 @keyframes slideup {
   0% {
