@@ -28,7 +28,7 @@
                     <?php // Show the first 4 entries only ?>
                     <?php for ($i=0; $i<4; $i++) { ?>
                         <?php if (!empty($slideshow[$i])) { ?>
-                            <div class="slide">
+                            <div class="slide slide_delayed">
                                 <div class="image" style="background-image:url('<?php echo $slideshow[$i]['homepage_slideshow_image']['url'] ?>')"></div>
 
                                 <?php if (!empty($slideshow[$i]['homepage_slideshow_testimonial'])) { ?>

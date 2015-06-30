@@ -40,34 +40,31 @@ $(document).ready(function () {
             autoplaySpeed: 12000,
             pauseOnHover: false,
             onInit: function (slider) {
-                // Hide all text boxes
-                slider.$slider.find('.cell').hide();
-
-                // Show text box for the first slide (straighaway; no delay like for the other slides)
-                slider.$slider.find('.slide').eq(0).find('.cell').show();
+                // Hide all text boxes except for the ones that are not delayed
+                slider.$slider.find('.slide_delayed .cell').hide();
 
                 // Apply the zoom effect to the current image
                 slider.$slider.find('.slide').eq(0).find('.image').addClass('zoom');
 
                 slickSlider = slider.$slider;
             },
-            onBeforeChange: function (slider, index) {
+            onBeforeChange: function (slider, currentIndex, targetIndex) {
                 // Hide all text boxes
-                slider.$slider.find('.cell').hide();
+                slider.$slider.find('.slide_delayed .cell').hide();
             },
             onAfterChange: function (slider, index) {
+                var this_slide = slider.$slider.find('.slide').eq(index);
+
                 // Show text box for the slide that we switched on to
-                if (index > 0) {
-                    slider.$slider.find('.slide').eq(index).find('.cell').show();
-                } else {
+                if (this_slide.hasClass('slide_delayed')) {
                     setTimeout(function () {
-                        slider.$slider.find('.slide').eq(index).find('.cell').show();
+                        this_slide.find('.cell').show();
                     }, 2000);
                 }
 
                 // Apply the zoom effect to the current image
                 slider.$slider.find('.slide .image.zoom').removeClass('zoom');
-                slider.$slider.find('.slide').eq(index).find('.image').addClass('zoom');
+                this_slide.find('.image').addClass('zoom');
             }
         });
     }
