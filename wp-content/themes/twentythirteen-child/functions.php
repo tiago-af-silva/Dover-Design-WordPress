@@ -101,12 +101,13 @@ function rewrite_menu_items() {
         remove_menu_page('plugins.php');
     }
 
-    // Move menu items
+    // Move custom post menu items
     $menu[6] = $menu[26];
-    $menu[7] = $menu[26];
+    $menu[7] = $menu[27];
     unset($menu[26]);
+    unset($menu[27]);
 
-    // Rename menu items
+    // Rename custom post menu items
     $menu[5][0] = 'Interior Design';
     $menu[6][0] = 'Brand Experience';
     $menu[7][0] = 'Visuals';
