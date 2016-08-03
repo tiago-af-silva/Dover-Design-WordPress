@@ -45,6 +45,19 @@
                     );
 
                     break;
+
+                case 'visuals':
+                    $tile = simple_fields_fieldgroup('project_visuals_tile');
+
+                    $project = (object) array(
+                        'client' => $tile['project_visuals_tile_client'],
+                        'location' => $tile['project_visuals_tile_location'],
+                        'image' => $tile['project_visuals_tile_image']['url'],
+                        'link' => get_the_permalink(),
+                        'category' => 'visuals',
+                    );
+
+                    break;
             }
 
             if (!empty($project)) {
@@ -76,6 +89,9 @@
             <button class="button filter_nav_item" data-filter=".brand">
                 <div class="filter_btn"><span>Brand Experience</span></div>
             </button>
+            <!-- <button class="button filter_nav_item" data-filter=".visuals">
+                <div class="filter_btn"><span>Visuals</span></div>
+            </button> -->
         </div>
 
         <div class="grid_wrapper">
