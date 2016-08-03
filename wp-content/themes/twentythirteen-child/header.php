@@ -59,7 +59,7 @@
                                 <?php
                                     if ($header_menu_item->object_id==$post->ID) {
                                         $class_name = 'active';
-                                    } elseif ($header_menu_item->object_id==get_post_id_for('work') && ($post->post_type=='post' || $post->post_type=='brand_experience')) {
+                                    } elseif ($header_menu_item->object_id==get_post_id_for('work') && ($post->post_type=='post' || $post->post_type=='brand_experience' || $post->post_type=='visuals')) {
                                         $class_name = 'active';
                                     } else {
                                         $class_name = '';

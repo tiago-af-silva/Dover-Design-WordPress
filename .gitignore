@@ -1,7 +1,13 @@
 *.log
 .htaccess
+
 sitemap.xml
 sitemap.xml.gz
+
+thumbs.db
+desktop.ini
+.DS_Store
+
 wp-config.php
 wp-content/advanced-cache.php
 wp-content/backup-db/

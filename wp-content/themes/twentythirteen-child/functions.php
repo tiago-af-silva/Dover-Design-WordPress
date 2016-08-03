@@ -25,9 +25,10 @@ function remove_post_formats() {
     remove_theme_support('post-formats');
 }
 
-// Brand Experience post type
+// Custom post types
 add_action('init', 'create_posttype');
 function create_posttype() {
+    // Brand experience
     register_post_type('brand_experience', array(
         'labels' => array(
             'name' => __('Posts'),
@@ -45,15 +46,34 @@ function create_posttype() {
 
     register_taxonomy_for_object_type('category', 'brand_experience');
     register_taxonomy_for_object_type('post_tag', 'brand_experience');
+
+    // Visuals
+    register_post_type('visuals', array(
+        'labels' => array(
+            'name' => __('Posts'),
+            'singular_name' => __('Post'),
+            'all_items' => __('All Posts'),
+        ),
+        'public' => true,
+        'capability_type' => 'post',
+        'map_meta_cap' => true,
+        'rewrite' => array('slug' => 'visuals', 'with_front' => true),
+        'query_var' => false,
+        'delete_with_user' => true,
+        'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'post-formats'),
+    ));
+
+    register_taxonomy_for_object_type('category', 'visuals');
+    register_taxonomy_for_object_type('post_tag', 'visuals');
 }
 
-// Show Brand Experience projects on the "Our work" page
+// Show custom type posts on the "Our work" page
 add_action('pre_get_posts', 'work_search_filter');
 function work_search_filter($query) {
     global $wp_query;
 
     if ($query->is_main_query() && $wp_query->queried_object_id == get_post_id_for('work')) {
-        $query->set('post_type', array('post', 'brand_experience'));
+        $query->set('post_type', array('post', 'brand_experience', 'visuals'));
         $query->set('orderby', 'post_date');
         $query->set('order', 'DESC');
     }
@@ -88,6 +108,7 @@ function rewrite_menu_items() {
     // Rename menu items
     $menu[5][0] = 'Interior Design';
     $menu[6][0] = 'Brand Experience';
+    $menu[6][0] = 'Visuals';
 
     // Add separators
     $menu[7] = array('', 'read', 'separator1', '', 'wp-menu-separator');
@@ -152,6 +173,7 @@ if (!current_user_can('manage_options')) {
         // Remove content textarea on the projects section
         remove_post_type_support('post', 'editor');
         remove_post_type_support('brand_experience', 'editor');
+        remove_post_type_support('visuals', 'editor');
     }
 
     // Customise admin bar
