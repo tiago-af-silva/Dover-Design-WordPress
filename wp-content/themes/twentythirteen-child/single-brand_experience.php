@@ -38,6 +38,42 @@
                 //     $project_options_archived = $options;
                 //     $options = array('project_options_archived'=>$project_options_archived);
                 // }
+
+                // Set to true as soon as the first video starts playing automatically
+                $playing_video = false;
+
+                function get_oembed_iframe($iframe) {
+                    global $playing_video;
+                    
+                    // Use preg_match to find iframe src
+                    preg_match('/src="(.+?)"/', $iframe, $matches);
+                    $src = $matches[1];
+
+                    // Add extra params to iframe src
+                    $params = array(
+                        'autohide' => 1,
+                        'controls' => 1,
+                        'hd' => 1,
+                        'badge' => 0,
+                        'byline' => 0,
+                        'portrait' => 0,
+                        'title' => 0
+                    );
+
+                    if (!$playing_video) {
+                        $params['autoplay'] = 1;
+                        $playing_video = true;
+                    }
+
+                    $new_src = add_query_arg($params, $src);
+                    $iframe = str_replace($src, $new_src, $iframe);
+
+                    // Add extra attributes to iframe HTML
+                    // $attributes = 'frameborder="0"';
+                    // $iframe = str_replace('></iframe>', ' '.$attributes.'></iframe>', $iframe);
+
+                    return $iframe;
+                }
             ?>
 
             <div class="work_row">
@@ -61,14 +97,17 @@
                                     <div class="work_brand_content content_left">
                                         <div class="table">
                                             <div class="cell">
-                                                <p class="work_brand_copy"><?php echo get_field('project_brand_box2_copy') ?></p>
+                                                <div class="work_brand_copy"><?php echo get_field('project_brand_box2_copy') ?></div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="work_brand_media">
                                         <div class="brand_media_wrapper">
-                                            <?php echo get_field('project_brand_box2_media') ?>
+                                            <?php
+                                                $iframe = get_field('project_brand_box2_media');
+                                                echo get_oembed_iframe($iframe);
+                                            ?>
                                         </div>
                                     </div>
                                 </div>
@@ -80,7 +119,7 @@
                     <?php case '6': ?>
                         <div class="work_row work_brand_images_row">
                             <div class="work_brand_grid clearfix">
-                                <?php foreach ($boxes[$index] as $images) { ?>
+                                <?php foreach ($boxes[$index-1] as $images) { ?>
                                     <div class="brand_grid wc3">
                                         <div class="brand_grid_container" style="background-image:url('<?php echo $images['project_brand_box'.$index.'_image_hover']['url'] ?>')">
                                             <div class="brand_grid_background" style="background-image:url('<?php echo $images['project_brand_box'.$index.'_image']['url'] ?>');"></div>
@@ -93,7 +132,7 @@
 
                     <?php case '4': ?>
                         <div class="work_row">
-                            <div class="work_brand_full" style="background-image:url('<?php echo $boxes[$index]['url'] ?>');"></div>
+                            <div class="work_brand_full" style="background-image:url('<?php echo $boxes[$index-1]['url'] ?>');"></div>
                         </div>
                         <?php break; ?>
 
@@ -104,14 +143,17 @@
                                     <div class="work_brand_content content_right">
                                         <div class="table">
                                             <div class="cell">
-                                                <p class="work_brand_copy"><?php echo get_field('project_brand_box5_copy') ?></p>
+                                                <div class="work_brand_copy"><?php echo get_field('project_brand_box5_copy') ?></div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="work_brand_media">
                                         <div class="brand_media_wrapper">
-                                            <?php echo get_field('project_brand_box5_media') ?>
+                                            <?php
+                                                $iframe = get_field('project_brand_box5_media');
+                                                echo get_oembed_iframe($iframe);
+                                            ?>
                                         </div>
                                     </div>
                                 </div>
@@ -126,7 +168,7 @@
                                     <div class="work_brand_content content_right">
                                         <div class="table">
                                             <div class="cell">
-                                                <p class="work_brand_copy"><?php echo get_field('project_brand_box7_copy') ?></p>
+                                                <div class="work_brand_copy"><?php echo get_field('project_brand_box7_copy') ?></div>
                                             </div>
                                         </div>
                                     </div>

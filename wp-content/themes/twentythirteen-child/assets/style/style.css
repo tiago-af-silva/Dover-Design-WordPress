@@ -2261,6 +2261,7 @@ button {
 }
 
 .work_brand_wrapper {
+  width: 100%;
   display: table;
   /*max-width: 1400px;*/
   margin: 0 auto;

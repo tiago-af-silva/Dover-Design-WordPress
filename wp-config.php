@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The base configurations of the WordPress.
  *
@@ -94,6 +95,9 @@ $table_prefix  = 'wp_';
  * in their development environments.
  */
 define('WP_DEBUG', false);
+
+define('WP_CACHE', true); //Added by WP-Cache Manager
+define( 'WPCACHEHOME', '/var/sites/d/doverdesign.com/public_html/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
 
 /* That's all, stop editing! Happy blogging. */
 
