@@ -103,15 +103,16 @@ function rewrite_menu_items() {
 
     // Move menu items
     $menu[6] = $menu[26];
+    $menu[7] = $menu[26];
     unset($menu[26]);
 
     // Rename menu items
     $menu[5][0] = 'Interior Design';
     $menu[6][0] = 'Brand Experience';
-    $menu[6][0] = 'Visuals';
+    $menu[7][0] = 'Visuals';
 
     // Add separators
-    $menu[7] = array('', 'read', 'separator1', '', 'wp-menu-separator');
+    $menu[8] = array('', 'read', 'separator1', '', 'wp-menu-separator');
 }
 
 // Tweak TinyMCE buttons
