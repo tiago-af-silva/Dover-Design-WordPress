@@ -73,7 +73,7 @@ function work_search_filter($query) {
     global $wp_query;
 
     if ($query->is_main_query() && $wp_query->queried_object_id == get_post_id_for('work')) {
-        $query->set('post_type', array('post', 'brand_experience'));
+        $query->set('post_type', array('post', 'brand_experience', 'visuals'));
         $query->set('orderby', 'post_date');
         $query->set('order', 'DESC');
     }
