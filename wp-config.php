@@ -25,12 +25,12 @@ switch ($_SERVER['SERVER_NAME']) {
         define('DB_PASSWORD', '');
         break;
 
-    case 'dover.madbox.org':
+    case 'doverdesign.madbox.org':
         define('ENVIRONMENT', 'staging');
         define('DB_HOST', 'localhost');
-        define('DB_NAME', 'dover');
-        define('DB_USER', 'root');
-        define('DB_PASSWORD', 'w0rdpr35s');
+        define('DB_NAME', 'doverdesign');
+        define('DB_USER', 'doverdesign');
+        define('DB_PASSWORD', 'X3rKE4728yxym4xN');
         break;
 
     case 'doverdesign.com.gridhosted.co.uk':
