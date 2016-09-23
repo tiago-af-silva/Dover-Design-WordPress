@@ -102,10 +102,10 @@ function rewrite_menu_items() {
     }
 
     // Move custom post menu items
-    $menu[6] = $menu[26];
-    $menu[7] = $menu[27];
-    unset($menu[26]);
+    $menu[6] = $menu[27];
+    $menu[7] = $menu[28];
     unset($menu[27]);
+    unset($menu[28]);
 
     // Rename custom post menu items
     $menu[5][0] = 'Interior Design';
