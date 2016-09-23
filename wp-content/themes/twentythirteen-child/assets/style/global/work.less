@@ -60,6 +60,8 @@ button {
 
 	border-left: 1px solid rgba(0,0,0,0.8);
 	border-right: none;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 
 	&:first-child {
@@ -136,10 +138,6 @@ button {
 	
 }
 
-
-
-
-
 .work__row {
 	display: block;
 	position: relative;
@@ -155,32 +153,8 @@ button {
 	}
 }
 
-
-/*  Old work cell
-
-
-
-
-
 .work__cell {
-	display: block;
-	position: relative;
-	overflow: hidden;
 	width: 20%;
-	padding-right: 5px;
-	padding-bottom: 5px;
-
-	float: left;
-
-	transition: 0.3s ease;
-	-webkit-transition: 0.3s ease;
-	-moz-transition: 0.3s ease;
-	-o-transition: 0.3s ease;
-	-ms-transition: 0.3s ease;
-}*/
-
-.work__cell {
-
 	margin-bottom: 5px;
 
 	&__container {
@@ -203,6 +177,8 @@ button {
 
 		&:hover {
 			.work__background {
+				-webkit-transform: scale(1.06);
+				-ms-transform: scale(1.06);
 				transform: scale(1.06);
 
 				-webkit-filter: grayscale(0%);
@@ -210,12 +186,10 @@ button {
 			}
 
 			.work__title {
-				transform: translateY(-150px);
+				bottom: 0px;
 			}
 		}
 	}
-
-	
 
 	img {
 		display: block;
@@ -239,8 +213,6 @@ button {
 	}
 }
 
-
-
 .work__title {
 	position: absolute;
 	display: block;
@@ -253,7 +225,8 @@ button {
 	background-color: rgba(0,0,0,0.8);
 	z-index: 1;
 
-	transition: transform 0.2s ease; 
+	-webkit-transition: bottom 0.2s ease;
+	transition: bottom 0.2s ease;
 }
 
 .client_name {
@@ -263,11 +236,13 @@ button {
 	margin-bottom: 5px;
 
 	font-size: 18px;
-	font-family: 'Pro-SemiBold',sans-serif;
+	font-family: 'Pro-SemiBold', sans-serif;
 	line-height: 1;
 	color: white;
 
 	z-index: 1;
+
+	transition: bottom 0.2s ease;
 }
 
 .project_location {
@@ -276,7 +251,7 @@ button {
 	margin: 0 auto;
 
 	font-size: 18px;
-	font-family: 'Pro-light',sans-serif;
+	font-family: 'Pro-light', sans-serif;
 	line-height: 1;
 	color: white;
 
@@ -291,6 +266,7 @@ button {
 	top: 0;
 	left: 0;
 
+	-webkit-background-size: cover;
 	background-size: cover;
 	background-position: center;
 
@@ -299,6 +275,8 @@ button {
 	/*filter: url(#greyscale);*/
 	filter: gray;
 
+	-webkit-transform-origin: 50% 50%;
+	-ms-transform-origin: 50% 50%;
 	transform-origin: 50% 50%;
 
 	transition: 0.3s ease;
@@ -331,15 +309,19 @@ button {
 
 .load_more {
 	position: relative;
+	display: -webkit-inline-flex;
+	display: -ms-inline-flexbox;
 	display: inline-flex;
 	width: 100%;
-	margin-top: 30px;
-	margin-bottom: 30px;
+	margin: 30px 0px;
 	cursor: pointer;
+	text-align: center;
 }
 
 .archive_btn {
 	position: relative;
+	display: -webkit-inline-flex;
+	display: -ms-inline-flexbox;
 	display: inline-block;
 	margin: 0 auto;
 	padding: 10px 20px;
@@ -347,13 +329,15 @@ button {
 	background-color: black;
 
 	color: white;
-	font-family: 'Pro-Regular',sans-serif;
+	font-family: 'Pro-Regular', sans-serif;
 	font-size: 15px;
 	text-decoration: none;
 
 	&::before {
 		content: '';
 		position: absolute;
+		display: -webkit-inline-flex;
+		display: -ms-inline-flexbox;
 		display: inline-flex;
 		width: 0;
 		height: 100%;
@@ -384,9 +368,8 @@ button {
 }
 
 .touch {
-
-	.work__title {
-		transform: translateY(-150px);
+	.work__title,
+	.team-button {
+		bottom: 0px;
 	}
-
 }

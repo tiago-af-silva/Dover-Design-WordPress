@@ -17,7 +17,7 @@
 	margin-top: 20px;
 	left: 20px;
 
-	Font-family: 'Pro-Light',sans-serif;
+	Font-family: 'Pro-Light', sans-serif;
 	font-size: 12px;
 	line-height: 1em;
 	text-transform: uppercase;
@@ -47,6 +47,8 @@
 
 	border-left: 1px solid rgba(255,255,255,0.8);
 	border-right: none;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 
 	&:first-child {
@@ -132,12 +134,13 @@
 	height: 25px;
 	left: 0;
 	top: 0;
-	background-image: url(/assets/img/linkedin.svg);
+	background-image: url(/wp-content/themes/twentythirteen-child/assets/img/linkedin.svg);
+	-webkit-background-size: 100%;
 	background-size: 100%;
 }
 
 a:hover .linkedin_logo {
-	background-image: url(/assets/img/linkedin_hover.svg);
+	background-image: url(/wp-content/themes/twentythirteen-child/assets/img/linkedin_hover.svg);
 }
 
 
@@ -147,12 +150,13 @@ a:hover .linkedin_logo {
 	height: 25px;
 	left: 0;
 	top: 0;
-	background-image: url(/assets/img/facebook.svg);
+	background-image: url(/wp-content/themes/twentythirteen-child/assets/img/facebook.svg);
+	-webkit-background-size: 100%;
 	background-size: 100%;
 }
 
 a:hover .facebook_logo {
-	background-image: url(/assets/img/facebook_hover.svg);
+	background-image: url(/wp-content/themes/twentythirteen-child/assets/img/facebook_hover.svg);
 }
 
 
@@ -162,12 +166,13 @@ a:hover .facebook_logo {
 	height: 25px;
 	left: 0;
 	top: 0;
-	background-image: url(/assets/img/twitter.svg);
+	background-image: url(/wp-content/themes/twentythirteen-child/assets/img/twitter.svg);
+	-webkit-background-size: 100%;
 	background-size: 100%;
 }
 
 a:hover .twitter_logo {
-	background-image: url(/assets/img/twitter_hover.svg);
+	background-image: url(/wp-content/themes/twentythirteen-child/assets/img/twitter_hover.svg);
 }
 
 
@@ -177,12 +182,13 @@ a:hover .twitter_logo {
 	height: 25px;
 	left: 0;
 	top: 0;
-	background-image: url(/assets/img/instagram.svg);
+	background-image: url(/wp-content/themes/twentythirteen-child/assets/img/instagram.svg);
+	-webkit-background-size: 100%;
 	background-size: 100%;
 }
 
 a:hover .instagram_logo {
-	background-image: url(/assets/img/instagram_hover.svg);
+	background-image: url(/wp-content/themes/twentythirteen-child/assets/img/instagram_hover.svg);
 }
 
 
@@ -196,7 +202,7 @@ a:hover .instagram_logo {
 	}
 
 	.footer_item a {
-		display: flex;
+		display: block;
 		font-size: 12px;
 		padding: 0 1px 0 5px;
 	}

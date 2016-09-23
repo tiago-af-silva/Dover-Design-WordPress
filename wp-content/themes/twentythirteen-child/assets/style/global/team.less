@@ -32,8 +32,11 @@
 
 
 .people_btn {
-	cursor: pointer;
 	overflow: hidden;
+
+	&.director {
+		cursor: pointer;
+	}
 
 	&:hover {
 		.team-button {
@@ -114,9 +117,8 @@
 	position:absolute;
 	width: 100%;
 	height: 100%;
-
 	padding: 0 30px;
-
+	-webkit-background-size: cover;
 	background-size: cover;
 	background-color: @orange;
 }
@@ -133,13 +135,26 @@
 
 	color: white;
 	font-size: 18px;
-	font-family: 'Pro-Light', 'sans-serif';
+	font-family: 'Pro-Light', sans-serif;
 	line-height: 25px;
+
+	strong {
+		display: block;
+		font-family: 'Pro-SemiBold', sans-serif;
+		font-size: 50px;
+		line-height: 0.9;
+		margin: 3px 0;
+	}
+
+	a {
+		color:white;
+		text-decoration:none;
+
+		&:hover {
+			text-decoration:underline;
+		}
+	}
 }
-
-
-
-
 
 /*  button  */
 
@@ -190,7 +205,7 @@
 .team_info_name {
 	margin-bottom: 5px;
 
-	font-family: 'Pro-Bold',sans-serif;
+	font-family: 'Pro-Bold', sans-serif;
 	font-size: 21px;
 	line-height: 21px;
 	
@@ -204,7 +219,7 @@
 .team_info_roll {
 	margin-bottom: 30px;
 
-	font-family: 'Pro-Light',sans-serif;
+	font-family: 'Pro-Light', sans-serif;
 	font-size: 21px;
 	line-height: 21px;
 	
@@ -239,6 +254,7 @@
 	margin: 20px;
 
 	background-image: url(/wp-content/themes/twentythirteen-child/assets/img/close_btn_b.svg);
+	-webkit-background-size: 100%;
 	background-size: 100%;
 
 	z-index: 99;
@@ -248,6 +264,7 @@
 	-moz-transition: all .2s;
 
 	&:hover {
+		-ms-transform: rotate(90deg);
 		transform: rotate(90deg);
 		-webkit-transform: rotate(90deg);
 		-moz-transform: rotate(90deg);
@@ -284,8 +301,8 @@
 
 }
 
-.touch {
-	.team-button {
-		bottom: 0px;
-	}
-}
+// .touch {
+// 	.team-button {
+// 		bottom: 0px;
+// 	}
+// }
