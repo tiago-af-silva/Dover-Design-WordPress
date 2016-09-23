@@ -6,7 +6,7 @@
             <div class="cell">
                 <div class="contact_wrap_inside">
                     <div class="contact_content">
-                        [email-download download_id="1178" contact_form_id="1174"]
+                        <?php echo do_shortcode('[email-download download_id="1178" contact_form_id="1174"]'); ?>
                     </div>
                 </div>
             </div>
