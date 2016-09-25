@@ -46,8 +46,7 @@
 	-webkit-box-sizing: border-box;
 	
 	-webkit-transform: translateZ(0px);
-	-moz-transform: translateZ(0px);
-	-ms-transform: translateZ(0);
+	-ms-transform: translateZ(0px);
 	transform: translateZ(0px);
 }
 
@@ -114,24 +113,6 @@
 	}
 	100% {
 		-webkit-transform: scale(1.2);
-	}
-}
-
-@-moz-keyframes image_zoom {
-	0%   {
-		-moz-transform: scale(1);
-	}
-	100% {
-		-moz-transform: scale(1.2);
-	}
-}
-
-@-o-keyframes image_zoom {
-	0%   {
-		-o-transform: scale(1);
-	}
-	100% {
-		-o-transform: scale(1.2);
 	}
 }
 
@@ -283,7 +264,6 @@
 /*--- Slide Animation ---*/
 
 .slick-active .once_slide {
-	-moz-animation: slideup 2s ease forwards;
 	-webkit-animation: slideup 2s ease forwards; /* Chrome, Safari, Opera */ 
     animation: slideup 2s ease forwards;
 }
@@ -298,18 +278,11 @@
 	0%   {-webkit-transform: translateY(-200px); opacity: 0}
     50%   {-webkit-transform: translateY(-200px); opacity: 0}
     100% {-webkit-transform: translateY(0px); opacity: 1}
-}
-
-@-moz-keyframes slideup {
-	0%   {-moz-transform: translateY(-200px); opacity: 0}
-    50%   {-moz-transform: translateY(-200px); opacity: 0}
-    100% {-moz-transform: translateY(0px); opacity: 1}
 }
 
 
 
 .slick-active .slide_title {
-	-moz-animation: slideup 2s ease forwards;
 	-webkit-animation: slideup 2s ease forwards; /* Chrome, Safari, Opera */ 
     animation: slideup 2s ease forwards;
 }
@@ -326,16 +299,9 @@
     100% {-webkit-transform: translateY(0px); opacity: 1}
 }
 
-@-moz-keyframes slideup {
-	0%   {-moz-transform: translateY(-200px); opacity: 0}
-    50%   {-moz-transform: translateY(-200px); opacity: 0}
-    100% {-moz-transform: translateY(0px); opacity: 1}
-}
-
 
 
 .slick-active .find_more_btn {
-	-moz-animation: slidedow 2s ease forwards;
 	-webkit-animation: slidedow 2s ease forwards; /* Chrome, Safari, Opera */ 
     animation: slidedow 2s ease forwards;
 }
@@ -350,12 +316,6 @@
 	0%   {-webkit-transform: translateY(200px); opacity: 0}
     50%   {-webkit-transform: translateY(200px); opacity: 0}
     100% {-webkit-transform: translateY(0px); opacity: 1}
-}
-
-@-moz-keyframes slidedow {
-	0%   {-moz-transform: translateY(200px); opacity: 0}
-    50%   {-moz-transform: translateY(200px); opacity: 0}
-    100% {-moz-transform: translateY(0px); opacity: 1}
 }
 
 
