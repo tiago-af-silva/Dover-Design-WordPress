@@ -45,14 +45,20 @@
         <?php } elseif (get_the_ID() == get_post_id_for('alchemy')) { ?>
             <script>
                 $(window).load(function () {
-                    $('form').each(function () {
-                        $(this).find('input').keypress(function (e) {
-                            // Enter pressed?
-                            if (e.which == 10 || e.which == 13) {
-                                this.form.submit();
-                            }
+                    if ($('.wpcf7-mail-sent-ok').length > 0) {
+                        $('.alchemy_form').remove();
+                        $('.alchemy_download').show();
+
+                    } else {
+                        $('form').each(function () {
+                            $(this).find('input').keypress(function (e) {
+                                // Enter pressed?
+                                if (e.which == 10 || e.which == 13) {
+                                    this.form.submit();
+                                }
+                            });
                         });
-                    });
+                    }
                 });
             </script>
         <?php } ?>

@@ -11,7 +11,13 @@
                         &lsquo;Alchemy for Restaurateurs&rsquo;
                     </h1>
 
-                    <?php echo do_shortcode('[email-download download_id="1193" contact_form_id="1192"]'); ?>
+                    <div class="alchemy_form">
+                        <?php echo do_shortcode('[email-download download_id="1193" contact_form_id="1192"]'); ?>
+                    </div>
+
+                    <div class="alchemy_download">
+                        <?php echo do_shortcode('[download id="1193" template="alchemy"]'); ?>
+                    </div>
                 </div>
             </div>
         </div>
