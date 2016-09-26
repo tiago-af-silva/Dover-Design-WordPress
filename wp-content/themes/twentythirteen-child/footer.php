@@ -50,11 +50,14 @@
                         $('.alchemy_download').show();
 
                     } else {
-                        $('#alchemy-form-name, #alchemy-form-email').keypress(function (e) {
-                            // Enter pressed?
-                            if (e.which == 10 || e.which == 13) {
-                                this.form.submit();
-                            }
+                        $('form.wpcf7-form').each(function () {
+                            $(this).find('input').keypress(function (e) {
+                                // Enter pressed?
+                                if (e.which == 10 || e.which == 13) {
+                                    this.form.submit();
+                                    return false;
+                                }
+                            });
                         });
                     }
                 });
