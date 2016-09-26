@@ -19,6 +19,13 @@ function get_post_id_for($slug) {
     return (array_key_exists($slug, $post_ids) ? $post_ids[$slug] : null);
 }
 
+// Super admin account ID
+// This is the only user account with access to everything in the CMS
+$superadmin_id = 3;
+
+// Get current user object
+$current_user = wp_get_current_user();
+
 // Remove post formats support
 add_action('after_setup_theme', 'remove_post_formats', 11);
 function remove_post_formats() {
@@ -84,7 +91,8 @@ add_action('admin_menu', 'rewrite_menu_items');
 function rewrite_menu_items() {
     global $menu;
     
-    if (!current_user_can('manage_options')) {
+    // if (!current_user_can('manage_options')) {
+    if ($current_user->ID != $superadmin_id) {
         // Hide dashboard
         remove_menu_page('index.php');
 
@@ -159,7 +167,39 @@ function register_my_menu() {
     register_nav_menu('footer', __('Footer', 'twentythirteen'));
 }
 
-if (!current_user_can('manage_options')) {
+add_action('admin_head', 'custom_admin_styles');
+function custom_admin_styles() {
+    // Only show slideshow fields when editing the homepage
+    if (!isset($_GET['post']) || $_GET['post'] != get_post_id_for('home')) {
+        echo '<style>
+            #simple_fields_connector_5 { display:none; }
+            #simple_fields_connector_17 { display:none; }
+        </style>';
+    }
+    
+    if ($_GET['post'] == get_post_id_for('home')) {
+        echo '<style>
+            #simple_fields_connector_17 .add_media { display:none; }
+        </style>';
+    }
+
+    // Only show clients fields when editing the about page
+    if (!isset($_GET['post']) || $_GET['post'] != get_post_id_for('about')) {
+        echo '<style>
+            #simple_fields_connector_6 { display:none; }
+        </style>';
+    }
+
+    // Only show clients fields when editing the about page
+    if (!isset($_GET['post']) || $_GET['post'] != get_post_id_for('team')) {
+        echo '<style>
+            #simple_fields_connector_15 { display:none; }
+        </style>';
+    }
+}
+
+// if (!current_user_can('manage_options')) {
+if ($current_user->ID != $superadmin_id) {
     // Hide a few things
     add_action('init', 'unregister_taxonomies');
     function unregister_taxonomies() {
@@ -213,37 +253,6 @@ if (!current_user_can('manage_options')) {
 
         if (isset($_GET['post']) && $_GET['post'] == get_post_id_for('home')) {
             remove_meta_box('simple_fields_connector_5', 'page', 'normal');
-        }
-    }
-
-    add_action('admin_head', 'custom_admin_styles');
-    function custom_admin_styles() {
-        // Only show slideshow fields when editing the homepage
-        if (!isset($_GET['post']) || $_GET['post'] != get_post_id_for('home')) {
-            echo '<style>
-                #simple_fields_connector_5 { display:none; }
-                #simple_fields_connector_17 { display:none; }
-            </style>';
-        }
-
-        if ($_GET['post'] == get_post_id_for('home')) {
-            echo '<style>
-                #simple_fields_connector_17 .add_media { display:none; }
-            </style>';
-        }
-
-        // Only show clients fields when editing the about page
-        if (!isset($_GET['post']) || $_GET['post'] != get_post_id_for('about')) {
-            echo '<style>
-                #simple_fields_connector_6 { display:none; }
-            </style>';
-        }
-
-        // Only show clients fields when editing the about page
-        if (!isset($_GET['post']) || $_GET['post'] != get_post_id_for('team')) {
-            echo '<style>
-                #simple_fields_connector_15 { display:none; }
-            </style>';
         }
     }
 
