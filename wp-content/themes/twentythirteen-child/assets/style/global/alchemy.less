@@ -1,16 +1,26 @@
 .alchemy_wrap {
-    position: absolute;
+    position: relative;
     display: block;
     width: 100%;
-    height: 100%;
+    height: auto;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
+
+    padding-top: 120px;
+    padding-bottom: 60px;
+
     background-image: url(/wp-content/themes/twentythirteen-child/assets/content/alchemy/alchemy_bg.jpg);
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center;
+
+    @media only screen and (min-width: 451px) {
+        position: absolute;
+        height: 100%;
+        padding: 0;
+    }
 }
 
 .alchemy_wrap_content {
