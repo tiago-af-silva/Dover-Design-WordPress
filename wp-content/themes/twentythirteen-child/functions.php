@@ -14,6 +14,7 @@ function get_post_id_for($slug) {
         'about' => '67',
         'work' => '70',
         'team' => '80',
+        'alchemy' => '1181',
     );
 
     return (array_key_exists($slug, $post_ids) ? $post_ids[$slug] : null);
@@ -176,7 +177,7 @@ function custom_admin_styles() {
             #simple_fields_connector_17 { display:none; }
         </style>';
     }
-    
+
     if ($_GET['post'] == get_post_id_for('home')) {
         echo '<style>
             #simple_fields_connector_17 .add_media { display:none; }

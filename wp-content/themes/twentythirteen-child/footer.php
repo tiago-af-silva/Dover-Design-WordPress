@@ -36,10 +36,24 @@
 
         <?php if (get_the_ID() == get_post_id_for('home')) { ?>
             <script>
-                $(window).load(function() {
+                $(window).load(function () {
                     // Show loading animation
                     $('.loader').fadeOut('slow');
                 })
+            </script>
+
+        <?php } elseif (get_the_ID() == get_post_id_for('alchemy')) { ?>
+            <script>
+                $(window).load(function () {
+                    $('form').each(function () {
+                        $(this).find('input').keypress(function (e) {
+                            // Enter pressed?
+                            if (e.which == 10 || e.which == 13) {
+                                this.form.submit();
+                            }
+                        });
+                    });
+                });
             </script>
         <?php } ?>
     </body>
