@@ -12,7 +12,7 @@
                     </h1>
 
                     <div class="alchemy_form">
-                        <?php echo do_shortcode('[email-download download_id="1193" contact_form_id="1192"]'); ?>
+                        <?php echo do_shortcode('[contact-form-7 id="1192" title="Alchemy for Restaurateurs"]'); ?>
                     </div>
 
                     <div class="alchemy_download">
