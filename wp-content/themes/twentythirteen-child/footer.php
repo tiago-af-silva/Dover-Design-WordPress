@@ -50,7 +50,7 @@
                         $('.alchemy_download').show();
 
                     } else {
-                        $('form').each(function () {
+                        $('form.wpcf7-form').each(function () {
                             $(this).find('input').keypress(function (e) {
                                 // Enter pressed?
                                 if (e.which == 10 || e.which == 13) {
