@@ -97,7 +97,7 @@ $table_prefix  = 'wp_';
 define('WP_DEBUG', false);
 
 define('WP_CACHE', true); //Added by WP-Cache Manager
-define( 'WPCACHEHOME', '/var/sites/d/doverdesign.com/public_html/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
+define( 'WPCACHEHOME', '/Users/tiagosilva/Sites/doverdesign.com/htdocs/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
 
 /* That's all, stop editing! Happy blogging. */
 
