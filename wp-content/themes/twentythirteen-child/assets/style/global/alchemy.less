@@ -17,20 +17,20 @@
     position: relative;
     display: block;
     font-family: 'Pro-Bold', sans-serif;
-    padding: 20px;
+    padding: 0 20px 60px 20px;
     margin: 0 auto;
 
     h1 {
-        font-size: 40px;
+        font-size: 34px;
         color: #FFFFFF;
         text-transform: uppercase;
         text-shadow: 2px 2px 10px #000000;
-        margin-bottom: 10%;
+        margin-bottom: 70px;
     }
 
     form {
         table {
-            margin: 0 auto 5% auto;
+            margin: 0 auto;
 
             td {
                 display: block;
@@ -65,24 +65,6 @@
             }
         }
 
-        @media only screen and (min-width: 451px) {
-            table {
-                td {
-                    display: table-cell;
-                    vertical-align: middle;
-                }
-            }
-
-            label {
-                padding-right: 25px;
-            }
-
-            input {
-                width: 330px;
-                margin: 18px 0 20px 0;
-            }
-        }
-
         input[type="submit"],
         .wpcf7-submit {
             display: none;
@@ -113,7 +95,7 @@
                 text-align: center;
                 background-color: grey;
                 background-color: rgba(255, 255, 255, 0.5);
-                padding-top: 20px;
+                padding-top: 18px;
                 border: 2px solid #FF6A00;
                 border-radius: 10px;
 
@@ -147,5 +129,29 @@
         text-align: left;
         text-shadow: 2px 2px 10px #000000;
         margin: -10px 0 10px 0;
+    }
+
+    @media only screen and (min-width: 451px) {
+        h1 {
+            font-size: 40px;
+        }
+
+        form {
+            table {
+                td {
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+            }
+
+            label {
+                padding-right: 25px;
+            }
+
+            input {
+                width: 330px;
+                margin: 18px 0 20px 0;
+            }
+        }
     }
 }
