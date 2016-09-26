@@ -21,8 +21,8 @@ switch ($_SERVER['SERVER_NAME']) {
         define('ENVIRONMENT', 'development');
         define('DB_HOST', 'localhost');
         define('DB_NAME', 'doverdesign');
-        define('DB_USER', 'root');
-        define('DB_PASSWORD', '');
+        define('DB_USER', 'mamp');
+        define('DB_PASSWORD', 'secret');
         break;
 
     case 'doverdesign.madbox.org':
