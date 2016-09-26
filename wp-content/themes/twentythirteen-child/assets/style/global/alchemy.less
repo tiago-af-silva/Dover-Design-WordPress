@@ -89,6 +89,53 @@
         }
     }
 
+    .alchemy_download {
+        display: none;
+
+        .download-link {
+            position: relative;
+            display: inline-block;
+            font-family: 'Pro-SemiBold',sans-serif;
+            font-size: 18px;
+            color: #FFFFFF;
+            text-decoration: none;
+            text-shadow: 2px 2px 10px #000000;
+            padding: 125px 10px 10px 10px;
+
+            &-icon {
+                position: absolute;
+                top: 10px;
+                left: 50%;
+                margin-left: -50px;
+                display: block;
+                width: 100px;
+                height: 100px;
+                text-align: center;
+                background-color: grey;
+                background-color: rgba(255, 255, 255, 0.5);
+                padding-top: 20px;
+                border: 2px solid #FF6A00;
+                border-radius: 10px;
+
+                transition: background-color 0.3s ease;
+                -webkit-transition: background-color 0.3s ease;
+                -moz-transition: background-color 0.3s ease;
+                -o-transition: background-color 0.3s ease;
+                -ms-transition: background-color 0.3s ease;
+            }
+
+            &:hover,
+            &:focus,
+            &:active {
+                text-decoration: none;
+
+                .download-link-icon {
+                    background-color: rgba(255, 255, 255, 0.6);
+                }
+            }
+        }
+    }
+
     .screen-reader-response,
     .wpcf7-response-output {
         display: none;

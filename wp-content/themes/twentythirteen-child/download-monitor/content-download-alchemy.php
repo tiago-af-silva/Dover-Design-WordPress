@@ -4,5 +4,6 @@
     <span class="download-link-icon">
         <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/content/alchemy/arrow-down.png">
     </span>
-    click to download
+    
+    <span>click to download</span>
 </a>
