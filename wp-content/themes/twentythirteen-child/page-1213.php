@@ -1,14 +1,39 @@
 <?php /* NEWSLETTER */ ?>
 <?php get_header(); ?>
 
-    <?php while (have_posts()) { the_post(); ?>
+    <?php
+        $args = array(
+            'numberposts' => '5',
+            'post_type' => 'newsletter',
+        );
+
+        $recent_posts = wp_get_recent_posts($args);
+
+        while (have_posts()) { the_post();
+    ?>
         <div class="about_wrap">
             <div class="about_wrap_inside">
-                <div class="mailchimp-archive">
-                    <script language="javascript" src="//tiagosilva.us15.list-manage.com/generate-js/?u=2d95da91c5f6cc8eb8806c245&fid=1165&show=10" type="text/javascript"></script>
-                </div>
+                <?php if (count($recent_posts) > 0) { ?>
+                    <div class="mailchimp-latest">
+                        <iframe src="<?php echo trim($recent_posts[0]['post_content']) ?>"></iframe>
+                    </div>
+                <?php } ?>
 
-                <div class="about_content">Founded in 1995, we are London based design agency with a broad range of experience in building and developing brands predominantly in the restaurant sector. Every project receives the personal attention of a design director working with a team of experienced designers and technicians. We thrive on working out creative solutions and developing the concept with the client. Creating the design and building the interior that delivers the brief, is what we do best. We hold the vision of the finished product throughout while respecting, integrating and coordinating all the other disciplines and services that make up the project.</div>
+                <?php
+                    array_shift($recent_posts);
+
+                    if (count($recent_posts) > 0) {
+                ?>
+                    <div class="mailchimp-archive">
+                        <ul>
+                            <?php foreach ($recent_posts as $recent_post) { ?>
+                                <li>
+                                    <a href="<?php echo trim($recent_post['post_content']) ?>" target="_blank"><?php echo $recent_post['post_title'] ?></a>
+                                </li>
+                            <?php } ?>
+                        </ul>
+                    </div>
+                <?php } ?>
             </div>
 
             <?php include('footer-nav.php'); ?>
