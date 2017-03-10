@@ -192,6 +192,9 @@
 	# End HackRepair.com Blacklist, http://pastebin.com/u/hackrepair
 # END iThemes Security - Do not modify or remove this line
 
+# Permanent redirect to new Branding page
+RedirectMatch 302 /our-work/brand-experience/(.*) /our-work/branding/$1
+
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On

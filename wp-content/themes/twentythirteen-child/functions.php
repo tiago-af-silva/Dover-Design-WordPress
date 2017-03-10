@@ -46,7 +46,7 @@ function create_posttype() {
         'public' => true,
         'capability_type' => 'post',
         'map_meta_cap' => true,
-        'rewrite' => array('slug' => 'brand-experience', 'with_front' => true),
+        'rewrite' => array('slug' => 'branding', 'with_front' => true),
         'query_var' => false,
         'delete_with_user' => true,
         'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'post-formats'),
