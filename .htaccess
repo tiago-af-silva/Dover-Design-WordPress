@@ -192,6 +192,12 @@
 	</IfModule>
 # END iThemes Security - Do not modify or remove this line
 
+# Permanent redirect to new Branding page
+RedirectMatch 302 /our-work/brand-experience/(.*) /our-work/branding/$1
+
+# Permanent redirect to the right project listing page
+RedirectMatch 301 /our-work /work
+
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On

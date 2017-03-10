@@ -36,7 +36,7 @@ function remove_post_formats() {
 // Custom post types
 add_action('init', 'create_posttype');
 function create_posttype() {
-    // Brand experience
+    // Branding
     register_post_type('brand_experience', array(
         'labels' => array(
             'name' => __('Posts'),
@@ -46,7 +46,7 @@ function create_posttype() {
         'public' => true,
         'capability_type' => 'post',
         'map_meta_cap' => true,
-        'rewrite' => array('slug' => 'brand-experience', 'with_front' => true),
+        'rewrite' => array('slug' => 'branding', 'with_front' => true),
         'query_var' => false,
         'delete_with_user' => true,
         'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'post-formats'),
@@ -73,6 +73,18 @@ function create_posttype() {
 
     register_taxonomy_for_object_type('category', 'visuals');
     register_taxonomy_for_object_type('post_tag', 'visuals');
+
+    // Newsletter - used by Zapier
+    register_post_type('newsletter', array(
+        'public' => false,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'capability_type' => 'post',
+        'map_meta_cap' => true,
+        'query_var' => false,
+        'delete_with_user' => false,
+        'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'revisions'),
+    ));
 }
 
 // Show custom type posts on the "Our work" page
@@ -118,7 +130,7 @@ function rewrite_menu_items() {
 
     // Rename custom post menu items
     $menu[5][0] = 'Interior Design';
-    $menu[6][0] = 'Brand Experience';
+    $menu[6][0] = 'Branding';
     $menu[7][0] = 'Visuals';
 
     // Add separators

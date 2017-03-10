@@ -80,14 +80,11 @@
 
     <div class="work_wrap" data-js-module="filtering-demo">
         <div class="filter-button-group js-radio-button-group filter_nav">
-            <button class="button filter_nav_item is-checked" data-filter="*">
-                <div class="filter_btn"><span>All</span></div>
-            </button>
             <button class="button filter_nav_item" data-filter=".interior">
                 <div class="filter_btn"><span>Interior Design</span></div>
             </button>
             <button class="button filter_nav_item" data-filter=".brand">
-                <div class="filter_btn"><span>Brand Experience</span></div>
+                <div class="filter_btn"><span>Branding</span></div>
             </button>
             <button class="button filter_nav_item" data-filter=".visuals">
                 <div class="filter_btn"><span>Visuals</span></div>
