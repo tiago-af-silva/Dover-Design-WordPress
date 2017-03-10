@@ -73,6 +73,18 @@ function create_posttype() {
 
     register_taxonomy_for_object_type('category', 'visuals');
     register_taxonomy_for_object_type('post_tag', 'visuals');
+
+    // Newsletter - used by Zapier
+    register_post_type('newsletter', array(
+        'public' => false,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'capability_type' => 'post',
+        'map_meta_cap' => true,
+        'query_var' => false,
+        'delete_with_user' => false,
+        'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'revisions'),
+    ));
 }
 
 // Show custom type posts on the "Our work" page
