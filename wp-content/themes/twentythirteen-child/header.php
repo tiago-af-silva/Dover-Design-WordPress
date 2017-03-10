@@ -16,6 +16,16 @@
         <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri() ?>/assets/style/style.css?v=20160926" />
 
         <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/vendor/modernizr-2.6.2.min.js"></script>
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		
+		  ga('create', 'UA-91633268-1', 'auto');
+		  ga('send', 'pageview');
+		
+		</script>
     </head>
     <body <?php body_class(); ?>>
         <!--[if lt IE 7]>
