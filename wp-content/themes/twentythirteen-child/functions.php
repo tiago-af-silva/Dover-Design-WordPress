@@ -15,6 +15,7 @@ function get_post_id_for($slug) {
         'work' => '70',
         'team' => '80',
         'alchemy' => '1181',
+        'newsletter' => '1213',
     );
 
     return (array_key_exists($slug, $post_ids) ? $post_ids[$slug] : null);
@@ -44,6 +45,7 @@ function create_posttype() {
             'all_items' => __('All Posts'),
         ),
         'public' => true,
+        'menu_position' => 6,
         'capability_type' => 'post',
         'map_meta_cap' => true,
         'rewrite' => array('slug' => 'branding', 'with_front' => true),
@@ -63,6 +65,7 @@ function create_posttype() {
             'all_items' => __('All Posts'),
         ),
         'public' => true,
+        'menu_position' => 7,
         'capability_type' => 'post',
         'map_meta_cap' => true,
         'rewrite' => array('slug' => 'visuals', 'with_front' => true),
@@ -76,7 +79,13 @@ function create_posttype() {
 
     // Newsletter - used by Zapier
     register_post_type('newsletter', array(
+        'labels' => array(
+            'name' => __('Posts'),
+            'singular_name' => __('Post'),
+            'all_items' => __('All Posts'),
+        ),
         'public' => false,
+        'menu_position' => 9,
         'show_ui' => true,
         'show_in_menu' => true,
         'capability_type' => 'post',
@@ -103,14 +112,13 @@ function work_search_filter($query) {
 add_action('admin_menu', 'rewrite_menu_items');
 function rewrite_menu_items() {
     global $menu;
-    
-    // if (!current_user_can('manage_options')) {
+
     if ($current_user->ID != $superadmin_id) {
         // Hide dashboard
         remove_menu_page('index.php');
 
         // Remove separator after dashboard
-        unset($menu[4]);
+        // unset($menu[4]);
 
         // Hide comments
         remove_menu_page('edit-comments.php');
@@ -122,19 +130,16 @@ function rewrite_menu_items() {
         remove_menu_page('plugins.php');
     }
 
-    // Move custom post menu items
-    $menu[6] = $menu[27];
-    $menu[7] = $menu[28];
-    unset($menu[27]);
-    unset($menu[28]);
-
     // Rename custom post menu items
     $menu[5][0] = 'Interior Design';
     $menu[6][0] = 'Branding';
     $menu[7][0] = 'Visuals';
-
-    // Add separators
     $menu[8] = array('', 'read', 'separator1', '', 'wp-menu-separator');
+    $menu[9][0] = 'Newsletter';
+
+    // Add another separator
+    $menu[11] = $menu[10]; // Move "Media" one index down before
+    $menu[10] = array('', 'read', 'separator1', '', 'wp-menu-separator');
 }
 
 // Tweak TinyMCE buttons
