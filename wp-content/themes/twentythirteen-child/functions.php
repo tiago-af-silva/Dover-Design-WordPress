@@ -36,7 +36,7 @@ function remove_post_formats() {
 // Custom post types
 add_action('init', 'create_posttype');
 function create_posttype() {
-    // Brand experience
+    // Branding
     register_post_type('brand_experience', array(
         'labels' => array(
             'name' => __('Posts'),
@@ -118,7 +118,7 @@ function rewrite_menu_items() {
 
     // Rename custom post menu items
     $menu[5][0] = 'Interior Design';
-    $menu[6][0] = 'Brand Experience';
+    $menu[6][0] = 'Branding';
     $menu[7][0] = 'Visuals';
 
     // Add separators

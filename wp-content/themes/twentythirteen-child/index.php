@@ -87,7 +87,7 @@
                 <div class="filter_btn"><span>Interior Design</span></div>
             </button>
             <button class="button filter_nav_item" data-filter=".brand">
-                <div class="filter_btn"><span>Brand Experience</span></div>
+                <div class="filter_btn"><span>Branding</span></div>
             </button>
             <button class="button filter_nav_item" data-filter=".visuals">
                 <div class="filter_btn"><span>Visuals</span></div>
