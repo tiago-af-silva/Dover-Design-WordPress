@@ -1,12 +1,5 @@
 # BEGIN iThemes Security - Do not modify or remove this line
 # iThemes Security Config Details: 2
-	<IfModule mod_rewrite.c>
-		RewriteEngine On
-
-		# Disable PHP in Uploads - Security > Settings > System Tweaks > Uploads
-		RewriteRule ^wp\-content/uploads/.*\.(?:php[1-6]?|pht|phtml?)$ - [NC,F]
-	</IfModule>
-
 	# Enable HackRepair.com's blacklist feature - Security > Settings > Banned Users > Default Blacklist
 	# Start HackRepair.com Blacklist
 	RewriteEngine on
@@ -190,6 +183,13 @@
 	# End Abuse HTTP Referrer Blocking
 	RewriteRule ^.* - [F,L]
 	# End HackRepair.com Blacklist, http://pastebin.com/u/hackrepair
+
+	<IfModule mod_rewrite.c>
+		RewriteEngine On
+
+		# Disable PHP in Uploads - Security > Settings > System Tweaks > Uploads
+		RewriteRule ^wp\-content/uploads/.*\.(?:php[1-6]?|pht|phtml?)$ - [NC,F]
+	</IfModule>
 # END iThemes Security - Do not modify or remove this line
 
 # BEGIN WordPress
