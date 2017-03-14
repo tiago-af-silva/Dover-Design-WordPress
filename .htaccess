@@ -1,3 +1,12 @@
+# Redirect old work pages to new ones
+RedirectMatch 302 /our-work/brand-experience/(.*) /work/branding/$1
+RedirectMatch 302 /our-work$ /work/
+RedirectMatch 302 /our-work/(.*) /work/$1
+
+# Show a 404 error when trying to access the Git files
+RedirectMatch 404 /\.git
+RedirectMatch 404 /\.gitignore
+
 # BEGIN iThemes Security - Do not modify or remove this line
 # iThemes Security Config Details: 2
 	# Enable HackRepair.com's blacklist feature - Security > Settings > Banned Users > Default Blacklist
@@ -192,12 +201,6 @@
 	</IfModule>
 # END iThemes Security - Do not modify or remove this line
 
-# Permanent redirect to new Branding page
-RedirectMatch 302 /our-work/brand-experience/(.*) /our-work/branding/$1
-
-# Permanent redirect to the right project listing page
-RedirectMatch 301 /our-work/?$ /work
-
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
@@ -209,7 +212,3 @@ RewriteRule . /index.php [L]
 </IfModule>
 
 # END WordPress
-
-# Show a 404 error when trying to access the Git files
-RedirectMatch 404 /\.git
-RedirectMatch 404 /\.gitignore
