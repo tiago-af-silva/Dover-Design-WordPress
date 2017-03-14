@@ -15,7 +15,7 @@ function get_post_id_for($slug) {
         'work' => '70',
         'team' => '80',
         'alchemy' => '1181',
-        'newsletter' => '1213',
+        'news' => '1213',
     );
 
     return (array_key_exists($slug, $post_ids) ? $post_ids[$slug] : null);
@@ -77,7 +77,7 @@ function create_posttype() {
     register_taxonomy_for_object_type('category', 'visuals');
     register_taxonomy_for_object_type('post_tag', 'visuals');
 
-    // Newsletter - used by Zapier
+    // Newsletter post type - used by Zapier
     register_post_type('newsletter', array(
         'labels' => array(
             'name' => __('Posts'),
@@ -135,7 +135,7 @@ function rewrite_menu_items() {
     $menu[6][0] = 'Branding';
     $menu[7][0] = 'Visuals';
     $menu[8] = array('', 'read', 'separator1', '', 'wp-menu-separator');
-    $menu[9][0] = 'Newsletter';
+    $menu[9][0] = 'News';
 
     // Add another separator
     $menu[11] = $menu[10]; // Move "Media" one index down before

@@ -1,4 +1,4 @@
-<?php /* NEWSLETTER */ ?>
+<?php /* NEWS */ ?>
 <?php get_header(); ?>
 
     <?php
