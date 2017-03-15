@@ -48,7 +48,7 @@
                         <div class="news_article_content">
                             <?php
                                 $dom = new DOMDocument();
-                                @$dom->loadHTMLFile(trim($recent_posts[0]['post_content']));
+                                @$dom->loadHTMLFile(trim($recent_post['post_content']));
                                 $node = $dom->getElementById('bodyTable');
 
                                 $innerHTML = '';
@@ -56,7 +56,7 @@
 
                                 foreach ($children as $child) { 
                                     $innerHTML .= $child->ownerDocument->saveXML($child); 
-                                } 
+                                }
 
                                 echo $innerHTML;
                             ?>
