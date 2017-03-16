@@ -3,10 +3,6 @@
 
     <?php while (have_posts()) { the_post(); ?>
         <div class="news_wrap">
-            <div class="news_title">
-                <h1>News</h1>
-            </div>
-
             <div class="news_content clearfix">
                 <?php
                     $args = array(
