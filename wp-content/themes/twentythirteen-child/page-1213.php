@@ -45,7 +45,7 @@
                             <?php
                                 $dom = new DOMDocument();
                                 @$dom->loadHTMLFile(trim($recent_post['post_content']));
-                                $node = $dom->getElementById('bodyTable');
+                                $node = $dom->getElementById('bodyCell');
 
                                 $innerHTML = '';
                                 $children = $node->childNodes;
