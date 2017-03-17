@@ -13,7 +13,7 @@
         <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
         <link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png" />
 
-        <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri() ?>/assets/style/style.css?v=20170315" />
+        <link rel="stylesheet" type="text/css" href="<?php echo get_stylesheet_directory_uri() ?>/assets/style/style.css?v=20170316" />
 
         <script src="<?php echo get_stylesheet_directory_uri() ?>/assets/js/vendor/modernizr-2.6.2.min.js"></script>
 		<script>

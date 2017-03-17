@@ -43,18 +43,32 @@
 
                         <div class="news_article_content">
                             <?php
-                                $dom = new DOMDocument();
-                                @$dom->loadHTMLFile(trim($recent_post['post_content']));
-                                $node = $dom->getElementById('bodyCell');
+                                $newsArticleReceived = false;
 
-                                $innerHTML = '';
-                                $children = $node->childNodes;
+                                $file = @file_get_contents(trim($recent_post['post_content']));
 
-                                foreach ($children as $child) { 
-                                    $innerHTML .= $child->ownerDocument->saveXML($child); 
+                                if ($file !== false) {
+                                    $dom = new DOMDocument();
+                                    @$dom->loadHTML(mb_convert_encoding($file, 'HTML-ENTITIES', 'UTF-8'));
+
+                                    $node = $dom->getElementById('bodyTable');
+
+                                    if ($node->childNodes->length > 0) {
+                                        $innerHTML = '';
+
+                                        foreach ($node->childNodes as $child) { 
+                                            $innerHTML .= $child->ownerDocument->saveXML($child); 
+                                        }
+
+                                        $newsArticleReceived = true;
+
+                                        echo $innerHTML;
+                                    }
                                 }
 
-                                echo $innerHTML;
+                                if (!$newsArticleReceived) {
+                                    echo '<p class="news_article_content_error"><strong>Oops!</strong> It looks like we couldn&rsquo;t get this newsletter.</p>';
+                                }
                             ?>
                         </div>
                     </div>
