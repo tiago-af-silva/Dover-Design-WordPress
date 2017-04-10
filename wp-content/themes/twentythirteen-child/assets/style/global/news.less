@@ -35,7 +35,7 @@
 .news_article_top {
     display: block;
     width: 100%;
-    padding: 10px 0;
+    padding: 10px 20px;
     margin-bottom: 20px;
     border-top: 1px solid #cccccc;
     border-bottom: 1px solid #cccccc;
@@ -61,6 +61,11 @@
                 }
             }
         }
+    }
+
+    @media only screen and (min-width: 900px) {
+        padding-left: 0px;
+        padding-right: 0px;
     }
 }
 
@@ -94,21 +99,40 @@
 
 .news_article_meta {
     display: inline-block;
-    width: 250px;
+    width: 100%;
     vertical-align: top;
-    padding-right: 30px;
+    padding: 10px 20px;
+
+    @media only screen and (min-width: 900px) {
+        width: 250px;
+        padding: 0 30px 0 0;
+    }
 }
 
 .news_article_content {
     display: inline-block;
-    width: 645px;
+    width: 100%;
     vertical-align: top;
-    background-color: #ffffff;
+    padding: 20px;
+
+    &_inner {
+        background-color: #ffffff;
+    }
+
+    img {
+        width:100% !important;
+        height:auto !important;
+    }
 
     // MailChimp stuff
     #templatePreheader,
     #templateFooter {
         display: none;
+    }
+
+    @media only screen and (min-width: 900px) {
+        width: 645px;
+        padding: 0px;
     }
 }
 

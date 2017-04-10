@@ -42,34 +42,36 @@
                         </div>
 
                         <div class="news_article_content">
-                            <?php
-                                $newsArticleReceived = false;
+                            <div class="news_article_content_inner">
+                                <?php
+                                    $newsArticleReceived = false;
 
-                                $file = @file_get_contents(trim($recent_post['post_content']));
+                                    $file = @file_get_contents(trim($recent_post['post_content']));
 
-                                if ($file !== false) {
-                                    $dom = new DOMDocument();
-                                    @$dom->loadHTML(mb_convert_encoding($file, 'HTML-ENTITIES', 'UTF-8'));
+                                    if ($file !== false) {
+                                        $dom = new DOMDocument();
+                                        @$dom->loadHTML(mb_convert_encoding($file, 'HTML-ENTITIES', 'UTF-8'));
 
-                                    $node = $dom->getElementById('bodyTable');
+                                        $node = $dom->getElementById('bodyTable');
 
-                                    if ($node->childNodes->length > 0) {
-                                        $innerHTML = '';
+                                        if ($node->childNodes->length > 0) {
+                                            $innerHTML = '';
 
-                                        foreach ($node->childNodes as $child) { 
-                                            $innerHTML .= $child->ownerDocument->saveXML($child); 
+                                            foreach ($node->childNodes as $child) { 
+                                                $innerHTML .= $child->ownerDocument->saveXML($child); 
+                                            }
+
+                                            $newsArticleReceived = true;
+
+                                            echo $innerHTML;
                                         }
-
-                                        $newsArticleReceived = true;
-
-                                        echo $innerHTML;
                                     }
-                                }
 
-                                if (!$newsArticleReceived) {
-                                    echo '<p class="news_article_content_error"><strong>Oops!</strong> It looks like we couldn&rsquo;t get this newsletter.</p>';
-                                }
-                            ?>
+                                    if (!$newsArticleReceived) {
+                                        echo '<p class="news_article_content_error"><strong>Oops!</strong> It looks like we couldn&rsquo;t get this newsletter.</p>';
+                                    }
+                                ?>
+                            </div>
                         </div>
                     </div>
                 <?php } ?>
