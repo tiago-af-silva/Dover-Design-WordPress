@@ -287,16 +287,13 @@ if ($current_user->ID != $superadmin_id) {
     }
 }
 
-// Stop version update checks for this theme
-function stop_theme_version_check($r, $url) {
-    if (0 !== strpos( $url, 'http://api.wordpress.org/themes/update-check')) {
-        return $r; // Not a theme update request. Bail immediately.
-    }
+// Stop version checks for all themes
+function stop_theme_version_check() {
+    global $wp_version;
 
-    $themes = unserialize($r['body']['themes']);
-    unset($themes[get_option('template')]);
-    unset($themes[get_option('stylesheet')]);
-    $r['body']['themes'] = serialize($themes);
-    return $r;
+    return (object) array(
+        'last_checked' => time(),
+        'version_checked' => $wp_version,
+    );
 }
-add_filter('http_request_args', 'stop_theme_version_check', 5, 2);
+add_filter('pre_site_transient_update_themes', 'stop_theme_version_check');
