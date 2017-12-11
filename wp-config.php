@@ -1,5 +1,10 @@
 <?php
 
+// BEGIN iThemes Security - Do not modify or remove this line
+// iThemes Security Config Details: 2
+define( 'DISALLOW_FILE_EDIT', true ); // Disable File Editor - Security > Settings > WordPress Tweaks > File Editor
+// END iThemes Security - Do not modify or remove this line
+
 /**
  * The base configurations of the WordPress.
  *
@@ -97,7 +102,7 @@ $table_prefix  = 'wp_';
 define('WP_DEBUG', false);
 
 define('WP_CACHE', true); //Added by WP-Cache Manager
-define( 'WPCACHEHOME', '/Users/tiagosilva/Sites/doverdesign.com/htdocs/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
+define( 'WPCACHEHOME', '/var/sites/d/doverdesign.com/public_html/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
 
 /* That's all, stop editing! Happy blogging. */
 

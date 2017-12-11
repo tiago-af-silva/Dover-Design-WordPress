@@ -35,6 +35,7 @@ class DLM_Admin {
 
 		// Settings
 		add_action( 'admin_init', array( $this, 'register_settings' ) );
+		$this->register_lazy_select_filters();
 
 		// Logs
 		add_action( 'admin_init', array( $this, 'export_logs' ) );
@@ -48,6 +49,9 @@ class DLM_Admin {
 
 		// flush rewrite rules on shutdown
 		add_action( 'shutdown', array( $this, 'maybe_flush_rewrites' ) );
+
+        // filter attachment thumbnails in media library for files in dlm_uploads
+		add_filter( 'wp_prepare_attachment_for_js', array( $this, 'filter_thumbnails_protected_files' ), 10, 1 );
 	}
 
 	/**
@@ -104,13 +108,40 @@ class DLM_Admin {
 	}
 
 	/**
+     * filter attachment thumbnails in media library for files in dlm_uploads
+     *
+	 * @param array $response
+	 *
+	 * @return array
+	 */
+	public function filter_thumbnails_protected_files( $response ) {
+
+		if ( apply_filters( 'dlm_filter_thumbnails_protected_files', true ) ) {
+			$upload_dir = wp_upload_dir();
+
+			if ( strpos( $response['url'], $upload_dir['baseurl'] . '/dlm_uploads' ) !== false ) {
+				if ( ! empty( $response['sizes'] ) ) {
+					$dlm_protected_thumb = WP_DLM::get_plugin_url() . '/assets/images/protected-file-thumbnail.png';
+					foreach ( $response['sizes'] as $rs_key => $rs_val ) {
+						$rs_val['url']                = $dlm_protected_thumb;
+						$response['sizes'][ $rs_key ] = $rs_val;
+					}
+				}
+			}
+		}
+
+		return $response;
+	}
+
+	/**
 	 * Return pages with ID => Page title format
 	 *
 	 * @return array
 	 */
 	private function get_pages() {
+
 		// pages
-		$pages = array( 0 => __( 'Select Page', 'download-monitor' ) );
+		$pages = array( array( 'key' => 0, 'lbl' => __( 'Select Page', 'download-monitor' ) ) );
 
 		// get pages from db
 		$db_pages = get_pages();
@@ -118,7 +149,7 @@ class DLM_Admin {
 		// check and loop
 		if ( count( $db_pages ) > 0 ) {
 			foreach ( $db_pages as $db_page ) {
-				$pages[ $db_page->ID ] = $db_page->post_title;
+				$pages[] = array( 'key' => $db_page->ID, 'lbl' => $db_page->post_title );
 			}
 		}
 
@@ -175,6 +206,14 @@ class DLM_Admin {
 							'label'    => __( 'Prevent hotlinking', 'download-monitor' ),
 							'cb_label' => __( 'Enable', 'download-monitor' ),
 							'desc'     => __( 'If enabled, the download handler will check the PHP referer to see if it originated from your site and if not, redirect them to the homepage.', 'download-monitor' ),
+							'type'     => 'checkbox'
+						),
+						array(
+							'name'     => 'dlm_allow_x_forwarded_for',
+							'std'      => '0',
+							'label'    => __( 'Allow Proxy IP Override', 'download-monitor' ),
+							'cb_label' => __( 'Enable', 'download-monitor' ),
+							'desc'     => __( 'If enabled, Download Monitor will use the X_FORWARDED_FOR HTTP header set by proxies as the IP address. Note that anyone can set this header, making it less secure.', 'download-monitor' ),
 							'type'     => 'checkbox'
 						),
 					),
@@ -260,8 +299,8 @@ class DLM_Admin {
 							'std'     => '',
 							'label'   => __( 'No Access Page', 'download-monitor' ),
 							'desc'    => __( "Choose what page is displayed when the user has no access to a file. Don't forget to add the <code>[dlm_no_access]</code> shortcode to the page.", 'download-monitor' ),
-							'type'    => 'select',
-							'options' => $this->get_pages()
+							'type'    => 'lazy_select',
+							'options' => array()
 						),
 						array(
 							'name'        => 'dlm_no_access_error',
@@ -302,6 +341,7 @@ class DLM_Admin {
 	public function register_settings() {
 		$this->init_settings();
 
+		// register our options and settings
 		foreach ( $this->settings as $section ) {
 			foreach ( $section[1] as $option ) {
 				if ( isset( $option['std'] ) ) {
@@ -310,7 +350,30 @@ class DLM_Admin {
 				register_setting( 'download-monitor', $option['name'] );
 			}
 		}
+
+		// register option for tab navigation :: 'dlm_settings_tab_saved'
+		add_option( 'dlm_settings_tab_saved', 'general' );
+		register_setting( 'download-monitor', 'dlm_settings_tab_saved' );
+
 	}
+
+	/**
+	 * Register the filters used by lazy select fields
+	 */
+	private function register_lazy_select_filters() {
+	    add_filter( 'dlm_settings_lazy_select_dlm_no_access_page', array( $this, 'lazy_select_dlm_no_access_page' ) );
+    }
+
+	/**
+     * Fetch and returns pages on lazy select for dlm_no_access_page option
+     *
+	 * @param array $options
+	 *
+	 * @return array
+	 */
+    public function lazy_select_dlm_no_access_page( $options ) {
+	    return $this->get_pages();
+    }
 
 	/**
 	 * admin_enqueue_scripts function.
@@ -452,11 +515,17 @@ class DLM_Admin {
 					?>
 				</h2><br/>
 
+				<input type="hidden" id="setting-dlm_settings_tab_saved" name="dlm_settings_tab_saved" value="general" />
+
 				<?php
 
 				if ( ! empty( $_GET['settings-updated'] ) ) {
 					$this->need_rewrite_flush = true;
 					echo '<div class="updated notice is-dismissible"><p>' . __( 'Settings successfully saved', 'download-monitor' ) . '</p></div>';
+
+					$dlm_settings_tab_saved = get_option( 'dlm_settings_tab_saved', 'general' );
+
+					echo '<script type="text/javascript">var dlm_settings_tab_saved = "' . $dlm_settings_tab_saved . '";</script>';
 				}
 
 				foreach ( $this->settings as $key => $section ) {
@@ -510,6 +579,17 @@ class DLM_Admin {
 									echo '<option value="' . esc_attr( $key ) . '" ' . selected( $value, $key, false ) . '>' . esc_html( $name ) . '</option>';
 								}
 								?></select><?php
+
+								if ( $option['desc'] ) {
+									echo ' <p class="dlm-description">' . $option['desc'] . '</p>';
+								}
+
+								break;
+							case "lazy_select" :
+								?><select id="setting-<?php echo $option['name']; ?>" class="regular-text dlm-lazy-select"
+                                          name="<?php echo $option['name']; ?>" data-selected="<?php echo esc_attr( $value ); ?>">
+                                <option value="0"><?php _e( 'Loading', 'download-monitor'); ?>...</option>
+                                </select><?php
 
 								if ( $option['desc'] ) {
 									echo ' <p class="dlm-description">' . $option['desc'] . '</p>';
@@ -588,6 +668,10 @@ class DLM_Admin {
 			return;
 		}
 
+		if ( ! current_user_can( 'manage_downloads' ) ) {
+			wp_die( "You're not allowed to delete logs." );
+		}
+
 		check_admin_referer( 'delete_logs' );
 
 		$wpdb->query( "DELETE FROM {$wpdb->download_log};" );
@@ -601,6 +685,10 @@ class DLM_Admin {
 
 		if ( empty( $_GET['dlm_download_logs'] ) ) {
 			return;
+		}
+
+		if ( ! current_user_can( 'manage_downloads' ) ) {
+			wp_die( "You're not allowed to export logs." );
 		}
 
 		$filter_status = isset( $_REQUEST['filter_status'] ) ? sanitize_text_field( $_REQUEST['filter_status'] ) : '';
@@ -662,6 +750,8 @@ class DLM_Admin {
 					$row[] = $user->user_login;
 					$row[] = $user->user_email;
 				}
+
+				unset( $user );
 
 				$row[]  = $item->user_ip;
 				$row[]  = $item->user_agent;
