@@ -78,17 +78,17 @@
         }
     ?>
 
-    <div class="work_wrap" data-js-module="filtering-demo">
-        <div class="filter-button-group js-radio-button-group filter_nav">
+    <div class="work_wrap">
+        <div class="filter_nav">
             <button class="button filter_nav_item" data-filter=".interior">
                 <div class="filter_btn"><span>Interior Design</span></div>
             </button>
             <button class="button filter_nav_item" data-filter=".brand">
                 <div class="filter_btn"><span>Branding</span></div>
             </button>
-            <button class="button filter_nav_item" data-filter=".visuals">
+            <!-- <button class="button filter_nav_item" data-filter=".visuals">
                 <div class="filter_btn"><span>Visuals</span></div>
-            </button>
+            </button> -->
         </div>
 
         <div class="grid_wrapper">

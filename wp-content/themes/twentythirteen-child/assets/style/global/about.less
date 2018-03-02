@@ -1,144 +1,285 @@
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+	  box-sizing: border-box;
+}
+
+.no_scroll {
+	overflow:hidden;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
 .about_wrap {
 	position: relative;
 	display: block;
 	width: 100%;
 	height: auto;
+	padding: 80px 2.5px 50px 2.5px;
+
+	background: white;
+}
+
+.item_wrap {
+	display: inline-block;
+	position: relative;
 	top: 0;
 	left: 0;
-	bottom: 0;
-	right: 0;
-
-	padding-top: 90px;
-	padding-bottom: 60px;
-
-	background-image: url(/wp-content/themes/twentythirteen-child/assets/content/about/about_bg2.jpg);
-	-webkit-background-size: cover;
-	background-size: cover;
-	background-position: center;
-}
-
-.about_wrap_inside {
-	position: relative;
-	display: block;
 	width: 100%;
-	max-width: 800px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	padding-left: 10px;
-	padding-right: 10px;
-
-	margin: 0 auto;
-	
-
-	background-color: rgba(36,36,36,0.95);
+	line-height: 100%;
 }
 
-.video_wrap {
-	position: relative;
-	display: block;
-	height: 0;
-	padding-bottom: 56.25%;
-	/*padding-top: 25px;*/
 
-	border: 2px solid black;
+.people_btn {
+	overflow: hidden;
 
-	iframe {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
+	&.director {
+		cursor: pointer;
+	}
+
+	&:hover {
+		.team-button {
+			// transform: translateY(-150px);
+			bottom: 0px;
+		}
 	}
 }
 
-.about_content {
+/*  Copy block  */
+.copy_box {
+	.c1x1,
+	.c1x2,
+	.c1x3 {
+		z-index: -1;
+	}
+
+	.c1x1 { display: block; }
+	.c1x2 { display: none; }
+	.c1x3 { display: none; }
+
+	@media only screen and (max-width: 450px) {
+		.c1x1, .c1x2, .c1x3 { display: none; }
+
+		.copy {
+			position: relative;
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+	}
+
+	@media only screen and (min-width: 451px) and (max-width: 580px) {
+		.c1x1 { display: none; }
+		.c1x2 { display: none; }
+		.c1x3 { display: block; }
+	}
+
+	@media only screen and (min-width: 581px) and (max-width: 765px) {
+		.c1x1 { display: block; }
+		.c1x2 { display: none; }
+		.c1x3 { display: none; }
+	}
+
+	@media only screen and (min-width: 766px) and (max-width: 1025px) {
+		.c1x1 { display: none; }
+		.c1x2 { display: block; }
+		.c1x3 { display: none; }
+	}
+
+	@media only screen and (min-width: 1026px) and (max-width: 1150px) {
+		.c1x1 { display: none; }
+		.c1x2 { display: none; }
+		.c1x3 { display: block; }
+	}
+}
+
+.copy_box_inner {
 	position: relative;
-	display: block;
+}
+
+.copy {
+	position:absolute;
 	width: 100%;
-	margin-top: 40px;
-	padding: 20px;
+	height: 100%;
+	padding: 0 30px;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-color: @orange;
+}
+
+.about_copy_container {
+	position: relative;
+	display: table;
+	height: 100%;
+}
+
+.about_copy {
+	display: table-cell;
+	vertical-align: middle;
 
 	color: white;
-	font-family: 'Pro-Light';
-	font-size: 15px;
-	line-height: 22px;
-	letter-spacing: 0.5px;
+	font-size: 18px;
+	font-family: 'Pro-Light', sans-serif;
+	line-height: 25px;
+
+	strong {
+		display: block;
+		font-family: 'Pro-SemiBold', sans-serif;
+		font-size: 50px;
+		line-height: 0.9;
+		margin: 3px 0;
+	}
+
+	a {
+		color:white;
+		text-decoration:none;
+
+		&:hover {
+			text-decoration:underline;
+		}
+	}
 }
 
-.about_title {
+/*  button  */
+
+
+.team-button {
+	&:extend(.work__title);
+	text-align:left;
+
+	.team-member-name {
+		&:extend(.client_name);
+	}
+
+	.team-member-role {
+		&:extend(.project_location);
+	}
+}
+
+
+
+
+/* ---- Light box -----*/
+
+.about_lightbox {
+	// height: 61%;
+	height:auto;
+	background-color: white;
+
+	@media only screen and (max-width: 765px) {
+		height: 95%;
+	}
+}
+
+.about_info {
 	position: relative;
 	display: inline-block;
-	width: 100%;
-	font-size: 0;
+	width: 50%;
+	margin-top: 9%;
+	padding: 40px 40px 40px 0px;
+
+	color: black;
 }
 
-.about_line {
+.about_info_name {
+	margin-bottom: 5px;
+
+	font-family: 'Pro-Bold', sans-serif;
+	font-size: 21px;
+	line-height: 21px;
+	
+	font-style: normal;
+	font-weight: 700;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.about_info_roll {
+	margin-bottom: 30px;
+
+	font-family: 'Pro-Light', sans-serif;
+	font-size: 21px;
+	line-height: 21px;
+	
+	font-style: italic;
+	font-weight: 700;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.about_info_photo {
 	display: inline-block;
-	border-color: @orange; 
-	width: 31%;
-}
-
-.about_title_text {
-	display: inline-block;
-	width: 30%;
-	margin: 5% 4%;
-	padding: 10px;
-	border: 1px solid white;
-}
-
-
-.clients_secion {
-	position: relative;
-	display: inline-block;
-	width: 100%;
-	padding: 20px;
-
-	text-align: center;
-}
-
-.clients_grid {
-
-}
-
-.clients_item {
-	position: relative;
-	display: inline-block;
-	overflow: hidden;
-	width: 25%;
-	height: auto;
-	padding: 10px;
 	float: left;
+	width: 50%;
+	padding: 20px;
 
 	img {
 		width: 100%;
-		opacity: 0.8;
 	}
-
-	a:hover img {
-		opacity: 1;
-	}
-
 }
 
+.about_info_copy {
+	display: block;
+}
+
+.close_btn {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	top: 0;
+	right: 0;
+	margin: 20px;
+
+	background-image: url(/wp-content/themes/twentythirteen-child/assets/img/close_btn_b.svg);
+	-webkit-background-size: 100%;
+	background-size: 100%;
+
+	z-index: 99;
+
+	transition: all .2s;
+	-webkit-transition: all .2s;
+
+	&:hover {
+		-ms-transform: rotate(90deg);
+		transform: rotate(90deg);
+		-webkit-transform: rotate(90deg);
+	}
+}
+
+
+
+
+@media only screen and (max-width: 1025px) {
+	
+}
 
 @media only screen and (max-width: 765px) {
-	.clients_item {
-		width: 33.3%;
+
+	/* light box */
+	.about_info_photo {
+		width: 100%;
+		padding: 30px;
 	}
 
-	.about_line { 
-		width: 15%;
+	.about_info {
+		width: 100%;
+		padding: 0px 30px 30px 30px;
+		margin-top: 0;
 	}
 
-	.about_title_text {
-		width: 60%;
-		margin: 5%;
-	}
-}
-
-
-@media only screen and (max-width: 400px) {
-	.clients_item {
-		width: 50%;
+	.close_btn {
+		margin: 10px;
 	}
 }
+
+@media only screen and (max-width: 450px) {
+
+}
+
+// .touch {
+// 	.team-button {
+// 		bottom: 0px;
+// 	}
+// }

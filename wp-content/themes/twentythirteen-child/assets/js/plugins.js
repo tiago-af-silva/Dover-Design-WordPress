@@ -21,12 +21,27 @@
     }
 }());
 
-// Place any jQuery/helper plugins in here.
+function filter_grid(button_element, grid_class) {
+    if (!button_element || !grid_class) {
+        return false;
+    }
+
+    var filter_value = button_element.attr('data-filter');
+
+    if (!filter_value) {
+        filter_value = '*';
+    }
+
+    $(grid_class).isotope({
+        filter: filter_value
+    });
+
+    button_element.parent().find('.is-checked').removeClass('is-checked');
+    button_element.addClass('is-checked');
+}
 
 $(document).ready(function () {
-    //
     // Homepage carousel
-    //
     if ($('.slideshow').length > 0) {
         $('.slideshow').slick({
             dots: true,
@@ -69,12 +84,16 @@ $(document).ready(function () {
         });
     }
 
-    // // Work details & Team grid
-    // var container = document.querySelector('#masonry');
-    // var msnry = new Masonry( container, {
-    //   // columnWidth: 1,
-    //   itemSelector: '.item',
-    //   // gutter: 5
-    // });
+    // Grid on the work page
+    if ($('.filter_nav').length > 0 && $('.grid').length > 0) {
+        var filter_buttons = $('.filter_nav .filter_nav_item');
 
+        // Bind filter buttons
+        filter_buttons.on('click', function () {
+            filter_grid($(this), '.grid');
+        });
+
+        // Initial filtering
+        filter_grid(filter_buttons.first(), '.grid');
+    }
 });

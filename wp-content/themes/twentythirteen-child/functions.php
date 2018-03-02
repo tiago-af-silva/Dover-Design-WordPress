@@ -11,7 +11,7 @@
 function get_post_id_for($slug) {
     $post_ids = array(
         'home'  => '63',
-        'about' => '67',
+        'services' => '67',
         'work' => '70',
         'team' => '80',
         'alchemy' => '1181',
@@ -108,6 +108,20 @@ function work_search_filter($query) {
     }
 }
 
+// Set up redirect for services pages (/services/strategy/, /services/branding/, etc)
+add_action('init', 'services_rewrite');
+function services_rewrite() {
+    global $wp_rewrite;
+
+    $services_page = get_post(get_post_id_for('services'));
+    $services_slug = $services_page->post_name;
+
+    add_rewrite_tag('%service%', '([^&]+)');
+    add_rewrite_rule('^'.$services_slug.'/([^/]*)/?$','index.php?page_id='.get_post_id_for('services').'&service=$matches[1]', 'top');
+
+    $wp_rewrite->flush_rules();
+}
+
 // Modify CMS menu
 add_action('admin_menu', 'rewrite_menu_items');
 function rewrite_menu_items() {
@@ -190,28 +204,29 @@ function custom_admin_styles() {
     // Only show slideshow fields when editing the homepage
     if (!isset($_GET['post']) || $_GET['post'] != get_post_id_for('home')) {
         echo '<style>
-            #simple_fields_connector_5 { display:none; }
-            #simple_fields_connector_17 { display:none; }
+            #simple_fields_connector_5 { display:none !important; }
+            #simple_fields_connector_17 { display:none !important; }
         </style>';
     }
 
     if ($_GET['post'] == get_post_id_for('home')) {
         echo '<style>
-            #simple_fields_connector_17 .add_media { display:none; }
+            #simple_fields_connector_17 .add_media { display:none !important; }
         </style>';
     }
 
-    // Only show clients fields when editing the about page
-    if (!isset($_GET['post']) || $_GET['post'] != get_post_id_for('about')) {
+    // Only show services and clients fields when editing the services page
+    if (!isset($_GET['post']) || $_GET['post'] != get_post_id_for('services')) {
         echo '<style>
-            #simple_fields_connector_6 { display:none; }
+            #simple_fields_connector_6 { display:none !important; }
+            #simple_fields_connector_25 { display:none !important; }
         </style>';
     }
 
-    // Only show clients fields when editing the about page
+    // Only show team member fields when editing the team page
     if (!isset($_GET['post']) || $_GET['post'] != get_post_id_for('team')) {
         echo '<style>
-            #simple_fields_connector_15 { display:none; }
+            #simple_fields_connector_15 { display:none !important; }
         </style>';
     }
 }
