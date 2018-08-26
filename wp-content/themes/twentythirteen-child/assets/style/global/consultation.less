@@ -1,0 +1,301 @@
+.consultation_wrap {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    padding-top: 120px;
+
+    @media only screen and (min-width: 451px) {
+        position: absolute;
+        height: 100%;
+        padding-top: 20px;
+    }
+}
+
+.consultation_background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    background-image: url("/wp-content/themes/twentythirteen-child/assets/content/consultation/brown-paper-texture.jpg");
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+
+.consultation_wrap_content {
+    position: relative;
+    display: block;
+    margin: 110px 25px;
+
+    h2 {
+        font-family: 'Pro-Regular', sans-serif;
+        font-weight: inherit;
+        font-size: 26px;
+        line-height: 1.2;
+        color: white;
+        margin-bottom: 40px;
+    }
+
+    .button-teal {
+        font-size: 18px;
+    }
+}
+
+.consultation_intro {
+    position: relative;
+    display: block;
+    width: 400px;
+    padding: 30px 25px;
+    border: 5px solid white;
+    margin: 0 auto 160px auto;
+
+    font-family: 'Pro-Regular',sans-serif;
+    font-size: 26px;
+    line-height: 1.2;
+    color: white;
+    text-align: left;
+
+    p {
+        margin-bottom: 5px;
+
+        &.large {
+            font-family: 'Pro-SemiBold', sans-serif;
+            font-size: 46px;
+            margin-bottom: 30px;
+
+            &:first-child {
+                text-align: center;
+            }
+
+            span {
+                color: @orange;
+                margin-left: 2px;
+            }
+        }
+    }
+
+    h1 {
+        font-family: inherit;
+        font-size: inherit;
+        font-weight: inherit;
+        font-style: inherit;
+        margin-bottom: 5px;
+    }
+
+    @media only screen and (min-width: 850px) {
+        width: 500px;
+    }
+}
+
+.consultation_intro_edge {
+    position: absolute;
+    bottom: -120px;
+    right: -5px;
+    width: 120px;
+    height: 120px;
+    line-height: 1.1;
+    padding: 20px;
+    border: 5px solid white;
+    background-color: @teal;
+
+    span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    @media only screen and (min-width: 690px) {
+        right: -120px;
+    }
+}
+
+.consultation_form {
+    font-family: 'Pro-Light',sans-serif;
+    font-size: 18px;
+    color: white;
+
+    table {
+        width: 100%;
+        border-top: 2px solid white;
+        margin-bottom: 35px;
+
+        td {
+            position: relative;
+            display: block;
+            width: 100%;
+            text-align: left;
+            border: 2px solid white;
+            border-top: none;
+
+            &.text-right {
+                text-align: right;
+            }
+
+            &.hide-when-block {
+                display: none;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 850px) {
+        table {
+            border-top: none;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+
+            td {
+                display: table-cell;
+                width: 50%;
+                border: 2px solid white;
+
+                &.hide-when-block {
+                    display: table-cell;
+                }
+            }
+        }
+    }
+
+    .left-column {
+        @media only screen and (min-width: 1300px) {
+            float: left;
+            width: 64%;
+            margin-right: 2%;
+        }
+    }
+
+    .right-column {
+        @media only screen and (min-width: 1300px) {
+            float: right;
+            width: 33%;
+        }
+    }
+
+    label.on-the-back {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        padding: 13px 0 0 13px;
+    }
+
+    label.in-the-centre {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+        border-bottom: 2px solid white;
+    }
+
+    br {
+        display: none;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="date"],
+    textarea {
+        display: block;
+        width: 100%;
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        padding: 10px 10px 10px 30%;
+        background-color: transparent;
+        border: none;
+        outline: none;
+    }
+
+    textarea {
+        height: 300px;
+        padding: 10px;
+        resize: none;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+        margin-left: 14px;
+        margin-right: 7px;
+    }
+
+    a {
+        color: white;
+    }
+
+    .radio-buttons {
+        display: block;
+        padding: 11px 10px 11px 0px;
+    }
+
+    .consultation_slot_selection {
+        display: block;
+        text-align: center;
+        padding: 11px 10px 20px 0px;
+    }
+
+    .consultation_slot_day,
+    .consultation_slot_hour {
+        display: inline-block;
+        font-family: 'Pro-Regular',sans-serif;
+        font-size: 16px;
+        color: white;
+        background-color: @teal;
+        padding: 12px;
+        border: 1px solid white;
+        border-radius: 1px;
+        margin-top: 10px;
+        margin-left: 10px;
+
+        &.inactive {
+            background-color: lighten(desaturate(@teal, 70%), 30%);
+        }
+    }
+
+    .consultation_slot_hour_list {
+        display: none;
+
+        p {
+            margin: 5px 10px;
+        }
+    }
+
+    .consultation_slot_day_cancel {
+        white-space: nowrap;
+    }
+
+    #consultation_slot {
+        display: none;
+    }
+
+    .wpcf7-response-output,
+    .screen-reader-response,
+    .wpcf7-not-valid-tip {
+        font-family: 'Pro-Regular',sans-serif;
+    }
+
+    .screen-reader-response {
+        margin-bottom: 30px;
+
+        ul {
+            display: none;
+        }
+    }
+
+    .wpcf7-not-valid-tip {
+        display: block;
+        color: black;
+        padding: 13px;
+    }
+}

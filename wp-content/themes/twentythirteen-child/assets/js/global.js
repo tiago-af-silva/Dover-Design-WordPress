@@ -46,6 +46,36 @@ $(document).ready(function () {
         $(".wrapper").addClass("no_scroll");
     });
 
+    $(".consultation_slot_day").click(function () {
+        var day = $(this).attr("data-day");
+        $(".consultation_slot_day").hide();
+        $("#consultation_slot_" + day).show();
+    });
+
+    $(".consultation_slot_hour").click(function () {
+        var value = $(this).attr("data-value");
+        $("#consultation_slot").val(value);
+        $(".consultation_slot_hour").addClass("inactive");
+        $(this).removeClass("inactive");
+    });
+
+    $(".consultation_slot_day_cancel").click(function (e) {
+        e.preventDefault();
+        $("#consultation_slot").val("");
+        $(".consultation_slot_hour_list").hide();
+        $(".consultation_slot_hour").removeClass("inactive");
+        $(".consultation_slot_day").show();
+        return false;
+    });
+
+    if ($("#consultation_slot").val()) {
+        var value = $("#consultation_slot").val();
+        $(".consultation_slot_hour").addClass("inactive");
+        $(".consultation_slot_hour[data-value='" + value + "']").removeClass("inactive");
+        $(".consultation_slot_day").hide();
+        $(".consultation_slot_hour[data-value='" + value + "']").parents('.consultation_slot_hour_list').first().show();
+    }
+
     // Remove rollover
 
     if ('ontouchstart' in document.documentElement) {
