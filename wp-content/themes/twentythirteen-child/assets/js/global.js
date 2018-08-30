@@ -53,6 +53,8 @@ $(document).ready(function () {
     });
 
     $(".consultation_slot_hour").click(function () {
+        if ($(this).hasClass("unavailable")) return false;
+
         var value = $(this).attr("data-value");
         $("#consultation_slot").val(value);
         $(".consultation_slot_hour").addClass("inactive");

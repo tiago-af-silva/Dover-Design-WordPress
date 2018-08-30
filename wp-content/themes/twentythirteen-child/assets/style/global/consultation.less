@@ -257,9 +257,18 @@
         border-radius: 1px;
         margin-top: 10px;
         margin-left: 10px;
+        box-shadow: none;
 
         &.inactive {
-            background-color: lighten(desaturate(@teal, 70%), 30%);
+            background-color: lighten(desaturate(@teal, 60%), 30%);
+        }
+
+        &.unavailable,
+        &.inactive.unavailable {
+            cursor: not-allowed;
+            opacity: 0.75;
+            filter: alpha(opacity=75);
+            background-color: lighten(desaturate(@teal, 100%), 35%);
         }
     }
 
