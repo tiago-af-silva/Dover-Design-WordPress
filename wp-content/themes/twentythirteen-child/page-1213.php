@@ -46,11 +46,13 @@
                                 <?php
                                     $newsArticleReceived = false;
 
-                                    $file = @file_get_contents(trim($recent_post['post_content']));
+                                    $request = wp_remote_get(trim($recent_post['post_content']));
 
-                                    if ($file !== false) {
+                                    if (!is_wp_error($request) && wp_remote_retrieve_response_code($request) == 200) {
+                                        $body = wp_remote_retrieve_body($request);
+
                                         $dom = new DOMDocument();
-                                        @$dom->loadHTML(mb_convert_encoding($file, 'HTML-ENTITIES', 'UTF-8'));
+                                        @$dom->loadHTML(mb_convert_encoding($body, 'HTML-ENTITIES', 'UTF-8'));
 
                                         $node = $dom->getElementById('bodyTable');
 
